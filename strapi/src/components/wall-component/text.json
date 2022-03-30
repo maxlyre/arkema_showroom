@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_wall_component_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "richtext"
+    },
+    "column": {
+      "type": "integer",
+      "default": 12,
+      "max": 12,
+      "min": 1
+    }
+  }
+}

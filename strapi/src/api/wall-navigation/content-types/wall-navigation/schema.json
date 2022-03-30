@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "wall_navigations",
+  "info": {
+    "singularName": "wall-navigation",
+    "pluralName": "wall-navigations",
+    "displayName": "Wall Navigation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wall_group": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wall-component.wall-navigation-group"
+    }
+  }
+}

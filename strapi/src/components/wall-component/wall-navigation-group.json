@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_wall_component_wall_navigation_groups",
+  "info": {
+    "displayName": "Wall Navigation Group",
+    "icon": "equals"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "walls_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wall.wall"
+    }
+  }
+}

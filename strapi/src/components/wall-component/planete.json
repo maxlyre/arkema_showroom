@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_wall_component_planetes",
+  "info": {
+    "displayName": "Planete",
+    "icon": "dice-d6",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PlanetJson": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "column": {
+      "type": "integer",
+      "default": 12,
+      "required": false,
+      "max": 12,
+      "min": 1
+    }
+  }
+}

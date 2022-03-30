@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "walls",
+  "info": {
+    "singularName": "wall",
+    "pluralName": "walls",
+    "displayName": "Wall",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Contenu": {
+      "type": "dynamiczone",
+      "components": [
+        "wall-component.text",
+        "wall-component.gallerie",
+        "wall-component.camembert",
+        "wall-component.planete"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

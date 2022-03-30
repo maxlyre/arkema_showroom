@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_wall_component_galleries",
+  "info": {
+    "displayName": "Gallerie",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "column": {
+      "type": "integer",
+      "default": 12,
+      "max": 12,
+      "min": 1
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "bottom",
+        "right"
+      ],
+      "default": "bottom"
+    }
+  }
+}

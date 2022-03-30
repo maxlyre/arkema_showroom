@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_wall_component_camemberts",
+  "info": {
+    "displayName": "Camembert",
+    "icon": "chart-pie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Titre": {
+      "type": "string"
+    },
+    "pourcentages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wall-component.pourcentage"
+    },
+    "column": {
+      "type": "integer",
+      "default": 12,
+      "max": 12,
+      "min": 1
+    },
+    "pourcentage_externe": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wall-component.pourcentage"
+    }
+  }
+}
