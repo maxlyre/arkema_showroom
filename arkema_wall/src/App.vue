@@ -1,7 +1,8 @@
 <script>
   import Text from "./components/Text.vue";
   import Camembert from "./components/Camembert.vue";
-
+  import Gallery from "./components/Gallery.vue";
+  import Planet from "./components/Planet.vue";
   import TheWelcome from "./components/TheWelcome.vue";
 //   import { useQuery } from '@urql/vue';
 // import { onMounted } from '@vue/runtime-core';
@@ -16,7 +17,7 @@
         }
       },
       components:{
-        Text,Camembert
+        Text,Camembert,Gallery,Planet
       },
       computed:{
       },
@@ -62,6 +63,16 @@
         />
         <Camembert 
           v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
+          :content= content
+          :index = index
+        />
+        <Gallery 
+          v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
+          :content= content
+          :index = index
+        />
+        <Planet 
+          v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
           :content= content
           :index = index
         />
