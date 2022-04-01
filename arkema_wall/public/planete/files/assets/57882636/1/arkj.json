@@ -1,0 +1,2380 @@
+{
+"data":[
+    {
+      "country": "FRANCE",
+      "name": "MAKEA",
+      "employee": 8,
+      "site": "SIEGE SOCIAL",
+      "city": "COLOMBES CEDEX",
+      "lat": 48.9220615,
+      "long": 2.2533313
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHANGSHU) CHEMICAL COMPANY LIMITED",
+      "employee": 77,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHANGSHU CITY, JIANGSU PROVINCE",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHANGSHU) FLUOROCHEMICALS CO LTD",
+      "employee": 267,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHANGSHU CITY, JIANGSU PROVINCE",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHANGSHU) FLUOROCHEMICALS CO LTD",
+      "employee": 63,
+      "site": "CENTRE R&D",
+      "city": "CHANGSHU",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHANGSHU) POLYAMIDES CO, LTD",
+      "employee": 57,
+      "site": "USINE DE PRODUCTION",
+      "city": "SHANGHAI, CHINA",
+      "lat": 31.0312782,
+      "long": 121.6854568
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHINA) INVESTMENT CO. LTD",
+      "employee": 15,
+      "site": "SIEGE SOCIAL",
+      "city": "BEIJING",
+      "lat": 39.8929867,
+      "long": 116.4737288
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHINA) INVESTMENT CO. LTD CHANGSHU BRANCH",
+      "employee": 242,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHANGSHU CITY,JIANGSU POVINCE",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHINA) INVESTMENT CO. LTD GUANGZHOU BRANCH",
+      "employee": 31,
+      "site": "AGENCE COMMERCIALE",
+      "city": "GUANGZHOU,GUANGDONG PROVINCE",
+      "lat": 23.1475722,
+      "long": 113.2880602
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (CHINA) INVESTMENT CO. LTD SHANGHAI BRANCH",
+      "employee": 231,
+      "site": "SIEGE SOCIAL",
+      "city": "SHANGHAI",
+      "lat": 31.2776332,
+      "long": 121.4453451
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (SHANGHAI) DISTRIBUTION CO. LTD",
+      "employee": 3,
+      "site": "SIEGE SOCIAL",
+      "city": "SHANGHAI",
+      "lat": 31.3329321,
+      "long": 121.6046571
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA (SUZHOU) POLYAMIDES CO, LTD",
+      "employee": 201,
+      "site": "USINE DE PRODUCTION",
+      "city": "ZHANG JIA GANG",
+      "lat": 31.7612727,
+      "long": 120.6382072
+    },
+    {
+      "country": "BELGIQUE",
+      "name": "MAKEA ANTWERP",
+      "employee": 44,
+      "site": "USINE DE PRODUCTION",
+      "city": "ZWINDRECHT",
+      "lat": 51.2164116,
+      "long": 4.3335905
+    },
+    {
+      "country": "ALGERIE",
+      "name": "MAKEA BUREAU LIAISON ALGER",
+      "employee": 4,
+      "site": "SIEGE SOCIAL",
+      "city": "ALGER",
+      "lat": 36.753768,
+      "long": 3.0587561
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "MAKEA BV",
+      "employee": 33,
+      "site": "SIEGE SOCIAL",
+      "city": "VONDELINGENPLAAT / ROTTERDAM",
+      "lat": 51.8923144,
+      "long": 4.3380597
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "MAKEA BV",
+      "employee": 67,
+      "site": "USINE DE PRODUCTION",
+      "city": "ROTTERDAM",
+      "lat": 51.8923144,
+      "long": 4.3380597
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "MAKEA BV",
+      "employee": 22,
+      "site": "USINE DE PRODUCTION",
+      "city": "BRUMMEN",
+      "lat": 52.1030765,
+      "long": 6.153347999999999
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "MAKEA BV",
+      "employee": 66,
+      "site": "USINE DE PRODUCTION",
+      "city": "RITTHEM / VLISSINGEN-OOST",
+      "lat": 51.4483073,
+      "long": 3.6830563
+    },
+    {
+      "country": "CANADA",
+      "name": "MAKEA CANADA INC",
+      "employee": 53,
+      "site": "USINE DE PRODUCTION",
+      "city": "BECANCOUR",
+      "lat": 46.3867391,
+      "long": -72.3690979
+    },
+    {
+      "country": "CANADA",
+      "name": "MAKEA CANADA INC",
+      "employee": 10,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BURLINGTON",
+      "lat": 43.3955658,
+      "long": -79.7592638
+    },
+    {
+      "country": "ARABIE SAOUDITE",
+      "name": "MAKEA CHEMICAL SAUDI ARABIA",
+      "employee": 15,
+      "site": "USINE DE PRODUCTION",
+      "city": "DAMMAM",
+      "lat": 26.4206828,
+      "long": 50.0887943
+    },
+    {
+      "country": "INDE",
+      "name": "MAKEA CHEMICALS INDIA PRIVATE LTD",
+      "employee": 126,
+      "site": "SIEGE SOCIAL",
+      "city": "NAVI MUMBAI",
+      "lat": 19.0344647,
+      "long": 73.0110096
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA CO. LTD",
+      "employee": 9,
+      "site": "AGENCE COMMERCIALE",
+      "city": "HONG KONG",
+      "lat": 35.86166,
+      "long": 104.195397
+    },
+    {
+      "country": "MALAISIE",
+      "name": "MAKEA COATING RESINS MALAYSIA SDN. BHD.",
+      "employee": 150,
+      "site": "USINE DE PRODUCTION",
+      "city": "MALAYSIA",
+      "lat": 1.494907,
+      "long": 103.9376021
+    },
+    {
+      "country": "COLOMBIE",
+      "name": "MAKEA COLOMBIA S.A.S",
+      "employee": 6,
+      "site": "SIEGE SOCIAL",
+      "city": "MEDELLIN COLOMBIA",
+      "lat": 6.2476376,
+      "long": -75.56581530000001
+    },
+    {
+      "country": "TAIWAN",
+      "name": "MAKEA COMPANY LIMITED TAIWAN BRANCH",
+      "employee": 15,
+      "site": "AGENCE COMMERCIALE",
+      "city": "TAIPEI",
+      "lat": 25.0552958,
+      "long": 121.5541264
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA DAIKIN ADVANCED FLUOROCHEMICAL (CHANGSHU) CO LTD",
+      "employee": 58,
+      "site": "USINE DE PRODUCTION",
+      "city": "JIANGSU CHANGSHU",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 73,
+      "site": "USINE DE PRODUCTION",
+      "city": "BALAN",
+      "lat": 45.83316,
+      "long": 5.096755
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 387,
+      "site": "USINE DE PRODUCTION",
+      "city": "SAINT AVOLD CEDEX",
+      "lat": 49.104408,
+      "long": 6.705793
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 389,
+      "site": "CENTRE TECHNIQUE",
+      "city": "PIERRE BENITE",
+      "lat": 45.7026039,
+      "long": 4.8245191
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 18,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHATEAUROUX",
+      "lat": 46.8031198,
+      "long": 1.6926546
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 160,
+      "site": "USINE DE PRODUCTION",
+      "city": "SAINT LAURENT-BLANGY CEDEX",
+      "lat": 50.300542,
+      "long": 2.801689
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 131,
+      "site": "USINE DE PRODUCTION",
+      "city": "HONFLEUR CEDEX",
+      "lat": 49.418762,
+      "long": 0.233262
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 371,
+      "site": "USINE DE PRODUCTION",
+      "city": "JARRIE",
+      "lat": 45.0943968,
+      "long": 5.7403974
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 175,
+      "site": "USINE DE PRODUCTION",
+      "city": "LA CHAMBRE",
+      "lat": 45.358463,
+      "long": 6.301654
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 165,
+      "site": "CENTRE R&D",
+      "city": "LACQ",
+      "lat": 43.413249,
+      "long": -0.61914
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 343,
+      "site": "USINE DE PRODUCTION",
+      "city": "LACQ",
+      "lat": 43.413249,
+      "long": -0.61914
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 152,
+      "site": "USINE DE PRODUCTION",
+      "city": "LANNEMEZAN CEDEX",
+      "lat": 43.032934,
+      "long": 0.397571
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 314,
+      "site": "USINE DE PRODUCTION",
+      "city": "MARSEILLE CEDEX 11",
+      "lat": 43.3068716,
+      "long": 5.4023705
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 287,
+      "site": "USINE DE PRODUCTION",
+      "city": "MONT",
+      "lat": 43.433921,
+      "long": -0.65154
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 222,
+      "site": "CENTRE R&D",
+      "city": "PIERRE BENITE CEDEX",
+      "lat": 45.7030349,
+      "long": 4.821038199999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 407,
+      "site": "USINE DE PRODUCTION",
+      "city": "PIERRE BENITE CEDEX",
+      "lat": 45.7030349,
+      "long": 4.821038199999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 223,
+      "site": "USINE DE PRODUCTION",
+      "city": "SAINT AUBAN",
+      "lat": 43.8460788,
+      "long": 6.7321901
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 282,
+      "site": "CENTRE R&D",
+      "city": "SERQUIGNY",
+      "lat": 49.10988140000001,
+      "long": 0.7055823
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 409,
+      "site": "USINE DE PRODUCTION",
+      "city": "SERQUIGNY",
+      "lat": 49.10988140000001,
+      "long": 0.7055823
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 865,
+      "site": "SIEGE SOCIAL",
+      "city": "COLOMBES CEDEX",
+      "lat": 48.9220615,
+      "long": 2.2533313
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 87,
+      "site": "CENTRE R&D",
+      "city": "VERNEUIL EN HALATTE",
+      "lat": 49.2667185,
+      "long": 2.5271526
+    },
+    {
+      "country": "FRANCE",
+      "name": "MAKEA FRANCE",
+      "employee": 143,
+      "site": "USINE DE PRODUCTION",
+      "city": "RIEUX CEDEX",
+      "lat": 49.298347,
+      "long": 2.518599
+    },
+    {
+      "country": "EGYPTE",
+      "name": "MAKEA FRANCE REPRESENTATIVE OFFICE - EGYPT",
+      "employee": 12,
+      "site": "SIEGE SOCIAL",
+      "city": "CAIRO",
+      "lat": 30.0444196,
+      "long": 31.2357116
+    },
+    {
+      "country": "GABON",
+      "name": "MAKEA GABON",
+      "employee": 8,
+      "site": "AGENCE COMMERCIALE",
+      "city": "PORT GENTIL",
+      "lat": -0.7292634,
+      "long": 8.7931878
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "MAKEA GMBH",
+      "employee": 125,
+      "site": "USINE DE PRODUCTION",
+      "city": "ZWICKAU",
+      "lat": 50.7017384,
+      "long": 12.4951376
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "MAKEA GMBH",
+      "employee": 74,
+      "site": "SIEGE SOCIAL",
+      "city": "DÜSSELDORF",
+      "lat": 51.2738092,
+      "long": 6.7421871
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "MAKEA GMBH",
+      "employee": 156,
+      "site": "USINE DE PRODUCTION",
+      "city": "GÜNZBURG",
+      "lat": 48.4707826,
+      "long": 10.278213
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "MAKEA GMBH",
+      "employee": 55,
+      "site": "USINE DE PRODUCTION",
+      "city": "LEUNA",
+      "lat": 51.3228697,
+      "long": 12.0820163
+    },
+    {
+      "country": "CHINE",
+      "name": "MAKEA HYDROGEN PEROXIDE CO. LTD SHANGHAI",
+      "employee": 75,
+      "site": "USINE DE PRODUCTION",
+      "city": "SHANGHAI",
+      "lat": 31.0808739,
+      "long": 121.4190899
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 42,
+      "site": "USINE DE PRODUCTION",
+      "city": "ALSIP, ILLINOIS",
+      "lat": 41.6685425,
+      "long": -87.7271123
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 103,
+      "site": "CENTRE R&D",
+      "city": "CARY, NC",
+      "lat": 35.7698044,
+      "long": -78.78162189999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 45,
+      "site": "USINE DE PRODUCTION",
+      "city": "HAHNVILLE, LA",
+      "lat": 29.9765931,
+      "long": -90.40897079999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 36,
+      "site": "USINE DE PRODUCTION",
+      "city": "TORRANCE, CA",
+      "lat": 33.8409696,
+      "long": -118.3520389
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 4,
+      "site": "USINE DE PRODUCTION",
+      "city": "COURTLAND, VA",
+      "lat": 36.7162613,
+      "long": -77.06801949999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 125,
+      "site": "USINE DE PRODUCTION",
+      "city": "BEAUMONT, TX",
+      "lat": 30.0802412,
+      "long": -94.0997344
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 63,
+      "site": "USINE DE PRODUCTION",
+      "city": "BIRDSBORO, PA",
+      "lat": 40.2645371,
+      "long": -75.8040852
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 39,
+      "site": "USINE DE PRODUCTION",
+      "city": "BLOOMING PRAIRIE, MN",
+      "lat": 43.8666294,
+      "long": -93.0488091
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 139,
+      "site": "USINE DE PRODUCTION",
+      "city": "BRISTOL, PA",
+      "lat": 40.1006661,
+      "long": -74.8518311
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 271,
+      "site": "USINE DE PRODUCTION",
+      "city": "CALVERT CITY, KY",
+      "lat": 37.0508193,
+      "long": -88.381958
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 143,
+      "site": "USINE DE PRODUCTION",
+      "city": "PASADENA, TX",
+      "lat": 29.6343793,
+      "long": -95.07027939999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 655,
+      "site": "SIEGE SOCIAL",
+      "city": "PHILADELPHIA, PA",
+      "lat": 39.9531865,
+      "long": -75.1749671
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 49,
+      "site": "USINE DE PRODUCTION",
+      "city": "CROSBY, TX",
+      "lat": 29.9118885,
+      "long": -95.0621512
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 95,
+      "site": "USINE DE PRODUCTION",
+      "city": "GENESEO, NY",
+      "lat": 42.795896,
+      "long": -77.816947
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 30,
+      "site": "USINE DE PRODUCTION",
+      "city": "GRAND RAPIDS",
+      "lat": 42.9274782,
+      "long": -85.6537627
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 63,
+      "site": "USINE DE PRODUCTION",
+      "city": "HOUSTON, TX",
+      "lat": 29.7690048,
+      "long": -95.1744903
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 79,
+      "site": "USINE DE PRODUCTION",
+      "city": "LOUISVILLE, KY",
+      "lat": 38.2,
+      "long": -85.7
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 58,
+      "site": "USINE DE PRODUCTION",
+      "city": "MEMPHIS, TN",
+      "lat": 35.2368232,
+      "long": -90.0186555
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 106,
+      "site": "USINE DE PRODUCTION",
+      "city": "AXIS, AL",
+      "lat": 30.9297926,
+      "long": -88.02726469999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 20,
+      "site": "USINE DE PRODUCTION",
+      "city": "NORTH KANSAS CITY",
+      "lat": 39.1584696,
+      "long": -94.5727598
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 14,
+      "site": "SIEGE SOCIAL",
+      "city": "PINEVILLE, LOUISIANA",
+      "lat": 31.3224044,
+      "long": -92.4343035
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 57,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHATHAM",
+      "lat": 36.82569429999999,
+      "long": -79.3980806
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 88,
+      "site": "USINE DE PRODUCTION",
+      "city": "EXTON",
+      "lat": 40.0325817,
+      "long": -75.6274583
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "MAKEA INC",
+      "employee": 76,
+      "site": "USINE DE PRODUCTION",
+      "city": "WEST CHESTER",
+      "lat": 39.9606643,
+      "long": -75.6054882
+    },
+    {
+      "country": "SUISSE",
+      "name": "MAKEA INTERNATIONAL",
+      "employee": 98,
+      "site": "SIEGE SOCIAL",
+      "city": "GENÈVE 3",
+      "lat": 46.2003242,
+      "long": 6.1530384
+    },
+    {
+      "country": "HONGRIE",
+      "name": "MAKEA KFT",
+      "employee": 7,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BUDAPEST",
+      "lat": 47.497912,
+      "long": 19.040235
+    },
+    {
+      "country": "TURQUIE",
+      "name": "MAKEA KIMYA SANAYI VE TICARET A.S",
+      "employee": 17,
+      "site": "AGENCE COMMERCIALE",
+      "city": "ISTANBUL",
+      "lat": 41.0694095,
+      "long": 28.9856113
+    },
+    {
+      "country": "JAPON",
+      "name": "MAKEA KK",
+      "employee": 36,
+      "site": "SIEGE SOCIAL",
+      "city": "TOKYO",
+      "lat": 35.6702509,
+      "long": 139.7569024
+    },
+    {
+      "country": "JAPON",
+      "name": "MAKEA KK",
+      "employee": 20,
+      "site": "CENTRE R&D",
+      "city": "KYOTO",
+      "lat": 34.9953362,
+      "long": 135.7372933
+    },
+    {
+      "country": "JAPON",
+      "name": "MAKEA KK",
+      "employee": 8,
+      "site": "CENTRE TECHNIQUE",
+      "city": "KANAGAWA",
+      "lat": 35.45346070000001,
+      "long": 139.5974053
+    },
+    {
+      "country": "CORÉE DU SUD",
+      "name": "MAKEA KOREA LTD",
+      "employee": 21,
+      "site": "USINE DE PRODUCTION",
+      "city": "JINHAE",
+      "lat": 35.1269655,
+      "long": 128.7080127
+    },
+    {
+      "country": "CORÉE DU SUD",
+      "name": "MAKEA KOREA LTD",
+      "employee": 39,
+      "site": "SIEGE SOCIAL",
+      "city": "SEOUL",
+      "lat": 37.566535,
+      "long": 126.9779692
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "MAKEA MEXICO SERVICIOS S.A. DE C.V.",
+      "employee": 55,
+      "site": "USINE DE PRODUCTION",
+      "city": "IXHUATLAN DEL SURESTE VERACRUZ",
+      "lat": 18.07206,
+      "long": -94.4053497
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "MAKEA MEXICO SERVICIOS S.A. DE C.V.",
+      "employee": 139,
+      "site": "USINE DE PRODUCTION",
+      "city": "H. MATAMOROS",
+      "lat": 25.8401137,
+      "long": -97.4367396
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "MAKEA MEXICO SERVICIOS S.A. DE C.V.",
+      "employee": 41,
+      "site": "SIEGE SOCIAL",
+      "city": "TLALNEPANTLA ESTADO DE MEXICO",
+      "lat": 19.5292557,
+      "long": -99.2044432
+    },
+    {
+      "country": "ÉMIRATS ARABES UNIS",
+      "name": "MAKEA MIDDLE EAST DMCC (DUBAI)",
+      "employee": 26,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MENA",
+      "lat": 25.1135421,
+      "long": 55.201837
+    },
+    {
+      "country": "INDE",
+      "name": "MAKEA PEROXIDES INDIA PRIVATE LIMITED",
+      "employee": 2,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MUMBAI",
+      "lat": 19.0217224,
+      "long": 72.837479
+    },
+    {
+      "country": "INDE",
+      "name": "MAKEA PEROXIDES INDIA PRIVATE LIMITED",
+      "employee": 49,
+      "site": "USINE DE PRODUCTION",
+      "city": "SEMMANKUPPAM",
+      "lat": 11.6473923,
+      "long": 79.7398563
+    },
+    {
+      "country": "INDE",
+      "name": "MAKEA PEROXIDES INDIA PRIVATE LIMITED",
+      "employee": 9,
+      "site": "SIEGE SOCIAL",
+      "city": "CHENNAI",
+      "lat": 13.0366742,
+      "long": 80.25167429999999
+    },
+    {
+      "country": "SINGAPOUR",
+      "name": "MAKEA PTE LTD (SINGAPORE)",
+      "employee": 58,
+      "site": "SIEGE SOCIAL",
+      "city": "SINGAPORE",
+      "lat": 1.284457,
+      "long": 103.780115
+    },
+    {
+      "country": "THAILANDE",
+      "name": "MAKEA PTE LTD (THAILANDE) BRANCH OFFICE IN BANGKOK",
+      "employee": 4,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BANGKOK",
+      "lat": 13.7262395,
+      "long": 100.5267991
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA QUIMICA LTDA (BRASIL)",
+      "employee": 1,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MANAUS",
+      "lat": -3.0462589,
+      "long": -59.99207559999999
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA QUIMICA LTDA (BRASIL)",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "CAMAÇARI - BA",
+      "lat": -12.7331327,
+      "long": -38.28558580000001
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA QUIMICA LTDA (BRASIL)",
+      "employee": 45,
+      "site": "USINE DE PRODUCTION",
+      "city": "RIO CLARO - SP",
+      "lat": -22.3580966,
+      "long": -47.5544774
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA QUIMICA LTDA (BRASIL)",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "RIO DE JANEIRO",
+      "lat": -22.9994618,
+      "long": -43.3593137
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA QUIMICA LTDA (BRASIL)",
+      "employee": 68,
+      "site": "SIEGE SOCIAL",
+      "city": "SÃO PAULO - SP",
+      "lat": -23.5905071,
+      "long": -46.65001720000001
+    },
+    {
+      "country": "ESPAGNE",
+      "name": "MAKEA QUIMICA,S.A.U",
+      "employee": 63,
+      "site": "USINE DE PRODUCTION",
+      "city": "MOLLET DEL VALLÉS",
+      "lat": 41.5450948,
+      "long": 2.2089109
+    },
+    {
+      "country": "ESPAGNE",
+      "name": "MAKEA QUIMICA,S.A.U",
+      "employee": 138,
+      "site": "USINE DE PRODUCTION",
+      "city": "SANT CELONI",
+      "lat": 41.6826815,
+      "long": 2.5495112
+    },
+    {
+      "country": "RUSSIE",
+      "name": "MAKEA REPRESENTATIVE OFFICE IN CIS",
+      "employee": 13,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MOSCOU",
+      "lat": 55.7282153,
+      "long": 37.6106922
+    },
+    {
+      "country": "POLOGNE",
+      "name": "MAKEA SP. Z O O",
+      "employee": 18,
+      "site": "SIEGE SOCIAL",
+      "city": "INOWROC£AW",
+      "lat": 51.1140053,
+      "long": 17.034463
+    },
+    {
+      "country": "POLOGNE",
+      "name": "MAKEA SP. Z O O",
+      "employee": 42,
+      "site": "USINE DE PRODUCTION",
+      "city": "INOWROC³AW",
+      "lat": 52.76722760000001,
+      "long": 18.2599205
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 59,
+      "site": "USINE DE PRODUCTION",
+      "city": "ANAGNI",
+      "lat": 41.745324,
+      "long": 13.1513636
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 88,
+      "site": "USINE DE PRODUCTION",
+      "city": "BORETTO",
+      "lat": 44.9009472,
+      "long": 10.5578961
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 19,
+      "site": "USINE DE PRODUCTION",
+      "city": "FICAROLO",
+      "lat": 44.9541498,
+      "long": 11.4364526
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 57,
+      "site": "USINE DE PRODUCTION",
+      "city": "GISSI",
+      "lat": 42.0401335,
+      "long": 14.5538744
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 51,
+      "site": "USINE DE PRODUCTION",
+      "city": "VENEZIA",
+      "lat": 45.469429,
+      "long": 12.2400678
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 207,
+      "site": "USINE DE PRODUCTION",
+      "city": "RHO",
+      "lat": 45.5353029,
+      "long": 9.0551608
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 58,
+      "site": "SIEGE SOCIAL",
+      "city": "RHO (MI)",
+      "lat": 45.5353029,
+      "long": 9.0551608
+    },
+    {
+      "country": "ITALIE",
+      "name": "MAKEA SRL SOCIO UNICO",
+      "employee": 63,
+      "site": "USINE DE PRODUCTION",
+      "city": "ALESSANDRIA (AL)",
+      "lat": 44.9072727,
+      "long": 8.6116796
+    },
+    {
+      "country": "TCHEQUIE",
+      "name": "MAKEA SRO",
+      "employee": 8,
+      "site": "AGENCE COMMERCIALE",
+      "city": "PRAGUE, CZECH REPUBLIC",
+      "lat": 50.07515249999999,
+      "long": 14.4375259
+    },
+    {
+      "country": "MALAISIE",
+      "name": "MAKEA THIOCHEMICALS SDN BHD",
+      "employee": 126,
+      "site": "USINE DE PRODUCTION",
+      "city": "KERTEH KEMAMAN TERENGGANU MALAYSIA",
+      "lat": 4.538693299999999,
+      "long": 103.4280586
+    },
+    {
+      "country": "MALAISIE",
+      "name": "MAKEA THIOCHEMICALS SDN BHD",
+      "employee": 6,
+      "site": "SIEGE SOCIAL",
+      "city": "PETALING JAYA - SELANGOR",
+      "lat": 3.1136631,
+      "long": 101.5999816
+    },
+    {
+      "country": "CHINE",
+      "name": "CASDA BIOMATERIALS CO. LTD",
+      "employee": 446,
+      "site": "USINE DE PRODUCTION",
+      "city": "HENGSHUI",
+      "lat": 37.7352097,
+      "long": 115.6986949
+    },
+    {
+      "country": "SUISSE",
+      "name": "FEBEX",
+      "employee": 55,
+      "site": "SIEGE SOCIAL",
+      "city": "BEX",
+      "lat": 46.2499149,
+      "long": 7.0671861
+    },
+    {
+      "country": "CHINE",
+      "name": "LAMBSON CHINA LTD",
+      "employee": 1,
+      "site": "AGENCE COMMERCIALE",
+      "city": "SHANGHAI, CHINA, 201107",
+      "lat": 31.207384,
+      "long": 121.2943049
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "LAMBSON LTD HQ",
+      "employee": 35,
+      "site": "SIEGE SOCIAL",
+      "city": "WETHERBY - WEST YORKSHIRE- LS22 7NS, UK",
+      "lat": 53.9326405,
+      "long": -1.3816187
+    },
+    {
+      "country": "CHINE",
+      "name": "SARTOMER (GUANGZHOU) CHEMICALS COMPANY LTD",
+      "employee": 157,
+      "site": "USINE DE PRODUCTION",
+      "city": "GUANGZHOU",
+      "lat": 22.833623,
+      "long": 113.5005396
+    },
+    {
+      "country": "CORÉE DU SUD",
+      "name": "SEKI MAKEA",
+      "employee": 40,
+      "site": "SIEGE SOCIAL",
+      "city": "HAMAN-GUN, KYUNGNAM",
+      "lat": 35.3310258,
+      "long": 128.4955043
+    },
+    {
+      "country": "CHINE",
+      "name": "TAIXING SUNKE CHEMICALS CO., LTD.",
+      "employee": 361,
+      "site": "USINE DE PRODUCTION",
+      "city": "TAIXING CITY, JIANGSU PROVINCE, PR CHINA",
+      "lat": 32.1711898,
+      "long": 120.020568
+    },
+    {
+      "country": "ARGENTINE",
+      "name": "VETEK SA",
+      "employee": 22,
+      "site": "SIEGE SOCIAL",
+      "city": "CIUDAD DE BUENOS AIRES",
+      "lat": -34.639533,
+      "long": -58.363507
+    },
+    {
+      "country": "ARGENTINE",
+      "name": "VETEK SA",
+      "employee": 5,
+      "site": "AGENCE COMMERCIALE",
+      "city": "CAPILLA DEL SENOR",
+      "lat": -34.29266,
+      "long": -59.101039
+    },
+    {
+      "country": "ARGENTINE",
+      "name": "VETEK SA",
+      "employee": 12,
+      "site": "USINE DE PRODUCTION",
+      "city": "CARLOS CASARES",
+      "lat": -35.622887,
+      "long": -61.364307
+    },
+    {
+      "country": "FRANCE",
+      "name": "ARRMAZ CHEMICALS SAS",
+      "employee": 5,
+      "site": "SIEGE SOCIAL",
+      "city": "COLOMBES",
+      "lat": 48.9237226,
+      "long": 2.2431251
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "ARRMAZ DO BRAZIL",
+      "employee": 26,
+      "site": "SIEGE SOCIAL",
+      "city": "DUQUE DE CAXIAS – RJ – CEP 25243-150",
+      "lat": -22.6677244,
+      "long": -43.2977691
+    },
+    {
+      "country": "ÉMIRATS ARABES UNIS",
+      "name": "ARRMAZ GULF CHEMICALS, LTD",
+      "employee": 45,
+      "site": "SIEGE SOCIAL",
+      "city": "AL KHOBAR 31952",
+      "lat": 26.2171906,
+      "long": 50.1971381
+    },
+    {
+      "country": "MAROC",
+      "name": "ARRMAZ MOROC",
+      "employee": 15,
+      "site": "SIEGE SOCIAL",
+      "city": "CALIFORNIE – CASABLANCA 20100",
+      "lat": 33.5282271,
+      "long": -7.621078600000001
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "ARRMAZ PRODUCTS L.P.",
+      "employee": 188,
+      "site": "SIEGE SOCIAL",
+      "city": "MULBERRY, FLORIDA USA 33860",
+      "lat": 27.8953038,
+      "long": -81.9734172
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "ARRMAZ ROAD SCIENCE",
+      "employee": 30,
+      "site": "SIEGE SOCIAL",
+      "city": "TULSA, OKLAHOMA USA  74136",
+      "lat": 36.0613546,
+      "long": -95.9515399
+    },
+    {
+      "country": "CHINE",
+      "name": "ARRMAZ YUNNAN",
+      "employee": 80,
+      "site": "SIEGE SOCIAL",
+      "city": "YUNNAN",
+      "lat": 25.0665692,
+      "long": 102.7262344
+    },
+    {
+      "country": "ESPAGNE",
+      "name": "AFINITICA PROCESS TECHNOLOGY S.L.",
+      "employee": 3,
+      "site": "CENTRE R&D",
+      "city": "CERDANYOLA DEL VALLèS (BARCELONA)",
+      "lat": 41.49733519999999,
+      "long": 2.0910377
+    },
+    {
+      "country": "ESPAGNE",
+      "name": "AFINITICA TECHNOLOGIES S.L.",
+      "employee": 19,
+      "site": "CENTRE TECHNIQUE",
+      "city": "CERDANYOLA DEL VALLèS (BARCELONA)",
+      "lat": 41.49733519999999,
+      "long": 2.0910377
+    },
+    {
+      "country": "THAILANDE",
+      "name": "STIKO (THAILAND) CO., LTD",
+      "employee": 10,
+      "site": "SIEGE SOCIAL",
+      "city": "BANGKOK",
+      "lat": 13.6741713,
+      "long": 100.608395
+    },
+    {
+      "country": "DANEMARK",
+      "name": "STIKO A/S",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "GLOSTRUP",
+      "lat": 55.6814823,
+      "long": 12.4121207
+    },
+    {
+      "country": "SUEDE",
+      "name": "STIKO AB",
+      "employee": 92,
+      "site": "SIEGE SOCIAL",
+      "city": "HELSINGBORG",
+      "lat": 56.0464674,
+      "long": 12.6945121
+    },
+    {
+      "country": "ARGENTINE",
+      "name": "STIKO ARGENTINA SA",
+      "employee": 6,
+      "site": "SIEGE SOCIAL",
+      "city": "CIUDAD DE BUENOS AIRES",
+      "lat": -34.639533,
+      "long": -58.363507
+    },
+    {
+      "country": "NORVEGE",
+      "name": "STIKO AS",
+      "employee": 4,
+      "site": "AGENCE COMMERCIALE",
+      "city": "NA",
+      "lat": 67.9931452,
+      "long": 13.6397069
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 32,
+      "site": "USINE DE PRODUCTION",
+      "city": "KINGS PARK",
+      "lat": -33.7457198,
+      "long": 150.9047417
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 6,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MEADOWBROOK",
+      "lat": -27.6678291,
+      "long": 153.1395015
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 1,
+      "site": "AGENCE COMMERCIALE",
+      "city": "ESSENDON FIELDS",
+      "lat": -37.7263122,
+      "long": 144.8968793
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 50,
+      "site": "USINE DE PRODUCTION",
+      "city": "THOMASTOWN",
+      "lat": -37.6837819,
+      "long": 145.0107588
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 59,
+      "site": "SIEGE SOCIAL",
+      "city": "ESSENDON FIELDS",
+      "lat": -37.7263122,
+      "long": 144.8968793
+    },
+    {
+      "country": "AUSTRALIE",
+      "name": "STIKO AUSTRALIA PTY LTD",
+      "employee": 2,
+      "site": "AGENCE COMMERCIALE",
+      "city": "ESSENDON FIELDS",
+      "lat": -37.7263122,
+      "long": 144.8968793
+    },
+    {
+      "country": "BELGIQUE",
+      "name": "STIKO BELUX NV SA",
+      "employee": 18,
+      "site": "AGENCE COMMERCIALE",
+      "city": "GENT",
+      "lat": 51.06783069999999,
+      "long": 3.7290914
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "STIKO BV (HERTOGENBOSCH)",
+      "employee": 70,
+      "site": "AGENCE COMMERCIALE",
+      "city": "'S-HERTOGENBOSCH",
+      "lat": 51.6849853,
+      "long": 5.3593943
+    },
+    {
+      "country": "CANADA",
+      "name": "STIKO CANADA LTD",
+      "employee": 3,
+      "site": "SIEGE SOCIAL",
+      "city": "MONTREAL",
+      "lat": 45.573978,
+      "long": -73.60949389999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO DURABLE GOODS BU",
+      "employee": 12,
+      "site": "USINE DE PRODUCTION",
+      "city": "LE BARP",
+      "lat": 44.64191049999999,
+      "long": -0.7342734
+    },
+    {
+      "country": "EGYPTE",
+      "name": "STIKO EGYPT FOR PRODUCTION OF ADHESIVES S.A.E.",
+      "employee": 24,
+      "site": "USINE DE PRODUCTION",
+      "city": "GIZA",
+      "lat": 30.0130557,
+      "long": 31.2088526
+    },
+    {
+      "country": "ESPAGNE",
+      "name": "STIKO ESPAÑA",
+      "employee": 28,
+      "site": "USINE DE PRODUCTION",
+      "city": "RUBI",
+      "lat": 41.724761,
+      "long": 1.8247278
+    },
+    {
+      "country": "CHINE",
+      "name": "STIKO FINDLEY CHINA CO, LTD",
+      "employee": 155,
+      "site": "USINE DE PRODUCTION",
+      "city": "GUANGZHOU",
+      "lat": 23.1783011,
+      "long": 113.5964855
+    },
+    {
+      "country": "MALAISIE",
+      "name": "STIKO FINDLEY MALAYSIA SDN-BHD",
+      "employee": 8,
+      "site": "USINE DE PRODUCTION",
+      "city": "JOHOR",
+      "lat": 1.5250153,
+      "long": 103.6478486
+    },
+    {
+      "country": "MALAISIE",
+      "name": "STIKO FINDLEY MALAYSIA SDN-BHD",
+      "employee": 109,
+      "site": "SIEGE SOCIAL",
+      "city": "SEREMBAN",
+      "lat": 2.6994528,
+      "long": 101.9798888
+    },
+    {
+      "country": "MALAISIE",
+      "name": "STIKO FINDLEY MALAYSIA SDN-BHD",
+      "employee": 2,
+      "site": "AGENCE COMMERCIALE",
+      "city": "SINGAPORE",
+      "lat": 1.3353181,
+      "long": 103.7470628
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO GMBH",
+      "employee": 94,
+      "site": "SIEGE SOCIAL",
+      "city": "BORGHOLZHAUSEN",
+      "lat": 52.1025558,
+      "long": 8.2813014
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO GMBH",
+      "employee": 221,
+      "site": "USINE DE PRODUCTION",
+      "city": "BORGHOLZHAUSEN",
+      "lat": 52.1025558,
+      "long": 8.2813014
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO GMBH",
+      "employee": 15,
+      "site": "USINE DE PRODUCTION",
+      "city": "WIESMOOR",
+      "lat": 53.4113669,
+      "long": 7.7248722
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO GMBH",
+      "employee": 8,
+      "site": "AGENCE COMMERCIALE",
+      "city": "WELS",
+      "lat": 48.1624296,
+      "long": 14.013313
+    },
+    {
+      "country": "CHINE",
+      "name": "STIKO HOLDING HONG KONG LIMITED",
+      "employee": 2,
+      "site": "AGENCE COMMERCIALE",
+      "city": "HONG KONG",
+      "lat": 22.3193039,
+      "long": 114.1693611
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 1,
+      "site": "AGENCE COMMERCIALE",
+      "city": "EXPATS IN CHINA",
+      "lat": 43.0513426,
+      "long": -88.0411993
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 3,
+      "site": "CENTRE TECHNIQUE",
+      "city": "ANN ARBOR",
+      "lat": 42.2129167,
+      "long": -83.7305392
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 13,
+      "site": "USINE DE PRODUCTION",
+      "city": "CALHOUN",
+      "lat": 34.502587,
+      "long": -84.9510542
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 83,
+      "site": "USINE DE PRODUCTION",
+      "city": "CONYERS",
+      "lat": 33.6676103,
+      "long": -84.01769039999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 13,
+      "site": "USINE DE PRODUCTION",
+      "city": "DALLAS",
+      "lat": 32.7762864,
+      "long": -96.6958939
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 45,
+      "site": "USINE DE PRODUCTION",
+      "city": "DALTON",
+      "lat": 34.7787365,
+      "long": -84.9193082
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 59,
+      "site": "USINE DE PRODUCTION",
+      "city": "GREENVILLE",
+      "lat": 34.8742328,
+      "long": -82.33433749999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 74,
+      "site": "USINE DE PRODUCTION",
+      "city": "GREENVILLE",
+      "lat": 34.8742328,
+      "long": -82.33433749999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 22,
+      "site": "USINE DE PRODUCTION",
+      "city": "WAUWATOSA",
+      "lat": 43.0513426,
+      "long": -88.0411993
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 50,
+      "site": "USINE DE PRODUCTION",
+      "city": "LOUISVILLE",
+      "lat": 38.1495841,
+      "long": -85.8793252
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 91,
+      "site": "USINE DE PRODUCTION",
+      "city": "MIDDLETON",
+      "lat": 42.6007246,
+      "long": -71.014118
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 39,
+      "site": "USINE DE PRODUCTION",
+      "city": "WEST DEPFORD",
+      "lat": 39.8378991,
+      "long": -75.2362381
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 9,
+      "site": "USINE DE PRODUCTION",
+      "city": "DISPUTANTA",
+      "lat": 37.124332,
+      "long": -77.22637399999999
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 68,
+      "site": "AGENCE COMMERCIALE",
+      "city": "VARIOUS HOME OFFICE LOCATIONS ACROSS USA",
+      "lat": 43.0513426,
+      "long": -88.0411993
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 29,
+      "site": "USINE DE PRODUCTION",
+      "city": "TEMECULA",
+      "lat": 33.4767802,
+      "long": -117.1970557
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "STIKO INC",
+      "employee": 235,
+      "site": "CENTRE R&D",
+      "city": "WAUWATOSA",
+      "lat": 43.0513426,
+      "long": -88.0411993
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 66,
+      "site": "USINE DE PRODUCTION",
+      "city": "BANGALORE",
+      "lat": 12.8124199,
+      "long": 77.69403150000001
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 43,
+      "site": "USINE DE PRODUCTION",
+      "city": "JHAGADIA",
+      "lat": 21.719148,
+      "long": 73.14975489999999
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 55,
+      "site": "SIEGE SOCIAL",
+      "city": "BANGALORE",
+      "lat": 12.8124199,
+      "long": 77.69403150000001
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 19,
+      "site": "AGENCE COMMERCIALE",
+      "city": "INDIA",
+      "lat": 26.4870674,
+      "long": 80.34915989999999
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 7,
+      "site": "AGENCE COMMERCIALE",
+      "city": "CHENNAI",
+      "lat": 13.0920727,
+      "long": 80.1944807
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 17,
+      "site": "AGENCE COMMERCIALE",
+      "city": "NEW DELHI",
+      "lat": 28.6482162,
+      "long": 77.1640718
+    },
+    {
+      "country": "INDE",
+      "name": "STIKO INDIA PRIVATE LTD",
+      "employee": 9,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MUMBAI",
+      "lat": 19.1570343,
+      "long": 72.93274439999999
+    },
+    {
+      "country": "EIRE",
+      "name": "STIKO INDUSTRIES LIMITED",
+      "employee": 26,
+      "site": "AGENCE COMMERCIALE",
+      "city": "CO DUBLIN",
+      "lat": 53.3498053,
+      "long": -6.2603097
+    },
+    {
+      "country": "TURQUIE",
+      "name": "STIKO KIMYA SANAYI VE TICARET A.S",
+      "employee": 25,
+      "site": "SIEGE SOCIAL",
+      "city": "ISTANBUL",
+      "lat": 41.0628433,
+      "long": 28.986339
+    },
+    {
+      "country": "TURQUIE",
+      "name": "STIKO KIMYA SANAYI VE TICARET A.S",
+      "employee": 15,
+      "site": "USINE DE PRODUCTION",
+      "city": "TEKIRDAG",
+      "lat": 40.9780919,
+      "long": 27.511674
+    },
+    {
+      "country": "TURQUIE",
+      "name": "STIKO KIMYA SANAYI VE TICARET A.S",
+      "employee": 13,
+      "site": "USINE DE PRODUCTION",
+      "city": "BURSA",
+      "lat": 40.1885281,
+      "long": 29.0609636
+    },
+    {
+      "country": "CORÉE DU SUD",
+      "name": "STIKO KOREA LIMITED",
+      "employee": 14,
+      "site": "SIEGE SOCIAL",
+      "city": "SEOUL",
+      "lat": 37.566535,
+      "long": 126.9779692
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 1,
+      "site": "SIEGE SOCIAL",
+      "city": "NORTH YORKSHIRE",
+      "lat": 54.1731894,
+      "long": -1.3616483
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 29,
+      "site": "USINE DE PRODUCTION",
+      "city": "NORTH YORKSHIRE",
+      "lat": 54.1731894,
+      "long": -1.3616483
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 18,
+      "site": "SIEGE SOCIAL",
+      "city": "LEICESTER",
+      "lat": 52.6459869,
+      "long": -1.1142766
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 43,
+      "site": "USINE DE PRODUCTION",
+      "city": "LEICESTER",
+      "lat": 52.6459869,
+      "long": -1.1142766
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 175,
+      "site": "SIEGE SOCIAL",
+      "city": "STAFFORD",
+      "lat": 52.82820839999999,
+      "long": -2.1162826
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "STIKO LIMITED",
+      "employee": 142,
+      "site": "USINE DE PRODUCTION",
+      "city": "STAFFORD",
+      "lat": 52.82820839999999,
+      "long": -2.1162826
+    },
+    {
+      "country": "RUSSIE",
+      "name": "STIKO LLC",
+      "employee": 52,
+      "site": "AGENCE COMMERCIALE",
+      "city": "MOSCOW",
+      "lat": 55.7949959,
+      "long": 37.6014001
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "STIKO NEDERLAND BV",
+      "employee": 70,
+      "site": "USINE DE PRODUCTION",
+      "city": "ROOSENDAAL",
+      "lat": 51.5441115,
+      "long": 4.4948595
+    },
+    {
+      "country": "NOUVELLE ZÉLANDE",
+      "name": "STIKO NEW ZEALAND LTD",
+      "employee": 17,
+      "site": "SIEGE SOCIAL",
+      "city": "AUCKLAND",
+      "lat": -36.85088270000001,
+      "long": 174.7644881
+    },
+    {
+      "country": "NOUVELLE ZÉLANDE",
+      "name": "STIKO NEW ZEALAND LTD",
+      "employee": 35,
+      "site": "USINE DE PRODUCTION",
+      "city": "LOWER HUTT",
+      "lat": -41.16745,
+      "long": 174.9973546
+    },
+    {
+      "country": "JAPON",
+      "name": "STIKO NITTA CO. LTD",
+      "employee": 62,
+      "site": "AGENCE COMMERCIALE",
+      "city": "YAO, OSAKA",
+      "lat": 34.5985289,
+      "long": 135.6190172
+    },
+    {
+      "country": "FINLANDE",
+      "name": "STIKO OY",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "NA",
+      "lat": 38.8985658,
+      "long": -77.04428419999999
+    },
+    {
+      "country": "PHILIPPINES",
+      "name": "STIKO PHILIPPINES",
+      "employee": 91,
+      "site": "SIEGE SOCIAL",
+      "city": "PASIG CITY",
+      "lat": 14.5763768,
+      "long": 121.0851097
+    },
+    {
+      "country": "PHILIPPINES",
+      "name": "STIKO PHILIPPINES",
+      "employee": 15,
+      "site": "USINE DE PRODUCTION",
+      "city": "CAGAYAN DE ORO",
+      "lat": 8.4542363,
+      "long": 124.6318977
+    },
+    {
+      "country": "PHILIPPINES",
+      "name": "STIKO PHILIPPINES",
+      "employee": 93,
+      "site": "USINE DE PRODUCTION",
+      "city": "TANAY RIZAL",
+      "lat": 14.5797053,
+      "long": 121.3312882
+    },
+    {
+      "country": "PHILIPPINES",
+      "name": "STIKO PHILIPPINES",
+      "employee": 6,
+      "site": "USINE DE PRODUCTION",
+      "city": "TAYTAY RIZAL",
+      "lat": 14.5585549,
+      "long": 121.1360819
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 130,
+      "site": "CENTRE R&D",
+      "city": "VENETTE",
+      "lat": 49.4277351,
+      "long": 2.8127225
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 117,
+      "site": "USINE DE PRODUCTION",
+      "city": "AVELIN",
+      "lat": 50.52418669999999,
+      "long": 3.0990212
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 4,
+      "site": "USINE DE PRODUCTION",
+      "city": "COLMAR CEDEX",
+      "lat": 48.0793589,
+      "long": 7.358511999999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 99,
+      "site": "USINE DE PRODUCTION",
+      "city": "COUBERT",
+      "lat": 48.671688,
+      "long": 2.695835
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 51,
+      "site": "USINE DE PRODUCTION",
+      "city": "PRIVAS",
+      "lat": 44.735269,
+      "long": 4.599038999999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 159,
+      "site": "USINE DE PRODUCTION",
+      "city": "RIBECOURT CEDEX",
+      "lat": 49.51035599999999,
+      "long": 2.922679
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 33,
+      "site": "USINE DE PRODUCTION",
+      "city": "SAINVILLE",
+      "lat": 48.415133,
+      "long": 1.880156
+    },
+    {
+      "country": "FRANCE",
+      "name": "STIKO SA",
+      "employee": 312,
+      "site": "SIEGE SOCIAL",
+      "city": "LA PLAINE SAINT DENIS",
+      "lat": 48.9122322,
+      "long": 2.3614119
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "STIKO SERVICIOS MEXICO S.A. DE C.V.",
+      "employee": 62,
+      "site": "SIEGE SOCIAL",
+      "city": "NAUCALPAN",
+      "lat": 19.4744572,
+      "long": -99.22452369999999
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "STIKO SERVICIOS MEXICO S.A. DE C.V.",
+      "employee": 107,
+      "site": "USINE DE PRODUCTION",
+      "city": "NAUCALPAN",
+      "lat": 19.4744572,
+      "long": -99.22452369999999
+    },
+    {
+      "country": "MEXIQUE",
+      "name": "STIKO SERVICIOS MEXICO S.A. DE C.V.",
+      "employee": 101,
+      "site": "USINE DE PRODUCTION",
+      "city": "MONTERREY",
+      "lat": 25.7589438,
+      "long": -100.1619222
+    },
+    {
+      "country": "CHINE",
+      "name": "STIKO SHANGHAI MANAGEMENT, CO LTD",
+      "employee": 201,
+      "site": "SIEGE SOCIAL",
+      "city": "SHANGHAI",
+      "lat": 31.0808739,
+      "long": 121.4190899
+    },
+    {
+      "country": "POLOGNE",
+      "name": "STIKO SP Z O O",
+      "employee": 64,
+      "site": "AGENCE COMMERCIALE",
+      "city": "TARNOWO PODGÓRNE",
+      "lat": 52.4626443,
+      "long": 16.6734164
+    },
+    {
+      "country": "VIETNAM",
+      "name": "STIKO VIETNAM COMPANY LIMITED",
+      "employee": 9,
+      "site": "USINE DE PRODUCTION",
+      "city": "BINH DUONG",
+      "lat": 11.3254024,
+      "long": 106.477017
+    },
+    {
+      "country": "CHINE",
+      "name": "JIANGSU STIKO ADHESIVE CO",
+      "employee": 116,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHANGSHU",
+      "lat": 31.6984578,
+      "long": 121.0157967
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "MEM BAUCHEMIE GMBH",
+      "employee": 72,
+      "site": "SIEGE SOCIAL",
+      "city": "LEER",
+      "lat": 53.2551971,
+      "long": 7.451357799999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "PROCHIMIR SAS",
+      "employee": 26,
+      "site": "USINE DE PRODUCTION",
+      "city": "SEVREMONT",
+      "lat": 46.8282859,
+      "long": -0.8372508999999999
+    },
+    {
+      "country": "FRANCE",
+      "name": "PROCHIMIR SAS",
+      "employee": 42,
+      "site": "SIEGE SOCIAL",
+      "city": "POUZAUGES",
+      "lat": 46.78264799999999,
+      "long": -0.837243
+    },
+    {
+      "country": "INDONÉSIE",
+      "name": "PT STIKO INDONESIA",
+      "employee": 18,
+      "site": "SIEGE SOCIAL",
+      "city": "JAKARTA",
+      "lat": -6.2135191,
+      "long": 106.8222625
+    },
+    {
+      "country": "MAROC",
+      "name": "SOCIETE MAROCAINE DES COLLES",
+      "employee": 66,
+      "site": "SIEGE SOCIAL",
+      "city": "CASABLANCA",
+      "lat": 33.5731104,
+      "long": -7.589843399999999
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "SOVEREIGN CHEMICALS LIMITED",
+      "employee": 50,
+      "site": "SIEGE SOCIAL",
+      "city": "BARROW-IN-FURNESS",
+      "lat": 54.1438792,
+      "long": -3.2302821
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "USINA FORTALEZA INDUSTRIA E COMERCIO DE MASSA FINA LTDA",
+      "employee": 16,
+      "site": "USINE DE PRODUCTION",
+      "city": "ARARAQUARA/ SP",
+      "lat": -21.7830499,
+      "long": -48.2243666
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "USINA FORTALEZA INDUSTRIA E COMERCIO DE MASSA FINA LTDA",
+      "employee": 22,
+      "site": "SIEGE SOCIAL",
+      "city": "SÃO ROQUE/SP",
+      "lat": -23.5068655,
+      "long": -47.14367499999999
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "USINA FORTALEZA INDUSTRIA E COMERCIO DE MASSA FINA LTDA",
+      "employee": 1,
+      "site": "USINE DE PRODUCTION",
+      "city": "QUEIMADOS/ RJ",
+      "lat": -22.7160435,
+      "long": -43.5569907
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "USINA FORTALEZA INDUSTRIA E COMERCIO DE MASSA FINA LTDA",
+      "employee": 24,
+      "site": "SIEGE SOCIAL",
+      "city": "SÃO ROQUE/ SP",
+      "lat": -23.5068655,
+      "long": -47.14367499999999
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "USINA FORTALEZA INDUSTRIA E COMERCIO DE MASSA FINA LTDA",
+      "employee": 151,
+      "site": "USINE DE PRODUCTION",
+      "city": "SÃO ROQUE SP",
+      "lat": -23.5068655,
+      "long": -47.14367499999999
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA TEXOE BRASIL INDÚSTRIA E COMÉRCIO LTDA",
+      "employee": 1,
+      "site": "SIEGE SOCIAL",
+      "city": "SÃO PAULO",
+      "lat": -21.2922457,
+      "long": -50.3428431
+    },
+    {
+      "country": "BRÉSIL",
+      "name": "MAKEA TEXOE BRASIL INDÚSTRIA E COMÉRCIO LTDA",
+      "employee": 48,
+      "site": "USINE DE PRODUCTION",
+      "city": "ARACARIGUAMA",
+      "lat": -23.437744,
+      "long": -47.0638699
+    },
+    {
+      "country": "CHINE",
+      "name": "CHANGSHU TEXOE ADDITIVES CO TLD",
+      "employee": 101,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHANGSHU, JIANGSU PROVINCE",
+      "lat": 31.7879072,
+      "long": 120.7636612
+    },
+    {
+      "country": "CORÉE DU SUD",
+      "name": "TEXOE ASIA PACIFIC",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "SEOUL",
+      "lat": 37.566535,
+      "long": 126.9779692
+    },
+    {
+      "country": "SLOVAQUIE",
+      "name": "TEXOE CEE SRO",
+      "employee": 6,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BRATISLAVA",
+      "lat": 48.1554297,
+      "long": 17.1567036
+    },
+    {
+      "country": "ETATS-UNIS",
+      "name": "TEXOE INC",
+      "employee": 51,
+      "site": "USINE DE PRODUCTION",
+      "city": "CHESTER SC",
+      "lat": 34.7048613,
+      "long": -81.2142561
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "TEXOE NETHERLANDS BV",
+      "employee": 21,
+      "site": "USINE DE PRODUCTION",
+      "city": "MOERDIJK",
+      "lat": 51.6818606,
+      "long": 4.5857886
+    },
+    {
+      "country": "FRANCE",
+      "name": "TEXOE SAS",
+      "employee": 248,
+      "site": "SIEGE SOCIAL",
+      "city": "GENAY",
+      "lat": 45.9017563,
+      "long": 4.8367097
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO AEROSOLS GMBH",
+      "employee": 88,
+      "site": "USINE DE PRODUCTION",
+      "city": "REICHENBERG",
+      "lat": 49.7078573,
+      "long": 9.905539899999999
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "STIKO BENELUX B.V",
+      "employee": 72,
+      "site": "USINE DE PRODUCTION",
+      "city": "OOSTERHOUT",
+      "lat": 51.6232623,
+      "long": 4.884197599999999
+    },
+    {
+      "country": "PAYS-BAS",
+      "name": "STIKO BENELUX B.V",
+      "employee": 228,
+      "site": "USINE DE PRODUCTION",
+      "city": "OOSTERHOUT",
+      "lat": 51.6232623,
+      "long": 4.884197599999999
+    },
+    {
+      "country": "CROATIE",
+      "name": "STIKO CROATIA D.O.O",
+      "employee": 5,
+      "site": "AGENCE COMMERCIALE",
+      "city": "ZAGREB",
+      "lat": 45.8150108,
+      "long": 15.9819189
+    },
+    {
+      "country": "GRÈCE",
+      "name": "STIKO HELLAS S.A.",
+      "employee": 21,
+      "site": "AGENCE COMMERCIALE",
+      "city": "PIRAEUS, ATHENES",
+      "lat": 37.9405556,
+      "long": 23.6333333
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 6,
+      "site": "CENTRE TECHNIQUE",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 112,
+      "site": "USINE DE PRODUCTION",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 11,
+      "site": "CENTRE TECHNIQUE",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 4,
+      "site": "CENTRE TECHNIQUE",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 7,
+      "site": "CENTRE TECHNIQUE",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ROUMANIE",
+      "name": "STIKO ROMANIA  S.R.L.",
+      "employee": 12,
+      "site": "CENTRE TECHNIQUE",
+      "city": "BUFTEA, ILFOV",
+      "lat": 44.56297439999999,
+      "long": 25.9388214
+    },
+    {
+      "country": "ALLEMAGNE",
+      "name": "STIKO TECHNOLOGY GMBH",
+      "employee": 78,
+      "site": "USINE DE PRODUCTION",
+      "city": "SCHWEPNITZ",
+      "lat": 51.32922199999999,
+      "long": 13.9591927
+    },
+    {
+      "country": "SINGAPOUR",
+      "name": "BRAEDEASIA PTE LTD. (SINGAPORE)",
+      "employee": 5,
+      "site": "AGENCE COMMERCIALE",
+      "city": "SINGAPORE",
+      "lat": 1.293309,
+      "long": 103.860354
+    },
+    {
+      "country": "BULGARIE",
+      "name": "BRAEDEBULGARIA EOOD (BULGARIA)",
+      "employee": 17,
+      "site": "AGENCE COMMERCIALE",
+      "city": "ROUSSÉ",
+      "lat": 43.83557130000001,
+      "long": 25.9656554
+    },
+    {
+      "country": "FRANCE",
+      "name": "BRAEDEFRANCE S.A.R.L.",
+      "employee": 74,
+      "site": "USINE DE PRODUCTION",
+      "city": "LE MEUX CEDEX",
+      "lat": 49.3519093,
+      "long": 2.7538429
+    },
+    {
+      "country": "CHILI",
+      "name": "BRAEDELATIN AMERICA SPA",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "HUECHURABA, SANTIAGO",
+      "lat": -33.3742128,
+      "long": -70.6367425
+    },
+    {
+      "country": "PORTUGAL",
+      "name": "BRAEDEPRODUTOS QUIM. LDO.",
+      "employee": 11,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BRAGA",
+      "lat": 41.5621957,
+      "long": -8.445861299999999
+    },
+    {
+      "country": "SUISSE",
+      "name": "BRAEDESCHWEIZ AG",
+      "employee": 1,
+      "site": "AGENCE COMMERCIALE",
+      "city": "HERISAU",
+      "lat": 47.3857009,
+      "long": 9.2798472
+    },
+    {
+      "country": "AUTRICHE",
+      "name": "BRAEDESEALANTS GMBH (AUSTRIA)",
+      "employee": 10,
+      "site": "USINE DE PRODUCTION",
+      "city": "WÖLLERSDORF",
+      "lat": 47.86542,
+      "long": 16.16878
+    },
+    {
+      "country": "AFRIQUE DU SUD",
+      "name": "BRAEDESEALANTS SOUTH AFRICA PTY .LTD.",
+      "employee": 5,
+      "site": "AGENCE COMMERCIALE",
+      "city": "JOHANNESBURG",
+      "lat": 38.8985658,
+      "long": -77.04428419999999
+    },
+    {
+      "country": "AFRIQUE DU SUD",
+      "name": "BRAEDESEALANTS SOUTH AFRICA PTY .LTD.",
+      "employee": 3,
+      "site": "AGENCE COMMERCIALE",
+      "city": "JOHANNESBURG",
+      "lat": 38.8985658,
+      "long": -77.04428419999999
+    },
+    {
+      "country": "AFRIQUE DU SUD",
+      "name": "BRAEDESEALANTS SOUTH AFRICA PTY .LTD.",
+      "employee": 18,
+      "site": "AGENCE COMMERCIALE",
+      "city": "JOHANNESBURG",
+      "lat": 38.8985658,
+      "long": -77.04428419999999
+    },
+    {
+      "country": "MOLDAVIE",
+      "name": "BRAEDESILICONI S.R.L. (MOLDAVIA)",
+      "employee": 13,
+      "site": "AGENCE COMMERCIALE",
+      "city": "?",
+      "lat": 47.411631,
+      "long": 28.369885
+    },
+    {
+      "country": "ROYAUME-UNI",
+      "name": "SIROFLEX LTD",
+      "employee": 14,
+      "site": "AGENCE COMMERCIALE",
+      "city": "BARNSLEY, SOUTH YORKSHIRE",
+      "lat": 53.55263,
+      "long": -1.479726
+    },
+    {
+      "country": "FRANCE",
+      "name": "MLPC INTERNATIONAL",
+      "employee": 216,
+      "site": "SIEGE SOCIAL",
+      "city": "RION DES LANDES",
+      "lat": 43.93360699999999,
+      "long": -0.9205629999999999
+    }
+  ]
+}
