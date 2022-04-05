@@ -1,5 +1,5 @@
 <script>
-  import Planete from '../assets/planete_start.js'
+  import {initPlaycanvas} from '../assets/planete_start.js'
   export default {
     components: {
     },
@@ -11,12 +11,13 @@
     },
     data() {
       return {
+        app :undefined
       }
     },
     computed:{
     },
     mounted(){
-      Planete();
+      this.app = initPlaycanvas();
               var app = pc.Application.getApplication();
         app.on("start", function () {
             // get the root of the scene.
@@ -33,10 +34,10 @@
         });
     },
     unmounted(){
-       var app = pc.Application.getApplication();
-        app.destroy()
-        var app = pc.Application.getApplication();
-        console.log(app)
+      
+        this.app.app.destroy()
+        this.app.app = undefined;
+        this.app.device = undefined;
     }
 
   };

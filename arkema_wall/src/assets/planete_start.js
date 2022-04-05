@@ -8,7 +8,7 @@ let CONTEXT_OPTIONS = {
     'preferWebGl2': true,
     'powerPreference': "default"
 };
-let SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57429765, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
+let SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
 let CONFIG_FILENAME = "planete/config.json";
 let INPUT_SETTINGS = {
     useKeyboard: true,
@@ -22,6 +22,7 @@ let PRELOAD_MODULES = [
 ];
 
 let loaded = false;
+
 
 var loadModules = function (modules, urlPrefix, doneCallback) {
 
@@ -183,13 +184,8 @@ var pcBootstrap = {
 window.pcBootstrap = pcBootstrap;
 
 
-export default function() {
-
-
-
-
-(function () {
-    var canvas, devices, app;
+export function initPlaycanvas() {
+    var canvas, devices,app
 
     var createInputDevices = function (canvas) {
         var devices = {
@@ -246,10 +242,12 @@ export default function() {
     };
 
     canvas = pcBootstrap.createCanvas();
-        devices = createInputDevices(canvas);
-
-
+    
+    if(devices != undefined){
+        devices = undefined;
+    }
     try {
+        devices = createInputDevices(canvas);
         app = new pc.Application(canvas, {
             elementInput: devices.elementInput,
             keyboard: devices.keyboard,
@@ -274,6 +272,7 @@ export default function() {
 
         return;
     }
+
 
     var configure = function () {
         app.configure(CONFIG_FILENAME, function (err) {
@@ -315,5 +314,6 @@ export default function() {
     } else {
         configure();
     }
-})();
+
+        return {app:app,device:devices};
 } 

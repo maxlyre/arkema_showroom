@@ -1,5 +1,5 @@
-ASSET_PREFIX = "planete/";
-SCRIPT_PREFIX = "planete/";
+ASSET_PREFIX = "";
+SCRIPT_PREFIX = "";
 SCENE_PATH = "1215082.json";
 CONTEXT_OPTIONS = {
     'antialias': true,
@@ -8,8 +8,8 @@ CONTEXT_OPTIONS = {
     'preferWebGl2': true,
     'powerPreference': "default"
 };
-SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57429765, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
-CONFIG_FILENAME = "planete/config.json";
+SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
+CONFIG_FILENAME = "config.json";
 INPUT_SETTINGS = {
     useKeyboard: true,
     useMouse: true,

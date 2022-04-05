@@ -13,22 +13,6 @@
 <body>
     <script src="__modules__.js"></script>
     <script src="__start__.js"></script>
-    <script>
-        console.log("niaa")
-        var app = pc.Application.getApplication();
-        app.on("start", function () {
-            // get the root of the scene.
-            fetch("http://127.0.0.1:1337/uploads/arkj_6d132c6ac2.json").then(function(response) {
-                // Convert to JSON
-                return response.json();
-            }).then(function(j) {
-                app.fire("set:json", j)
-            }).catch(function(error) {
-                console.log('Request failed', error)
-            });
-            
-            // do other stuff here
-        });
-    </script>
+    <script src="__loading__.js"></script>
 </body>
 </html>
