@@ -26,8 +26,29 @@
       },
       methods:{
         changeIndex(index){
-          console.log(index)
+          document.querySelector('.active').classList.remove("active")
           this.id = index;
+          document.querySelector('a[targetId="'+index+'"]').classList.add("active")
+        },
+        arrowNav(direction){
+          const divs = document.querySelectorAll(".menu li li a")
+          function getClass (a){
+            return a.classList.contains('active')
+          }
+          let id = Array.from(divs).findIndex(getClass);
+                    console.log(id)
+
+          id += direction;
+
+          if(id > divs.length-1){
+            id = 0;
+          }else if(id<0){
+            id = divs.length-1;
+          }
+          this.id = id;
+          document.querySelector('.active').classList.remove("active")
+          divs[id].classList.add("active")
+          
         }
       }
 };
@@ -43,16 +64,30 @@
       width="125"
       height="125"
     /> -->
-    <ul id="example-1">
-      <li v-for="nav in dataNavigation">
-        {{ nav.Title }}
-        <ul>
-           <li v-for="data in nav.walls_items.data">
-             <a :targetID="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
-           </li>  
-        </ul>
-      </li>
-    </ul>
+    <div class="menu">
+      <ul id="example-1">
+        <li>
+          <ul>
+            <li >
+              <a targetID="0" class="active">Home</a>
+            </li>
+          </ul>
+        </li>
+        <li v-for="nav in dataNavigation">
+          {{ nav.Title }}
+          <ul>
+            <li v-for="data in nav.walls_items.data">
+              <a :targetID="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
+            </li>  
+          </ul>
+        </li>
+      </ul>
+      <div class="navigation">
+          <button class="prev" @click="arrowNav(-1)">Prev</button>
+          <button class="next" @click="arrowNav(1)">Next</button>    
+      </div>
+    </div>
+
 
     <section class="container row">
       <h1 class="col-md-12">{{dataWall[id].attributes.Title}}</h1>
@@ -149,6 +184,9 @@ a,
 
 .container{
   display: flex;
+}
+.active{
+  text-decoration: underline;
 }
 
 </style>
