@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wall-navigation",
     "pluralName": "wall-navigations",
-    "displayName": "Wall Navigation"
+    "displayName": "Wall Navigation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,8 @@
     "wall_group": {
       "type": "component",
       "repeatable": true,
-      "component": "wall-component.wall-navigation-group"
+      "component": "wall-component.wall-navigation-group",
+      "pluginOptions": {}
     }
   }
 }

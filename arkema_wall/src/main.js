@@ -18,8 +18,15 @@ const TodosQuery = gql`
             walls_items{
               data{
                 id
-                attributes{
-                  Title
+                locale
+                Title
+                localizations {
+                  data{
+                    id
+                    attributes{
+                      Title
+                    }
+                  }
                 }
               }
             }
@@ -27,7 +34,7 @@ const TodosQuery = gql`
         }
       }
     }
-    walls(pagination: { start: 0, limit: 100 }){
+    walls(pagination: { start: 0, limit: 100 },locale:"all"){
       data{
         id
         attributes{
