@@ -15,19 +15,22 @@ const TodosQuery = gql`
         attributes{
           wall_group{
             Title
+            EnglishTitle
             walls_items{
               data{
                 id
-                locale
-                Title
-                localizations {
-                  data{
-                    id
-                    attributes{
-                      Title
+                attributes{
+                  Title
+                  localizations {
+                    data{
+                      id
+                      attributes{
+                        Title
+                      }
                     }
                   }
                 }
+
               }
             }
           }
@@ -89,10 +92,10 @@ const TodosQuery = gql`
 
 const app = createApp(App);
 
-app.config.globalProperties.$APIURL = "http://localhost:1337"
+app.config.globalProperties.$APIURL = "http://localhost:1338"
 
 const client = createClient({
-    url: 'http://localhost:1337/graphql',
+    url: 'http://localhost:1338/graphql',
 });
 
 client
@@ -108,7 +111,6 @@ function sortData(data){
   let bufData = {}
   //Wall 
   bufData.wallNavigation = data.data.wallNavigation.data.attributes.wall_group;
-  console.log(data.data.walls.data)
   bufData.walls = {};
   data.data.walls.data.forEach((item)=>{
     bufData.walls[item.id] = item

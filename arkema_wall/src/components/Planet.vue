@@ -17,11 +17,13 @@
     computed:{
     },
     mounted(){
+      console.log(this.content)
       this.app = initPlaycanvas();
-              var app = pc.Application.getApplication();
+        var app = pc.Application.getApplication();
+        let url = this.$APIURL+this.content.PlanetJson.data.attributes.url;
         app.on("start", function () {
             // get the root of the scene.
-            fetch("http://127.0.0.1:1337/uploads/arkj_6d132c6ac2.json").then(function(response) {
+            fetch(url).then(function(response) {
                 // Convert to JSON
                 return response.json();
             }).then(function(j) {
