@@ -20,6 +20,14 @@
       },
       computed:{
       },
+      created(){
+        this.dataWall['0']={
+          attributes:{
+            Title : "",
+            Contenu : []
+          }
+        }
+      },
       mounted(){
         console.log(this.dataWall[this.id])
       },
@@ -45,36 +53,40 @@
       :content= dataNavigation
       v-on:changeID=changeID
     />
-
+  </header>
     <section class="container row">
-      <h1 class="col-md-12">{{dataWall[id].attributes.Title}}</h1>
-      <template v-for="(content,index) in dataWall[id].attributes.Contenu">
-        <Text 
-          v-if="content.__typename == 'ComponentWallComponentText'" 
-          :content= content
-        />
-        <Camembert 
-          v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
-          :content= content
-          :index = index
-        />
-        <Gallery 
-          v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
-          :content= content
-          :index = index
-        />
-        <Planet 
-          v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
-          :content= content
-          :index = index
-        />
-        <div v-else>
-          {{content.__typename}}
-        </div>
+      <div v-if="this.id >0" class="content">
+              </div>
+        <h1 class="col-md-12">{{dataWall[id].attributes.Title}}</h1>
+        <template v-for="(content,index) in dataWall[id].attributes.Contenu">
+          <Text 
+            v-if="content.__typename == 'ComponentWallComponentText'" 
+            :content= content
+          />
+          <Camembert 
+            v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
+            :content= content
+            :index = index
+          />
+          <Gallery 
+            v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
+            :content= content
+            :index = index
+          />
+          <Planet 
+            v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
+            :content= content
+            :index = index
+          />
+          <div v-else>
+            {{content.__typename}}
+          </div>
+
+
       </template>
     </section>
     <!-- <p>{{dataWall}}</p> -->
-  </header>
+
 </template>
 
 <style>
