@@ -70,6 +70,9 @@
     },
     updated(){
       document.querySelector('a[targetid="'+this.currentActive+'"]').classList.add("active")
+    },
+    created(){
+      console.log(this.content)
     }
   };
 </script>
@@ -138,7 +141,7 @@
   }
   .navigation_content{
         display: flex;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
   }
   .group_title{
     width: 130px;
@@ -152,6 +155,7 @@
     font-size: 1rem;
     line-height: 1.2;
     padding-top : 2px;
+    flex: none;
   }
   .group_title:after{
     content:"";
