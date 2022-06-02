@@ -17,6 +17,12 @@
     },
     "EnglishTitle": {
       "type": "string"
+    },
+    "positionX": {
+      "type": "float"
+    },
+    "positionY": {
+      "type": "float"
     }
   }
 }

@@ -23,19 +23,18 @@
     computed:{
     },
     mounted(){
-      console.log(this.content)
     },
     setup() {
       
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
+      // const onSwiper = (swiper) => {
+      //   console.log(swiper);
+      // };
+      // const onSlideChange = () => {
+      //   console.log('slide change');
+      // };
       return {
-        onSwiper,
-        onSlideChange,
+        // onSwiper,
+        // onSlideChange,
         modules: [Navigation, Pagination],
       };
     },

@@ -1,22 +1,20 @@
 <script>
-  import Text from "./components/Text.vue";
-  import Camembert from "./components/Camembert.vue";
-  import Gallery from "./components/Gallery.vue";
-  import Planet from "./components/Planet.vue";
   import TheWelcome from "./components/TheWelcome.vue";
   import Navigation from "./components/Navigation.vue"
-
+  import Pages from "./components/Pages.vue"
+  import Home from "./components/Home.vue"
   export default {
       data() {
         return {
           greeting: 'Hello World!',
           dataNavigation:this.$jsonData.wallNavigation,
           dataWall:this.$jsonData.walls,
-          id:2
+          id:0,
+          lang : "fr"
         }
       },
       components:{
-        Text,Camembert,Gallery,Planet,Navigation
+        Navigation,Pages,Home
       },
       computed:{
       },
@@ -28,12 +26,13 @@
           }
         }
       },
-      mounted(){
-        console.log(this.dataWall[this.id])
-      },
       methods:{
-        changeID(index){
+        changeID(index,lang){
           this.id = index;
+          this.lang = lang;
+        },
+        changeIDHome(index){
+          this.$refs.navigation.changeIndex(index)
         }
       }
 };
@@ -42,61 +41,30 @@
 
 <template>
   <header>
-    <!-- <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    /> -->
     <Navigation 
+      ref="navigation"
       :content= dataNavigation
       v-on:changeID=changeID
     />
   </header>
     <section class="container row">
-      <div v-if="this.id >0" class="content">
-              </div>
-        <h1 class="col-md-12">{{dataWall[id].attributes.Title}}</h1>
-        <template v-for="(content,index) in dataWall[id].attributes.Contenu">
-          <Text 
-            v-if="content.__typename == 'ComponentWallComponentText'" 
-            :content= content
-          />
-          <Camembert 
-            v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
-            :content= content
-            :index = index
-          />
-          <Gallery 
-            v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
-            :content= content
-            :index = index
-          />
-          <Planet 
-            v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
-            :content= content
-            :index = index
-          />
-          <div v-else>
-            {{content.__typename}}
-          </div>
-
-
-      </template>
+        <Home v-if="this.id == 0" 
+          :content= dataNavigation
+          :lang = lang
+          v-on:changeID = changeIDHome
+        />
+        <Pages v-else
+          :contents= dataWall[id] 
+        />
     </section>
-    <!-- <p>{{dataWall}}</p> -->
-
 </template>
 
 <style>
 @import "./assets/base.css";
 @import "./assets/flexbox.css";
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
+  padding: 1rem;
+  display: flex;
   font-weight: normal;
 }
 
@@ -109,18 +77,6 @@ header {
   margin: 0 auto 2rem;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 @media (min-width: 1024px) {
   body {
@@ -129,9 +85,8 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    height: 100vh;
   }
 
   header {

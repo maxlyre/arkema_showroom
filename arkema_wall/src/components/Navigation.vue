@@ -18,8 +18,7 @@
           if(active != null){
             active.classList.remove("active")
           }
-          console.log(index)
-          this.$emit("changeID",index);
+          this.$emit("changeID",index,this.lang);
           document.querySelector('a[targetid="'+index+'"]').classList.add("active")
         },
         arrowNav(direction){
@@ -37,7 +36,7 @@
           }else if(id<0){
             id = divs.length-1;
           }
-          this.$emit("changeID",divs[id].getAttribute('targetid'));
+          this.$emit("changeID",divs[id].getAttribute('targetid'),this.lang);
           let active = document.querySelector('.active');
           if(active != null){
             active.classList.remove("active")
@@ -48,7 +47,6 @@
         changeLang(lang){
           let active = document.querySelector('.active');
           let newIndex = 0;
-        console.log(active)
           if(active != null && active.getAttribute('targetid')!=0){
             let navItem = this.content[active.parentNode.getAttribute('groupindex')].walls_items.data[active.parentNode.getAttribute('itemindex')]
             if(lang=="fr"){
@@ -66,13 +64,9 @@
           }
           
           this.lang = lang;
-          this.$emit("changeID",newIndex);
+          this.$emit("changeID",newIndex,this.lang);
           this.currentActive = newIndex;
         },
-    },
-    created(){
-      console.log(this.content);
-      
     },
     updated(){
       document.querySelector('a[targetid="'+this.currentActive+'"]').classList.add("active")
@@ -82,43 +76,152 @@
 
 <template>
     <div class="menu">
-      <ul id="example-1">
-        <li>
-          <ul>
-            <li :groupindex="-1" :itemindex="-1">
+      <ul id="navigation_container">
+        <li class="navigation_content">
+            <div class="group_title">
+          </div>
+          <ul class="navigation_sub_container">
+            <li :groupindex="-1" :itemindex="-1" class="navigation_sub_content">
               <a targetID="0" class="active" @click="changeIndex(0)">Home</a>
             </li>
           </ul>
         </li>
-        <li v-for="(nav,groupindex) in content">
+        <li v-for="(nav,groupindex) in content" class="navigation_content">
           <div v-if="lang=='fr'" class="group_title">
                 {{ nav.Title }}
           </div>
           <div v-else class="group_title">
                 {{ nav.EnglishTitle }}
           </div>
-          <ul>
+          <ul class="navigation_sub_container">
             <template v-for="(data,index) in nav.walls_items.data" >
-              <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'">
+              <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
                 <a  v-if="lang=='fr'" :targetid="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
                 <a  v-else :targetid="data.attributes.localizations.data[0].id" @click="changeIndex(data.attributes.localizations.data[0].id)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
               </li>  
             </template>
-
           </ul>
         </li>
       </ul>
+        <div class="lang_switcher">
+          <button class="fr" v-bind:class="{ langActive: lang=='fr' }" @click="changeLang('fr')">FR</button>
+          <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
+      </div>
       <div class="navigation">
-          <button class="prev" @click="arrowNav(-1)">Prev</button>
-          <button class="next" @click="arrowNav(1)">Next</button>    
+          <button class="prev" @click="arrowNav(-1)"><img src="../assets/arrow.svg"/></button>
+          <button class="next" @click="arrowNav(1)"><img src="../assets/arrow.svg"/></button>    
       </div>
-      <div class="lang_switcher">
-          <button class="fr" @click="changeLang('fr')">FR</button>
-          <button class="en" @click="changeLang('en')">EN</button>    
-      </div>
+
     </div>
 </template>
 
 <style scoped>
+  .menu{
+
+  }
+  ul{
+    list-style: none;
+    padding:0;
+  }
+  .menu{
+    position:relative;
+  }
+  .menu:before{
+    content:"";
+    width: 2px;
+    height: 85vh;
+    position: absolute;
+    left: 130px;
+    top :  50%;
+    transform:translateY(-50%);
+    background-color: white;
+  }
+  .navigation_content{
+        display: flex;
+        padding-bottom: 30px;
+  }
+  .group_title{
+    width: 130px;
+    text-align: right;
+    padding-right: 20px;
+    text-transform: uppercase;
+    position: relative;
+    color: white;
+    font-family: 'Futura Std';
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.2;
+    padding-top : 2px;
+  }
+  .group_title:after{
+    content:"";
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top : 10px;
+    background-color: white;
+  }
+  .navigation_sub_content{
+    position: relative;
+    padding-left: 20px ;
+    font-family: 'Futura Std';
+    font-size: 0.9rem;
+    color: white;
+    cursor:pointer;
+
+  }
+  .navigation_sub_content:before{
+    content:"";
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top : 10px;
+    background-color: white;
+  }
+  .lang_switcher{
+
+    display:inline-block;
+    margin-left : 15px;
+  }
+  .lang_switcher button{
+    background-color: rgba(0,0,0,0); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border : 2px solid white;
+    font-family: 'Futura Std';
+    font-weight: 600;
+    cursor:pointer;
+
+  }
+  .lang_switcher .langActive{
+    background-color: white;
+    color: black;
+  }
+
+  .navigation{
+    display:inline-block;
+    position: absolute;
+    left : 76px;
+  }
+  .navigation button{
+    background-color: rgba(0,0,0,0); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 15px;
+    cursor:pointer;
+  }
+  .prev img{
+    transform:rotate(-180deg);
+  }
 
 </style>

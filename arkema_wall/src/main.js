@@ -16,6 +16,8 @@ const TodosQuery = gql`
           wall_group{
             Title
             EnglishTitle
+            positionX,
+            positionY
             walls_items{
               data{
                 id
