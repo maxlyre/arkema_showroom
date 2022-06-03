@@ -1,5 +1,4 @@
 <script>
-  import TheWelcome from "./components/TheWelcome.vue";
   import Navigation from "./components/Navigation.vue"
   import Pages from "./components/Pages.vue"
   import Home from "./components/Home.vue"
@@ -47,7 +46,7 @@
       v-on:changeID=changeID
     />
   </header>
-    <section class="container row">
+    <section class="container">
         <Home v-if="this.id == 0" 
           :content= dataNavigation
           :lang = lang
@@ -82,11 +81,13 @@ header {
   body {
     display: flex;
     place-items: center;
+    width: 100%;
   }
 
   #app {
     padding: 0 1rem;
     height: 100vh;
+    width: 100%;
   }
 
   header {
@@ -107,7 +108,7 @@ header {
 }
 
 .container{
-  display: flex;
+  flex: 1;
 }
 .active{
   text-decoration: underline;

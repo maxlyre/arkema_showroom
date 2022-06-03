@@ -46,7 +46,7 @@ img{
 }
 @font-face {
   font-family: 'Futura Std';
-  src: url('/font/FuturaStd-Medium-.woff2') format('woff2'),
+  src: url('/font/FuturaStd-Medium.woff2') format('woff2'),
       url('/font/FuturaStd-Medium.woff') format('woff');
   font-weight: 600;
   font-style: normal;
@@ -89,3 +89,6 @@ img{
   font-display: swap;
 }
 
+table{
+  width: 100%;
+}

@@ -41,7 +41,8 @@
     width: 100%;
   }
   .home{
-    position: relative
+    position: relative;
+    height: 100%;
   }
   .menu_item{
     position: absolute;

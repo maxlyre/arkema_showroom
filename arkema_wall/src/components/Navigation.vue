@@ -71,9 +71,6 @@
     updated(){
       document.querySelector('a[targetid="'+this.currentActive+'"]').classList.add("active")
     },
-    created(){
-      console.log(this.content)
-    }
   };
 </script>
 
@@ -120,7 +117,7 @@
 
 <style scoped>
   .menu{
-
+    padding-right:2rem;
   }
   ul{
     list-style: none;

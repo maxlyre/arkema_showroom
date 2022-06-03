@@ -26,8 +26,9 @@
 </script>
 
 <template>
-    <div class="content pages">
-        <h1 class="col-md-12">{{contents.attributes.Title}}</h1>
+  <h1 >{{contents.attributes.Title}}</h1>
+    <div class="content pages row">
+       
         <template v-for="(content,index) in contents.attributes.Contenu">
           <Text 
             v-if="content.__typename == 'ComponentWallComponentText'" 
@@ -58,5 +59,14 @@
 <style scoped>
   .content{
     width: 100%;
+    padding : 0rem 3rem 4rem 3rem;
+  }
+  h1{
+    font-family: 'Work Sans';
+    text-transform:uppercase;
+    color: white;
+    font-size : 1.3rem;
+    margin-bottom : 4.5rem;
+    padding: 4rem 3rem 0 3rem;
   }
 </style>
