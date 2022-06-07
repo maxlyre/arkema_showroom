@@ -62,7 +62,7 @@
 @import "./assets/base.css";
 @import "./assets/flexbox.css";
 #app {
-  padding: 1rem;
+
   display: flex;
   font-weight: normal;
 }
@@ -85,7 +85,6 @@ header {
   }
 
   #app {
-    padding: 0 1rem;
     height: 100vh;
     width: 100%;
   }
@@ -109,6 +108,8 @@ header {
 
 .container{
   flex: 1;
+  max-height: 100vh;
+  overflow-y :auto;
 }
 .active{
   text-decoration: underline;

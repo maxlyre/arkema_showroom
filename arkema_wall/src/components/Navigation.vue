@@ -117,7 +117,7 @@
 
 <style scoped>
   .menu{
-    padding-right:2rem;
+    padding:15px 45px 15px 15px;
   }
   ul{
     list-style: none;
@@ -131,7 +131,7 @@
     width: 2px;
     height: 85vh;
     position: absolute;
-    left: 130px;
+    left: 145px;
     top :  50%;
     transform:translateY(-50%);
     background-color: white;
@@ -207,7 +207,7 @@
   .navigation{
     display:inline-block;
     position: absolute;
-    left : 76px;
+    left : 90px;
   }
   .navigation button{
     background-color: rgba(0,0,0,0); /* Green */
