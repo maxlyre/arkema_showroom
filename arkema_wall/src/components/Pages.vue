@@ -68,5 +68,6 @@
     font-size : 1.3rem;
     margin-bottom : 4.5rem;
     padding: 4rem 3rem 0 3rem;
+    font-weight: normal;
   }
 </style>

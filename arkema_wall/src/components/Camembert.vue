@@ -61,15 +61,17 @@
               color: 'white',
               display: function(context) {
                 var dataset = context.dataset;
-                var count = dataset.data.length;
                 var value = dataset.data[context.dataIndex];
-                return value > count * 1.5;
+                return value > 0;
               },
               font: {
-                weight: 'bold'
+                weight: 'bold',
+                size: '18px'
               },
               padding: 6,
-              formatter: Math.round
+              formatter: function(value, context) {
+                  return Math.round(value) + '%';
+              }
             },
             tooltip:{
               enabled :false
@@ -92,13 +94,13 @@
   <div :class="['colonne', 'col-md-'+content.column]">
     <h3>{{content.Titre}}</h3>
     <div class="chart"><canvas :id="'nestedDoughnut'+index" /></div>
-    <ul v-if="content.pourcentages.length > 0">
-        <li v-for="line in content.pourcentages">
+    <ul v-if="content.pourcentages.length > 0" class="color_list">
+        <li v-for="line in content.pourcentages" class="color_data">
           <span :style={backgroundColor:line.hexColor} class="color_line"></span> {{line.Titre}}
         </li>  
     </ul>
-    <ul v-if="content.pourcentage_externe.length > 0">
-        <li v-for="line in content.pourcentage_externe">
+    <ul v-if="content.pourcentage_externe.length > 0" class="color_list">
+        <li v-for="line in content.pourcentage_externe" class="color_data">
           <span :style={backgroundColor:line.hexColor} class="color_line"></span>{{line.pourcentage}}% {{line.Titre}}
         </li>  
     </ul>
@@ -106,9 +108,42 @@
 </template>
 
 <style scoped>
+
+  h3{
+    font-family: 'Work Sans';
+    text-transform:uppercase;
+    color: white;
+    font-size : 1.1rem;
+    text-align: center;
+    margin-top : 1rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+  }
+
+  .chart{
+    width: 80%;
+    margin:auto;
+    margin-bottom: 1.5rem;
+  }
+  .color_list{
+    padding: 0;
+    width: 80%;
+    margin: auto;
+  }
+  .color_data{
+    list-style-type: none;
+    color: white;
+    font-weight: normal;
+    font-family: 'Work Sans'; ;
+    vertical-align: middle;
+    margin-bottom: 0.5rem;
+  }
   .color_line{
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 0.25rem;
   }
+
 </style>

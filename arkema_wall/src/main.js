@@ -60,6 +60,7 @@ const TodosQuery = gql`
               }
               column
               position
+              slidesPerView
             }
             ...on ComponentWallComponentPlanete {
               PlanetJson{
