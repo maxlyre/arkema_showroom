@@ -113,7 +113,7 @@
     font-family: 'Work Sans';
     text-transform:uppercase;
     color: white;
-    font-size : 1.1rem;
+    font-size : 1.3rem;
     text-align: center;
     margin-top : 1rem;
     margin-bottom: 1rem;
@@ -137,6 +137,7 @@
     font-family: 'Work Sans'; ;
     vertical-align: middle;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
   .color_line{
     display: inline-block;

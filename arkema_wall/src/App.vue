@@ -32,7 +32,13 @@
         },
         changeIDHome(index){
           this.$refs.navigation.changeIndex(index)
-        }
+        },
+        toggleMobileNavigation(){
+          document.querySelector('.open_button').classList.toggle('nav_active');
+          document.querySelector('.close_button').classList.toggle('nav_active');
+          document.querySelector('.menu_content').classList.toggle('nav_active');
+          document.querySelector('.lang_switcher').classList.toggle('nav_active');
+        } 
       }
 };
 
@@ -40,6 +46,10 @@
 
 <template>
   <header>
+    <div class="nav_button" @click="toggleMobileNavigation">
+      <img class="open_button nav_active" src="./assets/menu-8.svg" alt="">
+      <img class="close_button" src="./assets/e-remove.svg" alt="">
+    </div>
     <Navigation 
       ref="navigation"
       :content= dataNavigation
@@ -114,5 +124,33 @@ header {
 .active{
   text-decoration: underline;
 }
+.nav_button{
+  display: none;
+}
+  @media screen and (max-width: 1024px) {
+    #app{
+      height: 100vh;
+    }
+    header{
+      position: static;
+    }
+    .nav_button{
+      display: block;
+      position: absolute;
+      z-index: 100;
+      top : 10px;
+      left: 10px;
+      width: 25px
+    }
+    .nav_button .nav_active{
+      display: block;
+    }
+    .open_button{
+      display: none;
+    }
+    .close_button{
+      display: none;
+    }
+  }
 
 </style>

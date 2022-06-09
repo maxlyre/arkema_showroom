@@ -23,14 +23,14 @@
 </template>
 
 <style>
-
+  
   h2{
     font-family: 'Work Sans';
     text-transform:uppercase;
     color: white;
-    font-size : 2.3rem;
+    font-size : 2.5rem;
     line-height: 1.3;
-    margin-bottom : 1.4rem;
+    margin-bottom : 2.5rem;
     font-weight: normal;
   }
   h2 .text-big {
@@ -43,13 +43,14 @@
       font-family: 'Work Sans';
     color: white;
     line-height: 1.4;
-    font-size : 1rem;
-    margin-top : 1.2rem;
+    font-size : 1.3rem;
+    margin-top : 1.4rem;
+    font-weight: normal;
   }
   .text p,.text td{
     font-family: 'Work Sans';
     color: white;
-    font-size : 1.4rem;
+    font-size : 1.6rem;
     line-height: 1.5;
     margin-bottom: 0.8rem;
   }
@@ -59,7 +60,7 @@
   }
   .text p .text-huge,.text td .text-huge{
     font-weight:900;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .text ul{
     padding-left: 18px;
@@ -71,7 +72,7 @@
     font-size : 1.4rem;
   }
   .text .text-small{
-    font-size : 1rem;
+    font-size : 1.2rem;
     line-height : 1;
   }
 

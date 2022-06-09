@@ -76,33 +76,36 @@
 
 <template>
     <div class="menu">
-      <ul id="navigation_container">
-        <li class="navigation_content">
-            <div class="group_title">
-          </div>
-          <ul class="navigation_sub_container">
-            <li :groupindex="-1" :itemindex="-1" class="navigation_sub_content">
-              <a targetID="0" class="active" @click="changeIndex(0)">Home</a>
-            </li>
-          </ul>
-        </li>
-        <li v-for="(nav,groupindex) in content" class="navigation_content">
-          <div v-if="lang=='fr'" class="group_title">
-                {{ nav.Title }}
-          </div>
-          <div v-else class="group_title">
-                {{ nav.EnglishTitle }}
-          </div>
-          <ul class="navigation_sub_container">
-            <template v-for="(data,index) in nav.walls_items.data" >
-              <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
-                <a  v-if="lang=='fr'" :targetid="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
-                <a  v-else :targetid="data.attributes.localizations.data[0].id" @click="changeIndex(data.attributes.localizations.data[0].id)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
-              </li>  
-            </template>
-          </ul>
-        </li>
-      </ul>
+      <div class="menu_content">
+        <ul id="navigation_container">
+          <li class="navigation_content">
+              <div class="group_title">
+            </div>
+            <ul class="navigation_sub_container">
+              <li :groupindex="-1" :itemindex="-1" class="navigation_sub_content">
+                <a targetID="0" class="active" @click="changeIndex(0)">Home</a>
+              </li>
+            </ul>
+          </li>
+          <li v-for="(nav,groupindex) in content" class="navigation_content">
+            <div v-if="lang=='fr'" class="group_title">
+                  {{ nav.Title }}
+            </div>
+            <div v-else class="group_title">
+                  {{ nav.EnglishTitle }}
+            </div>
+            <ul class="navigation_sub_container">
+              <template v-for="(data,index) in nav.walls_items.data" >
+                <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
+                  <a  v-if="lang=='fr'" :targetid="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
+                  <a  v-else :targetid="data.attributes.localizations.data[0].id" @click="changeIndex(data.attributes.localizations.data[0].id)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
+                </li>  
+              </template>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
         <div class="lang_switcher">
           <button class="fr" v-bind:class="{ langActive: lang=='fr' }" @click="changeLang('fr')">FR</button>
           <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
@@ -126,12 +129,15 @@
   .menu{
     position:relative;
   }
-  .menu:before{
+  .menu_content{
+    position:relative;
+  }
+  #navigation_container:before{
     content:"";
     width: 2px;
     height: 85vh;
     position: absolute;
-    left: 145px;
+    left: 130px;
     top :  50%;
     transform:translateY(-50%);
     background-color: white;
@@ -223,6 +229,46 @@
   }
   .prev img{
     transform:rotate(-180deg);
+  }
+
+
+  @media screen and (max-width: 1024px) {
+
+    .menu{
+      position: static;
+      padding: 0;
+    }
+    .menu_content.nav_active{
+      display: flex;
+    }
+    .menu_content{
+      position: absolute;
+      background-color: black;
+      height: 100vh;
+      width: 100%;
+      z-index: 99;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+    .lang_switcher{
+      position: absolute;
+      bottom : 10px;
+      left : 10px;
+      margin: 0;
+      z-index: 101;
+      display: none;
+    }
+    .lang_switcher.nav_active{
+      display: block;
+    }
+    .navigation{
+      position: absolute;
+      top : 15px;
+      right : 0px;
+      text-align: right;
+      z-index: 50;
+    }
   }
 
 </style>
