@@ -18,7 +18,7 @@
   };
 </script>
 <template>
-  <div :class="['colonne','text', 'col-md-'+content.column]" v-html="imgBody">
+  <div :class="['colonne','text', 'col-sm-'+content.column, 'col-xs-12']" v-html="imgBody">
   </div>
 </template>
 
@@ -74,6 +74,18 @@
   .text .text-small{
     font-size : 1.2rem;
     line-height : 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .text .table td{
+      display: block;
+      width: 100% !important;
+      margin-bottom: 4rem;
+    }
+    .text .table td td{
+      margin-bottom: 0;
+    }
+
   }
 
 </style>

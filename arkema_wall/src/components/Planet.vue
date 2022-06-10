@@ -45,7 +45,7 @@
   };
 </script>
 <template>
-  <div :class="['colonne', 'col-md-'+content.column]" class="planete">
+  <div :class="['colonne', 'col-sm-'+content.column, 'col-xs-12']" class="planete">
     <canvas id="planet_canvas"></canvas>
   </div>
 </template>

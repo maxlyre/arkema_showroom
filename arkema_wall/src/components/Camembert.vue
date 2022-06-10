@@ -91,7 +91,7 @@
   };
 </script>
 <template>
-  <div :class="['colonne', 'col-md-'+content.column]">
+  <div :class="['colonne', 'col-sm-'+content.column, 'col-xs-12']">
     <h3>{{content.Titre}}</h3>
     <div class="chart"><canvas :id="'nestedDoughnut'+index" /></div>
     <ul v-if="content.pourcentages.length > 0" class="color_list">

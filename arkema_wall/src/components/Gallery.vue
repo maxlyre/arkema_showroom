@@ -57,7 +57,7 @@
   };
 </script>
 <template>
-  <div :class="['colonne','gallery', 'col-md-'+content.column,{bottom: content.position == 'bottom',right: content.position == 'right' }]">
+  <div :class="['colonne','gallery', 'col-sm-'+content.column,{bottom: content.position == 'bottom',right: content.position == 'right' }, 'col-xs-12']">
     <swiper
       :modules="modules"
       :slides-per-view=content.slidesPerView

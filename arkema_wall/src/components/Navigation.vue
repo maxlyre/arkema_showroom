@@ -231,8 +231,15 @@
     transform:rotate(-180deg);
   }
 
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1400px) {
+    .group_title{
+      font-size: 1.3rem;
+    }
+    .navigation_sub_content{
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 1200px) {
 
     .menu{
       position: static;
@@ -250,6 +257,7 @@
       align-items: center;
       justify-content: center;
       display: none;
+      top : 0;
     }
     .lang_switcher{
       position: absolute;

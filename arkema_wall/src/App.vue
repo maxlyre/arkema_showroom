@@ -29,6 +29,9 @@
         changeID(index,lang){
           this.id = index;
           this.lang = lang;
+          if(document.querySelector('.menu_content').classList.contains('nav_active')){
+              this.toggleMobileNavigation();
+          }
         },
         changeIDHome(index){
           this.$refs.navigation.changeIndex(index)
@@ -127,7 +130,13 @@ header {
 .nav_button{
   display: none;
 }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1400px) {
+      html{
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+
     #app{
       height: 100vh;
     }
@@ -150,6 +159,12 @@ header {
     }
     .close_button{
       display: none;
+    }
+    .colonne{
+      margin-bottom: 3rem;
+    }
+    figure{
+      display:inline-block;
     }
   }
 
