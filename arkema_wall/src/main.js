@@ -13,11 +13,32 @@ const TodosQuery = gql`
       data{
         id
         attributes{
+          homeBackgroundVideo{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
           wall_group{
             Title
             EnglishTitle
-            positionX,
+            positionX
             positionY
+            videoTransition{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            videoBackground{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
             walls_items{
               data{
                 id
@@ -32,7 +53,6 @@ const TodosQuery = gql`
                     }
                   }
                 }
-
               }
             }
           }
@@ -113,12 +133,14 @@ client
 function sortData(data){
   let bufData = {}
   //Wall 
+  console.log(data)
+  bufData.homeBackgroundVideo = data.data.wallNavigation.data.attributes.homeBackgroundVideo;
   bufData.wallNavigation = data.data.wallNavigation.data.attributes.wall_group;
   bufData.walls = {};
   data.data.walls.data.forEach((item)=>{
     bufData.walls[item.id] = item
   })
-  console.log(bufData.walls)
+  console.log(bufData)
   // bufData.walls = data.data.walls.data;
   return bufData;
 }

@@ -23,6 +23,20 @@
     },
     "positionY": {
       "type": "float"
+    },
+    "videoTransition": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "videoBackground": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
