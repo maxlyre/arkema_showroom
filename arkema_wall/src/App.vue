@@ -1,4 +1,5 @@
 <script>
+  import videoBackground from "./components/videoBackground.vue"
   import Navigation from "./components/Navigation.vue"
   import Pages from "./components/Pages.vue"
   import Home from "./components/Home.vue"
@@ -9,11 +10,12 @@
           dataNavigation:this.$jsonData.wallNavigation,
           dataWall:this.$jsonData.walls,
           id:0,
-          lang : "fr"
+          lang : "fr",
+          group : null
         }
       },
       components:{
-        Navigation,Pages,Home
+        Navigation,Pages,Home,videoBackground
       },
       computed:{
       },
@@ -26,9 +28,10 @@
         }
       },
       methods:{
-        changeID(index,lang){
+        changeID(index,lang,group){
           this.id = index;
           this.lang = lang;
+          this.group = group;
           if(document.querySelector('.menu_content').classList.contains('nav_active')){
               this.toggleMobileNavigation();
           }
@@ -69,6 +72,11 @@
           :contents= dataWall[id] 
         />
     </section>
+    <videoBackground
+      :content= dataNavigation
+      :homeURL = $jsonData.homeBackgroundVideo
+      :group = group
+    />
 </template>
 
 <style>

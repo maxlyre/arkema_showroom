@@ -133,14 +133,12 @@ client
 function sortData(data){
   let bufData = {}
   //Wall 
-  console.log(data)
   bufData.homeBackgroundVideo = data.data.wallNavigation.data.attributes.homeBackgroundVideo;
   bufData.wallNavigation = data.data.wallNavigation.data.attributes.wall_group;
   bufData.walls = {};
   data.data.walls.data.forEach((item)=>{
     bufData.walls[item.id] = item
   })
-  console.log(bufData)
   // bufData.walls = data.data.walls.data;
   return bufData;
 }

@@ -13,12 +13,12 @@
       }
     },
     methods:{
-        changeIndex(index){
+        changeIndex(index,group){
           let active = document.querySelector('.active');
           if(active != null){
             active.classList.remove("active")
           }
-          this.$emit("changeID",index,this.lang);
+          this.$emit("changeID",index,this.lang,group);
           document.querySelector('a[targetid="'+index+'"]').classList.add("active")
         },
         arrowNav(direction){
@@ -36,7 +36,7 @@
           }else if(id<0){
             id = divs.length-1;
           }
-          this.$emit("changeID",divs[id].getAttribute('targetid'),this.lang);
+          this.$emit("changeID",divs[id].getAttribute('targetid'),this.lang, divs[id].getAttribute('groupName'));
           let active = document.querySelector('.active');
           if(active != null){
             active.classList.remove("active")
@@ -64,7 +64,7 @@
           }
           
           this.lang = lang;
-          this.$emit("changeID",newIndex,this.lang);
+          this.$emit("changeID",newIndex);
           this.currentActive = newIndex;
         },
     },
@@ -97,8 +97,8 @@
             <ul class="navigation_sub_container">
               <template v-for="(data,index) in nav.walls_items.data" >
                 <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
-                  <a  v-if="lang=='fr'" :targetid="data.id" @click="changeIndex(data.id)">{{data.attributes.Title}}</a>
-                  <a  v-else :targetid="data.attributes.localizations.data[0].id" @click="changeIndex(data.attributes.localizations.data[0].id)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
+                  <a  v-if="lang=='fr'" :targetid="data.id" :groupName="nav.Title" @click="changeIndex(data.id,nav.Title)">{{data.attributes.Title}}</a>
+                  <a  v-else :targetid="data.attributes.localizations.data[0].id" :groupName="nav.Title" @click="changeIndex(data.attributes.localizations.data[0].id,nav.Title)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
                 </li>  
               </template>
             </ul>
