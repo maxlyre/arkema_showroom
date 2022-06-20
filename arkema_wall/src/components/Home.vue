@@ -16,8 +16,9 @@
       }
     },
     methods:{
-      changeIndex(id){
-      this.$emit("changeID",id);
+      changeIndex(id,group){
+        console.log(group)
+      this.$emit("changeID",id,group);
       }
     }
   };
@@ -30,8 +31,8 @@
         :style="{left:nav.positionX+'%',top:nav.positionY+'%'}"
       >
         
-        <h3 v-if="this.lang =='fr'" @click="changeIndex(nav.walls_items.data[0].id)">{{nav.Title}}</h3>
-        <h3 v-else @click="changeIndex(nav.walls_items.data[0].attributes.localizations.data[0].id)">{{nav.EnglishTitle}}</h3>
+        <h3 v-if="this.lang =='fr'" @click="changeIndex(nav.walls_items.data[0].id,nav.Title)">{{nav.Title}}</h3>
+        <h3 v-else @click="changeIndex(nav.walls_items.data[0].attributes.localizations.data[0].id,nav.Title)">{{nav.EnglishTitle}}</h3>
       </div>
     </div>
 </template>
@@ -49,5 +50,6 @@
   }
   h3{
     cursor: pointer;
+    color: white;
   }
 </style>

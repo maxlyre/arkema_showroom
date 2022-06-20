@@ -38,7 +38,6 @@
     computed:{
     },
     mounted(){
-      console.log(this.content)
     },
     setup() {
       

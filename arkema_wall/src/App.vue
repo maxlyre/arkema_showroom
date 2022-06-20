@@ -36,8 +36,8 @@
               this.toggleMobileNavigation();
           }
         },
-        changeIDHome(index){
-          this.$refs.navigation.changeIndex(index)
+        changeIDHome(index,group){
+          this.$refs.navigation.changeIndex(index,group)
         },
         toggleMobileNavigation(){
           document.querySelector('.open_button').classList.toggle('nav_active');
