@@ -136,6 +136,7 @@
                 this.activeGroup = groupe;
               }else{
                 u = groupe.videoBackground.data.attributes.url
+                this.isTransition = false;
               }
               
             }
