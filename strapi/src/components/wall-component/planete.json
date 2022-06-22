@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "PlanetJson": {
+    "PlanetCSV": {
       "type": "media",
       "multiple": false,
       "required": false,

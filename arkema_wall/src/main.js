@@ -83,7 +83,7 @@ const TodosQuery = gql`
               slidesPerView
             }
             ...on ComponentWallComponentPlanete {
-              PlanetJson{
+              PlanetCSV{
                 data{
                   attributes{
                     url
@@ -115,10 +115,10 @@ const TodosQuery = gql`
 
 const app = createApp(App);
 
-app.config.globalProperties.$APIURL = "http://localhost:1338"
+app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
 
 const client = createClient({
-    url: 'http://localhost:1338/graphql',
+    url: globalGonfig.backofficeURL+'/graphql',
 });
 
 client
