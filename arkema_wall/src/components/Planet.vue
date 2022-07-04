@@ -38,13 +38,17 @@
             let val =  values[index];
             val = val.replace('"', '');
             val = val.replace(/(\r\n|\n|\r)/gm, "");
+            // if(header == "employee"){
+            //   val = parseInt(val)
+            // }
             object[header] = val;
+
             // console.log(val)
             return object;
           }, {});
           return el;
         });
-
+        
         // return the array
         return arr;
       }
@@ -52,21 +56,25 @@
     mounted(){
 
       this.app = initPlaycanvas();
-        var app = pc.Application.getApplication();
+      var app = pc.Application.getApplication();
 
       let url = this.$APIURL+this.content.PlanetCSV.data.attributes.url;
       console.log(url)
       var self = this;
-      fetch(url).then(function(response) {
-          // // Convert to JSON
-          // return response.json();
-          return response.text()
-      }).then(function(tsv) {
-        let json = self.csvToArray(tsv)
+      app.on("start", function () {
+        fetch(url).then(function(response) {
+            // // Convert to JSON
+            // return response.json();
+            return response.text()
+        }).then(function(tsv) {
+          let json={
+            data : self.csvToArray(tsv)
+          } 
 
-        app.fire("set:json", json)
-      }).catch(function(error) {
-          console.log('Request failed', error)
+          app.fire("set:json", json)
+        }).catch(function(error) {
+            console.log('Request failed', error)
+        });
       });
 
       //   let url = this.$APIURL+this.content.PlanetCSV.data.attributes.url;
@@ -99,13 +107,17 @@
   </div>
 </template>
 
-<style scoped>
+<style>
   .planete{
     position: relative
   }
   canvas{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 0 !important;
+  }
+  .containerWebgl{
+    position: static;
   }
 </style>

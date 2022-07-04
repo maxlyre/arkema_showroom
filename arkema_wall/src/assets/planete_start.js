@@ -1,14 +1,14 @@
 window.ASSET_PREFIX = "planete/";
-let SCRIPT_PREFIX = "planete/";
+window.SCRIPT_PREFIX = "planete/";
 let SCENE_PATH = "1215082.json";
-let CONTEXT_OPTIONS = {
+window.CONTEXT_OPTIONS = {
     'antialias': true,
     'alpha': true,
     'preserveDrawingBuffer': false,
     'preferWebGl2': true,
     'powerPreference': "default"
 };
-let SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
+window.SCRIPTS = [ 57365924, 57365934, 57365935, 57365936, 57487189, 57578455, 57578680, 57658384, 57660842, 57674724, 64962564 ];
 let CONFIG_FILENAME = "planete/config.json";
 let INPUT_SETTINGS = {
     useKeyboard: true,

@@ -3,11 +3,11 @@
     {
       "country": "FRANCE",
       "name": "MAKEA",
-      "employee": 8,
+      "employee": "8",
       "site": "SIEGE SOCIAL",
       "city": "COLOMBES CEDEX",
-      "lat": 48.9220615,
-      "long": 2.2533313
+      "lat": "48.9220615",
+      "long": "2.2533313"
     },
     {
       "country": "CHINE",
