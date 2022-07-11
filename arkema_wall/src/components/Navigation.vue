@@ -157,7 +157,7 @@
     font-weight: bold;
     font-size: 1rem;
     line-height: 1.2;
-    padding-top : 2px;
+    padding-top : 5px;
     flex: none;
   }
   .group_title:after{
@@ -166,16 +166,16 @@
     height: 2px;
     position: absolute;
     right: 0;
-    top : 10px;
+    top : 13px;
     background-color: white;
   }
   .navigation_sub_content{
     position: relative;
-    padding-left: 20px ;
     font-family: 'Futura Std';
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: white;
     cursor:pointer;
+        padding: 3px 0 3px 20px;
 
   }
   .navigation_sub_content:before{
@@ -184,7 +184,7 @@
     height: 2px;
     position: absolute;
     left: 0;
-    top : 10px;
+    top : 13px;
     background-color: white;
   }
   .lang_switcher{

@@ -44,7 +44,7 @@
           data.datasets[1].data.push(item.pourcentage);
       })
       if(this.content.pourcentage_externe.length == 1){
-          data.datasets[1].backgroundColor.push("#ffffff00");
+          data.datasets[1].backgroundColor.push("#d9d9ca");
           data.datasets[1].data.push(data.datasets[1].data[0]-100);
       }
   
@@ -53,7 +53,7 @@
         datasets:{
           doughnut:{
               borderWidth :0,
-              cutout : "15%"
+              cutout : "30%"
           }
         },
           plugins: {

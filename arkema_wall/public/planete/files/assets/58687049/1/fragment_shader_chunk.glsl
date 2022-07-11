@@ -19,8 +19,7 @@ void getAlbedo()
      
     vec3 color = vec3(1.0,0.1,0.1);
     vec2 uv = $UV;
-    uv.x = uv.x*4.0;
-    uv.x -= 1.51;
+
     if(uv.x < uUsine){
         color = uUsineColor;
     }else if(uv.x <uUsine+uCommercial){

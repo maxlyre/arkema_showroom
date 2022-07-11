@@ -111,7 +111,7 @@
   .planete{
     position: relative
   }
-  canvas{
+  .planete canvas{
     position: absolute;
     width: 100% !important;
     height: 100% !important;
@@ -119,5 +119,65 @@
   }
   .containerWebgl{
     position: static;
+        overflow: visible;
   }
+  .planete .legend{
+    bottom : 16px;
+    left: 16px;
+    top : auto;
+        max-width: 50%;
+  }
+  .planete .legend li{
+    font-family: 'Work Sans';
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .planete .legend li.inactive{
+    opacity: 0.5;
+  }
+  
+  .planete .dataContainer{
+    background-color: inherit;
+    box-shadow: none;
+  }
+  .planete .cam_left,.planete .cam_right{
+    background: rgba(0,0,0,0);
+    border : none;
+    outline:none;
+  }
+  .planete .cam_left::after{
+    content:url('../assets/arrow.svg');
+    display:block;
+    width: 30px;
+    height: auto;
+    transform:rotate(180deg);
+    cursor: pointer;
+    top: -4px;
+  }
+  .planete .cam_right::after{
+    content:url('../assets/arrow.svg');
+    display:block;
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+  }
+  .planete p{
+        font-size: 1.2rem;
+      line-height: 1.5;
+          font-family: 'Work Sans';
+    color: white;
+  }
+  .planete p .country{
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

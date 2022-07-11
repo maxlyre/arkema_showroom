@@ -125,7 +125,7 @@ client
   .query(TodosQuery, { id: 'test' })
   .toPromise()
   .then(result => {
-    
+    console.log(result)
     app.config.globalProperties.$jsonData = sortData(result); // { data: ... }
     app.mount("#app");
 });

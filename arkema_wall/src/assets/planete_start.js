@@ -120,8 +120,8 @@ var pcBootstrap = {
 
     createCanvas: function () {
         let canvas = document.querySelector('#planet_canvas');
-        canvas.setAttribute('id', CANVAS_ID);
-        canvas.setAttribute('tabindex', 0);
+        // canvas.setAttribute('id', CANVAS_ID);
+        // canvas.setAttribute('tabindex', 0);
         // canvas.style.visibility = 'hidden';
 
         // Disable I-bar cursor on click+drag
@@ -280,7 +280,7 @@ export function initPlaycanvas() {
                 console.error(err);
             }
 
-            configureCss(app._fillMode, app._width, app._height);
+            // configureCss(app._fillMode, app._width, app._height);
 
             // do the first reflow after a timeout because of
             // iOS showing a squished iframe sometimes

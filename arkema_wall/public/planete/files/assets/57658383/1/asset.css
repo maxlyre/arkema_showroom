@@ -27,7 +27,7 @@
     list-style:none;
     margin-bottom : 5px;
     font-size: 14px;
-    
+    cursor: pointer;
 }
 .legend span{
     display: inline-block;
@@ -35,6 +35,9 @@
     height: 20px;
     margin-right: 10px;
     vertical-align: middle;
+}
+.legend .inactive span{
+    opacity: 0.3;
 }
 .scroll-control{
     display : block;
@@ -45,9 +48,9 @@
     overflow-y: auto;
     overflow-x : visible ;
 }
-.line{
+/* .line{
     border-bottom : 1px solid white;
-}
+} */
 p{
     font-size: 12px;
 }

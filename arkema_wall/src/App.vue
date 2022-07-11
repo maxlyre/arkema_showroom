@@ -11,7 +11,7 @@
           dataWall:this.$jsonData.walls,
           id:0,
           lang : "fr",
-          group : null
+          group : null,
         }
       },
       components:{
@@ -63,14 +63,15 @@
     />
   </header>
     <section class="container">
-        <Home v-if="this.id == 0" 
-          :content= dataNavigation
-          :lang = lang
-          v-on:changeID = changeIDHome
-        />
-        <Pages v-else
-          :contents= dataWall[id] 
-        />
+          <Home v-if="this.id == 0" 
+            :content= dataNavigation
+            :lang = lang
+            v-on:changeID = changeIDHome
+          />
+
+            <Pages v-else
+              :contents= dataWall[id] 
+            />
     </section>
     <videoBackground
       :content= dataNavigation
@@ -175,5 +176,13 @@ header {
       display:inline-block;
     }
   }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
 
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>

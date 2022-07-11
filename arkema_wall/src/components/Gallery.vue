@@ -1,10 +1,10 @@
 <script>
-  import { Navigation, Pagination } from 'swiper';
+  import { Navigation, Pagination ,Autoplay } from 'swiper';
   import { Swiper, SwiperSlide} from 'swiper/vue';
   import 'swiper/css';
   import 'swiper/css/navigation';
   import 'swiper/css/pagination';
-
+  import 'swiper/css/autoplay';
   export default {
     components: {
       Swiper,
@@ -50,7 +50,7 @@
       return {
         // onSwiper,
         // onSlideChange,
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination,Autoplay],
       };
     },
   };
@@ -66,6 +66,7 @@
           prevEl: '.button-prev'+index,
       }"
       :pagination="{ clickable: true,el:'.pagination'+index }"
+      :autoplay="{delay:3000}"
     >
       <swiper-slide v-for="slide in content.image.data">
         <img :src="this.$APIURL+slide.attributes.url" alt="">

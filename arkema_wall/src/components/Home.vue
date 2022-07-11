@@ -51,5 +51,13 @@
   h3{
     cursor: pointer;
     color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    max-width: 250px;
+    display: inline-block;
+    text-align:center;
+    padding: 0.5rem;
+    border-bottom: 1px solid white;
+
   }
 </style>
