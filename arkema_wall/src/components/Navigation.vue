@@ -48,7 +48,7 @@
           let active = document.querySelector('.active');
           let newIndex = 0;
           if(active != null && active.getAttribute('targetid')!=0){
-            let navItem = this.content[active.parentNode.getAttribute('groupindex')].walls_items.data[active.parentNode.getAttribute('itemindex')]
+            let navItem = this.content[active.parentNode.getAttribute('groupindex')].menu_entry[active.parentNode.getAttribute('itemindex')].wall.data;
             if(lang=="fr"){
               newIndex = navItem.id
             }else{
@@ -76,6 +76,14 @@
 
 <template>
     <div class="menu">
+      <div class="lang_switcher">
+          <button class="fr" v-bind:class="{ langActive: lang=='fr' }" @click="changeLang('fr')">FR</button>
+          <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
+      </div>
+      <div class="navigation">
+          <button class="prev" @click="arrowNav(-1)"><img src="../assets/arrow.svg"/></button>
+          <button class="next" @click="arrowNav(1)"><img src="../assets/arrow.svg"/></button>    
+      </div>
       <div class="menu_content">
         <ul id="navigation_container">
           <li class="navigation_content">
@@ -95,10 +103,10 @@
                   {{ nav.EnglishTitle }}
             </div>
             <ul class="navigation_sub_container">
-              <template v-for="(data,index) in nav.walls_items.data" >
-                <li :groupindex="groupindex" :itemindex="index" v-if="data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
-                  <a  v-if="lang=='fr'" :targetid="data.id" :groupName="nav.Title" @click="changeIndex(data.id,nav.Title)">{{data.attributes.Title}}</a>
-                  <a  v-else :targetid="data.attributes.localizations.data[0].id" :groupName="nav.Title" @click="changeIndex(data.attributes.localizations.data[0].id,nav.Title)">{{data.attributes.localizations.data[0].attributes.Title}}</a>
+              <template v-for="(data,index) in nav.menu_entry" >
+                <li :groupindex="groupindex" :itemindex="index" v-if="data.wall.data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
+                  <a  v-if="lang=='fr'" :targetid="data.wall.data.id" :groupName="nav.Title" @click="changeIndex(data.wall.data.id,nav.Title)">{{data.wall.data.attributes.Title}}</a>
+                  <a  v-else :targetid="data.wall.data.attributes.localizations.data[0].id" :groupName="nav.Title" @click="changeIndex(data.wall.data.attributes.localizations.data[0].id,nav.Title)">{{data.wall.data.attributes.localizations.data[0].attributes.Title}}</a>
                 </li>  
               </template>
             </ul>
@@ -106,14 +114,7 @@
         </ul>
       </div>
 
-        <div class="lang_switcher">
-          <button class="fr" v-bind:class="{ langActive: lang=='fr' }" @click="changeLang('fr')">FR</button>
-          <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
-      </div>
-      <div class="navigation">
-          <button class="prev" @click="arrowNav(-1)"><img src="../assets/arrow.svg"/></button>
-          <button class="next" @click="arrowNav(1)"><img src="../assets/arrow.svg"/></button>    
-      </div>
+
 
     </div>
 </template>
@@ -157,7 +158,7 @@
     font-weight: bold;
     font-size: 1rem;
     line-height: 1.2;
-    padding-top : 5px;
+    padding-top : 6px;
     flex: none;
   }
   .group_title:after{
@@ -166,7 +167,7 @@
     height: 2px;
     position: absolute;
     right: 0;
-    top : 13px;
+    top : 14px;
     background-color: white;
   }
   .navigation_sub_content{
@@ -175,7 +176,7 @@
     font-size: 1rem;
     color: white;
     cursor:pointer;
-        padding: 3px 0 3px 20px;
+        padding: 4px 0 4px 20px;
 
   }
   .navigation_sub_content:before{
@@ -184,11 +185,11 @@
     height: 2px;
     position: absolute;
     left: 0;
-    top : 13px;
+    top : 14px;
     background-color: white;
   }
   .lang_switcher{
-
+    margin-bottom: 20px;
     display:inline-block;
     margin-left : 15px;
   }

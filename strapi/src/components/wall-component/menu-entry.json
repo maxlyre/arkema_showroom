@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_wall_component_menu_entries",
+  "info": {
+    "displayName": "Menu Entry",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "wall": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wall.wall"
+    }
+  }
+}

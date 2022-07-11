@@ -11,59 +11,53 @@
         type: Object,
         required: true,
       },
-      idPage :Number
+      idPage :Number,
+      lang: String
     },
     components:{
       Text,Camembert,Gallery,Planet
     },
-    data() {
-      return {
-        tick : false
-      }
-    },
-    methods:{
-
-    },
     update(){
-      this.tick = !this.tick;
+              console.log(this.lang)
     }
   };
 </script>
 
 <template>
-  <h1 >{{contents.attributes.Title}}</h1>
+  <div class="pageContainer">
+    <h1 >{{contents.attributes.Title}}</h1>
+      <div class="content pages row">
 
-    <div class="content pages row">
+            <template v-for="(content,index) in contents.attributes.Contenu">
 
-          <template v-for="(content,index) in contents.attributes.Contenu">
+                <Text 
+                  v-if="content.__typename == 'ComponentWallComponentText'" 
+                  :content= content
+                />
+                <Camembert 
+                  v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
+                  :content= content
+                  :index = index
+                />
+                <Gallery 
+                  v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
+                  :content= content
+                  :index = index
+                />
+                <Planet 
+                  v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
+                  :content= content
+                  :index = index
+                  :lang = lang
+                />
+                <div v-else>
+                  {{content.__typename}}
+                </div>
 
-              <Text 
-                v-if="content.__typename == 'ComponentWallComponentText'" 
-                :content= content
-              />
-              <Camembert 
-                v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
-                :content= content
-                :index = index
-              />
-              <Gallery 
-                v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 
-                :content= content
-                :index = index
-              />
-              <Planet 
-                v-else-if="content.__typename == 'ComponentWallComponentPlanete'" 
-                :content= content
-                :index = index
-              />
-              <div v-else>
-                {{content.__typename}}
-              </div>
+          </template>
 
-        </template>
-
-    </div>
-
+      </div>
+  </div>
 </template>
 
 <style scoped>
@@ -80,5 +74,8 @@
     padding: 4rem 3rem 0 3rem;
     font-weight: normal;
   }
-
+  .pageContainer{
+    position: absolute;
+    width: 100%;
+  }
 </style>

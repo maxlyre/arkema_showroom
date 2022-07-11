@@ -39,22 +39,25 @@ const TodosQuery = gql`
                 }
               }
             }
-            walls_items{
-              data{
-                id
-                attributes{
-                  Title
-                  localizations {
-                    data{
-                      id
-                      attributes{
-                        Title
+            menu_entry{
+							wall{
+                data{
+                  id
+                  attributes{
+                    Title
+                    localizations {
+                      data{
+                        id
+                        attributes{
+                          Title
+                        }
                       }
                     }
-                  }
+                	}
                 }
               }
             }
+
           }
         }
       }
@@ -125,7 +128,6 @@ client
   .query(TodosQuery, { id: 'test' })
   .toPromise()
   .then(result => {
-    console.log(result)
     app.config.globalProperties.$jsonData = sortData(result); // { data: ... }
     app.mount("#app");
 });

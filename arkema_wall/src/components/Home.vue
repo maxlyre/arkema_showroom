@@ -18,9 +18,9 @@
     methods:{
       changeIndex(id,group){
         console.log(group)
-      this.$emit("changeID",id,group);
+        this.$emit("changeID",id,group);
       }
-    }
+    },
   };
 </script>
 
@@ -31,8 +31,8 @@
         :style="{left:nav.positionX+'%',top:nav.positionY+'%'}"
       >
         
-        <h3 v-if="this.lang =='fr'" @click="changeIndex(nav.walls_items.data[0].id,nav.Title)">{{nav.Title}}</h3>
-        <h3 v-else @click="changeIndex(nav.walls_items.data[0].attributes.localizations.data[0].id,nav.Title)">{{nav.EnglishTitle}}</h3>
+        <h3 v-if="this.lang =='fr'" @click="changeIndex(nav.menu_entry[0].wall.data.id,nav.Title)">{{nav.Title}}</h3>
+        <h3 v-else @click="changeIndex(nav.menu_entry[0].wall.data.attributes.localizations.data[0].id,nav.Title)">{{nav.EnglishTitle}}</h3>
       </div>
     </div>
 </template>

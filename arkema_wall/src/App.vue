@@ -45,7 +45,7 @@
           document.querySelector('.menu_content').classList.toggle('nav_active');
           document.querySelector('.lang_switcher').classList.toggle('nav_active');
         } 
-      }
+      },
 };
 
 </script>
@@ -63,6 +63,8 @@
     />
   </header>
     <section class="container">
+        <Transition name="fade" mode="out-in">
+
           <Home v-if="this.id == 0" 
             :content= dataNavigation
             :lang = lang
@@ -71,7 +73,10 @@
 
             <Pages v-else
               :contents= dataWall[id] 
+              :lang = lang
+              :key="id"
             />
+        </Transition>
     </section>
     <videoBackground
       :content= dataNavigation
@@ -132,6 +137,7 @@ header {
   flex: 1;
   max-height: 100vh;
   overflow-y :auto;
+  position: relative;
 }
 .active{
   text-decoration: underline;
@@ -178,7 +184,7 @@ header {
   }
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease 0.1s;
   }
 
   .fade-enter-from,

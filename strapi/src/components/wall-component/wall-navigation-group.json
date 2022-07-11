@@ -10,11 +10,6 @@
     "Title": {
       "type": "string"
     },
-    "walls_items": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::wall.wall"
-    },
     "EnglishTitle": {
       "type": "string"
     },
@@ -25,18 +20,26 @@
       "type": "float"
     },
     "videoTransition": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "videoBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "menu_entry": {
+      "displayName": "Menu Entry",
+      "type": "component",
+      "repeatable": true,
+      "component": "wall-component.menu-entry"
     }
   }
 }

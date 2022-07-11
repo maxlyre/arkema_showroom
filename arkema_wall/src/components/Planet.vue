@@ -7,7 +7,8 @@
       content: {
         type: Object,
         required: true,
-      }
+      },
+      lang : String
     },
     data() {
       return {
@@ -54,12 +55,11 @@
       }
     },
     mounted(){
-
+      
       this.app = initPlaycanvas();
       var app = pc.Application.getApplication();
 
       let url = this.$APIURL+this.content.PlanetCSV.data.attributes.url;
-      console.log(url)
       var self = this;
       app.on("start", function () {
         fetch(url).then(function(response) {
@@ -72,6 +72,7 @@
           } 
 
           app.fire("set:json", json)
+          app.fire("lang:change",self.lang);
         }).catch(function(error) {
             console.log('Request failed', error)
         });
@@ -97,7 +98,17 @@
         this.app.app.destroy()
         this.app.app = undefined;
         this.app.device = undefined;
+    },
+    watch: { 
+      lang: function(newVal, oldVal) { // watch it
+        console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+      }
     }
+    // updated(){
+    //     var app = pc.Application.getApplication();
+    //     console.log(this.lang)
+    //     app.fire("lang:change",this.lang);
+    // }
 
   };
 </script>
@@ -131,6 +142,7 @@
     font-family: 'Work Sans';
     font-size: 1rem;
     line-height: 1.5;
+    width: fit-content;
   }
   .planete .legend li.inactive{
     opacity: 0.5;
@@ -139,6 +151,10 @@
   .planete .dataContainer{
     background-color: inherit;
     box-shadow: none;
+  }
+  .planete .nav{
+    top : 10px;
+    bottom : auto;
   }
   .planete .cam_left,.planete .cam_right{
     background: rgba(0,0,0,0);
