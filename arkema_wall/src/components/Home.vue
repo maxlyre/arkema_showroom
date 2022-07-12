@@ -17,7 +17,6 @@
     },
     methods:{
       changeIndex(id,group){
-        console.log(group)
         this.$emit("changeID",id,group);
       }
     },

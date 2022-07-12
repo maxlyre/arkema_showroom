@@ -1,5 +1,5 @@
 <script>
-  import videoBackground from "./components/videoBackground.vue"
+  import VideoBackground from "./components/videoBackground.vue"
   import Navigation from "./components/Navigation.vue"
   import Pages from "./components/Pages.vue"
   import Home from "./components/Home.vue"
@@ -10,12 +10,14 @@
           dataNavigation:this.$jsonData.wallNavigation,
           dataWall:this.$jsonData.walls,
           id:0,
+          oldID : null,
           lang : "fr",
           group : null,
+
         }
       },
       components:{
-        Navigation,Pages,Home,videoBackground
+        Navigation,Pages,Home,VideoBackground
       },
       computed:{
       },
@@ -29,6 +31,7 @@
       },
       methods:{
         changeID(index,lang,group){
+          this.oldID = this.id;
           this.id = index;
           this.lang = lang;
           this.group = group;
@@ -44,7 +47,10 @@
           document.querySelector('.close_button').classList.toggle('nav_active');
           document.querySelector('.menu_content').classList.toggle('nav_active');
           document.querySelector('.lang_switcher').classList.toggle('nav_active');
-        } 
+        } ,
+        showPage(){
+          document.querySelector('.pageContainer').classList.remove('hide')
+        }
       },
 };
 
@@ -75,13 +81,15 @@
               :contents= dataWall[id] 
               :lang = lang
               :key="id"
+              :oldID= oldID
             />
         </Transition>
     </section>
-    <videoBackground
+    <VideoBackground
       :content= dataNavigation
       :homeURL = $jsonData.homeBackgroundVideo
       :group = group
+      v-on:transitionEnded = showPage
     />
 </template>
 

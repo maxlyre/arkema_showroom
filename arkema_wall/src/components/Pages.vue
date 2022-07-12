@@ -12,13 +12,16 @@
         required: true,
       },
       idPage :Number,
-      lang: String
+      lang: String,
+      oldID : [String,Number]
     },
     components:{
       Text,Camembert,Gallery,Planet
     },
-    update(){
-              console.log(this.lang)
+    mounted(){
+      if(this.oldID == 0){
+        document.querySelector('.pageContainer').classList.add('hide')
+      }
     }
   };
 </script>
@@ -77,5 +80,10 @@
   .pageContainer{
     position: absolute;
     width: 100%;
+    transition: opacity 0.6s ease;
+  }
+  .hide{
+    opacity: 0;
+     transition: opacity 0.6s ease;
   }
 </style>

@@ -83,6 +83,7 @@
           this.isReady[id]=true;
           this.activeVideo = id; 
           this.isTransition = false;
+          this.$emit('transitionEnded')
         }
       },
       //Get inactive ID
