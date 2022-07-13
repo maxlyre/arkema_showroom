@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" type="image/png" href="newFavicon-32x32.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arkema Wall</title>
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/flexbox.css">
-    <title>Arkema Wall</title>
-
   </head>
   <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
     <div id="app"></div>
+    <!-- built files will be auto injected -->
     <script type="text/javascript">
       const globalGonfig={
         backofficeURL : "http://arkema.backoffice.bonjour-lab.com"
       }
     </script>
-    <script type="module" src="/src/main.js"></script>
-
     <script src="planete/playcanvas-stable.min.js"></script>
-   <!--<script src="planete/__start__.js"></script>-->
   </body>
 </html>

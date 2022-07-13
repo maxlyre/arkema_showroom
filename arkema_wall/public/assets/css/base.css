@@ -28,8 +28,8 @@ img{
 
 @font-face {
   font-family: 'Futura Std';
-  src: url('/font/FuturaStd-CondensedBold.woff2') format('woff2'),
-      url('/font/FuturaStd-CondensedBold.woff') format('woff');
+  src: url('../font/FuturaStd-CondensedBold.woff2') format('woff2'),
+      url('../font/FuturaStd-CondensedBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -37,16 +37,16 @@ img{
 
 @font-face {
   font-family: 'Futura Std';
-  src: url('/font/FuturaStd-Condensed.woff2') format('woff2'),
-      url('/font/FuturaStd-Condensed.woff') format('woff');
+  src: url('../font/FuturaStd-Condensed.woff2') format('woff2'),
+      url('../font/FuturaStd-Condensed.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Futura Std';
-  src: url('/font/FuturaStd-Medium.woff2') format('woff2'),
-      url('/font/FuturaStd-Medium.woff') format('woff');
+  src: url('../font/FuturaStd-Medium.woff2') format('woff2'),
+      url('../font/FuturaStd-Medium.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -54,8 +54,8 @@ img{
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('/font/WorkSans-Regular.woff2') format('woff2'),
-      url('/font/WorkSans-Regular.woff') format('woff');
+  src: url('../font/WorkSans-Regular.woff2') format('woff2'),
+      url('../font/WorkSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -63,8 +63,8 @@ img{
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('/font/WorkSans-Bold.woff2') format('woff2'),
-      url('/font/WorkSans-Bold.woff') format('woff');
+  src: url('../font/WorkSans-Bold.woff2') format('woff2'),
+      url('../font/WorkSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -72,8 +72,8 @@ img{
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('/font/WorkSans-ExtraBold.woff2') format('woff2'),
-      url('/font/WorkSans-ExtraBold.woff') format('woff');
+  src: url('../font/WorkSans-ExtraBold.woff2') format('woff2'),
+      url('../font/WorkSans-ExtraBold.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -81,8 +81,8 @@ img{
 
 @font-face {
   font-family: 'Arkema';
-  src: url('/font/Arkema-Regular.woff2') format('woff2'),
-      url('/font/Arkema-Regular.woff') format('woff');
+  src: url('../font/Arkema-Regular.woff2') format('woff2'),
+      url('../font/Arkema-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -90,4 +90,21 @@ img{
 
 table{
   width: 100%;
+}
+
+.planete .cam_left::after{
+  content:url('../img/arrow.svg');
+  display:block;
+  width: 30px;
+  height: auto;
+  transform:rotate(180deg);
+  cursor: pointer;
+  top: -4px;
+}
+.planete .cam_right::after{
+  content:url('../img/arrow.svg');
+  display:block;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
 }

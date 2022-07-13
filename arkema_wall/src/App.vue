@@ -52,6 +52,9 @@
           document.querySelector('.pageContainer').classList.remove('hide')
         }
       },
+      update(){
+        console.log(this.lang)
+      }
 };
 
 </script>
@@ -94,8 +97,6 @@
 </template>
 
 <style>
-@import "./assets/base.css";
-@import "./assets/flexbox.css";
 #app {
 
   display: flex;

@@ -20,6 +20,9 @@
         this.$emit("changeID",id,group);
       }
     },
+    update(){
+      console.log(this.lang)
+    }
   };
 </script>
 

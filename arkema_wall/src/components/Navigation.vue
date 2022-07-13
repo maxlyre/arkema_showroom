@@ -64,7 +64,7 @@
           }
           
           this.lang = lang;
-          this.$emit("changeID",newIndex);
+          this.$emit("changeID",newIndex,this.lang,active.getAttribute('groupName'));
           this.currentActive = newIndex;
         },
     },
@@ -81,8 +81,8 @@
           <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
       </div>
       <div class="navigation">
-          <button class="prev" @click="arrowNav(-1)"><img src="../assets/arrow.svg"/></button>
-          <button class="next" @click="arrowNav(1)"><img src="../assets/arrow.svg"/></button>    
+          <button class="prev" @click="arrowNav(-1)"><img src="/assets/img/arrow.svg"/></button>
+          <button class="next" @click="arrowNav(1)"><img src="/assets/img/arrow.svg"/></button>    
       </div>
       <div class="menu_content">
         <ul id="navigation_container">
