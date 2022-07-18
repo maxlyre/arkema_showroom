@@ -8,13 +8,18 @@
 * fseq argument : fseq int
 */
 
+
 const oscmsg = require("osc-msg");
 
-function decodeOSCTuioBundle(msg,type){
-  let jsonMessage;
-  if(type == undefined){
-    jsonMessage = {};
-  }
+var alive = {
+  "2Dobj":{},
+  "2Dcur" : {},
+  "2Dblb" :{}
+}
+
+function decodeOSCTuioBundle(msg){
+  let jsonMessage = {};
+
   let decoded;
   let bundle = oscmsg.decode(msg, { strict: true, strip: true, bundle: true });
       if (bundle.error) {
@@ -22,70 +27,39 @@ function decodeOSCTuioBundle(msg,type){
       }
       bundle.elements.forEach((message) => {
         // console.log(message)
-        switch(type){
-          case 'set':
-            decoded =  TuioMessagetoJson(message,'set');
+            let type= message.elements[0].args[0];
+            decoded =  TuioMessagetoJson(message);
             if(decoded != undefined){
-              jsonMessage = decoded;
+              jsonMessage[type] = decoded;
             }
-          break;
-          case 'alive':
-            decoded =  TuioMessagetoJson(message,'alive');
-            if(decoded != undefined){
-              jsonMessage = decoded;
-            }
-          break;
-          case 'fseq':
-            decoded =  TuioMessagetoJson(message,'fseq');
-            if(decoded != undefined){
-              jsonMessage = decoded;
-            }
-          break;
-          default:
-          jsonMessage[message.elements[0].args[0]] = TuioMessagetoJson(message);
-        }
+            
       });
+      elementsManager(jsonMessage);
+
       return jsonMessage;
 }
 
-function decodeOSCTuioMessage(msg,type){
+function decodeOSCTuioMessage(msg){
   let jsonMessage;
   let decoded;
   let bundle = oscmsg.decode(msg, { strict: true, strip: true, bundle: false });
       if (bundle.error) {
         return;
       }
-        switch(type){
-          case 'set':
-            decoded =  TuioMessagetoJson(message,'set');
-            if(decoded != undefined){
-              jsonMessage = decoded;
-            }
-          break;
-          case 'alive':
-            decoded =  TuioMessagetoJson(message,'alive');
-            if(decoded != undefined){
-              jsonMessage = decoded;
-            }
-          break;
-          case 'fseq':
-            decoded =  TuioMessagetoJson(message,'fseq');
-            if(decoded != undefined){
-              jsonMessage = decoded;
-            }
-          break;
-        }
+      let type= msg.elements[0].args[0];
+      decoded =  TuioMessagetoJson(message);
+      if(decoded != undefined){
+        jsonMessage[type] = decoded;
+      }
 
       return jsonMessage;
 }
-function TuioMessagetoJson(msg,type){
+function TuioMessagetoJson(msg){
   let jsonMessage;
   let message = msg.elements[0];
   let args =message.args;
-  console.log("message ",message)
   switch (args[0]) {
     case 'set':
-    if(type == 'set' || type == undefined){
       switch (message.address) {
         case '/tuio/2Dobj':
         jsonMessage = decode2DObjectMessage(args);
@@ -98,22 +72,29 @@ function TuioMessagetoJson(msg,type){
         break;
         default:
           console.log(`Don't recognize the kind of the object`);
-      }
     }
 
     break;
     case 'alive':
-      if(type == 'alive' || type == undefined){
-        jsonMessage = args[1];
-      }
+        let aliveIDs = [];
+        for(let i=1;i<args.length;i++){
+          aliveIDs.push(args[i])
+        }
+        jsonMessage = {
+          aliveIDs : aliveIDs,
+          elementType : message.address.replace('/tuio/',"")
+        };
     break;
     case 'fseq':
-      if(type == 'fseq' || type == undefined){
-        jsonMessage = args[1];
-      }
+        jsonMessage = {fseq : args[1]};
+    break;
+    case 'source':
+        jsonMessage = {source : args[1]};
     break;
     default:
   }
+
+
   return jsonMessage;
 }
 
@@ -181,5 +162,36 @@ function decode2DBlobMessage(message ){
   return jsonMessage;
 }
 
+function elementsManager(messages){
+  // console.log(messages)
+
+  let aliveLists =alive[messages.alive.elementType];
+  // console.log(aliveLists)
+  if(messages.set != undefined){
+    if(aliveLists[messages.set.sessionId]== undefined){
+      console.log("add",messages.set.sessionId)
+    }else{
+      console.log('update',messages.set.sessionId)
+    }
+    aliveLists[messages.set.sessionId] = messages.set;
+    aliveLists[messages.set.sessionId].fseq = messages.fseq;
+  }
+
+  let deletedElements = [];
+  let alivesKeys = Object.keys(aliveLists)
+
+  for( let i =0;i<alivesKeys.length;i++){
+    if(!messages.alive.aliveIDs.includes(parseInt(alivesKeys[i]))){
+      deletedElements.push(alivesKeys[i]);
+    }
+  }
+  if(deletedElements.length > 0){
+    for(let i =0;i<deletedElements.length;i++){
+      console.log("delete ",deletedElements[i])
+      delete aliveLists[deletedElements[i]];
+    }
+  }
+  console.log(aliveLists)
+}
 module.exports.decodeOSCTuioBundle = decodeOSCTuioBundle;
 module.exports.decodeOSCTuioMessage = decodeOSCTuioMessage;

@@ -56,7 +56,6 @@
         console.log(this.lang)
       }
 };
-
 </script>
 
 <template>
@@ -199,5 +198,19 @@ header {
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
+  }
+
+  .pointer{
+    display: block;
+    position: absolute;
+    background: rgba(0,0,0,0);
+    border: 2px solid white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 9000;
+    margin-left: -10px;
+    margin-top: -10px;
+    pointer-events: none;
   }
 </style>

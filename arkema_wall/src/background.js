@@ -3,11 +3,12 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
+import { remote } from "electron";
 const isDevelopment = process.env.NODE_ENV !== 'production'
+var Tuio = require('./modules/TuioClass.js');
 
-
-const tuio = require('tuio-extended');
-
+let win
+let contents;
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -16,7 +17,7 @@ protocol.registerSchemesAsPrivileged([
 
 async function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -27,7 +28,7 @@ async function createWindow() {
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
     }
   })
-
+  contents = win.webContents;
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -86,5 +87,26 @@ if (isDevelopment) {
 
 
 //TUIO
-console.log(tuio.Client)
-var client = new tuio.Client({host: 'localhost:3333'});
+
+
+const tuioElement = new Tuio( "0.0.0.0",3333);
+
+tuioElement.event.on('listening',(address)=>{
+    console.log("TuioServer listening on: " + address.address + ":" + address.port);
+})
+
+tuioElement.event.on('add',(element)=>{
+    contents.send( 'tuioAdd' ,element);
+})
+tuioElement.event.on('update',(element)=>{
+    contents.send( 'tuioUpdate' ,element);
+})
+
+tuioElement.event.on('delete',(element)=>{
+    contents.send( 'tuioDelete' , element);
+    let size= win.getContentSize();
+    let x = size[0]*element.xPosition;
+    let y = size[1]*element.yPosition;
+    contents.sendInputEvent({type:'mouseDown', x:x, y: y, button:'left', clickCount: 1});
+    setTimeout(()=>{contents.sendInputEvent({type:'mouseUp', x:x, y: y, button:'left', clickCount: 1})},50);
+})
