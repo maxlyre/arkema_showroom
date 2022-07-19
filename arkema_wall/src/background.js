@@ -3,13 +3,14 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
-import { remote } from "electron";
 const isDevelopment = process.env.NODE_ENV !== 'production'
-var Tuio = require('./modules/TuioClass.js');
+import { gql,createClient } from '@urql/core';
 
+var Tuio = require('./modules/TuioClass.js');
+import { DataController } from './modules/DataController.js'
 let win
 let contents;
-
+let dataController = new DataController('http://arkema.backoffice.bonjour-lab.com');
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true,stream: true, supportFetchAPI: true } }
@@ -20,6 +21,10 @@ async function createWindow() {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    resizable: false,
+    useContentSize:true,
+    frame:false,
+    fullscreen:true,
     webPreferences: {
       
       // Use pluginOptions.nodeIntegration, leave this alone
@@ -38,6 +43,7 @@ async function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+
 }
 
 // Quit when all windows are closed.
@@ -68,6 +74,10 @@ app.on('ready', async () => {
     }
   }
   createWindow()
+  contents.once('dom-ready', () => {
+    dataController.initController();
+  });
+  
 })
 
 // Exit cleanly on request from parent process in development mode.
@@ -108,5 +118,17 @@ tuioElement.event.on('delete',(element)=>{
     let x = size[0]*element.xPosition;
     let y = size[1]*element.yPosition;
     contents.sendInputEvent({type:'mouseDown', x:x, y: y, button:'left', clickCount: 1});
-    setTimeout(()=>{contents.sendInputEvent({type:'mouseUp', x:x, y: y, button:'left', clickCount: 1})},50);
+    setTimeout(()=>{contents.sendInputEvent({type:'mouseUp', x:x, y: y, button:'left', clickCount: 1})},100);
 })
+
+dataController.event.on('dataGetted',(data)=>{
+  contents.send('console',"dataGetted")
+ })
+ dataController.event.on('error',(data)=>{
+  contents.send( 'error');
+ })
+ dataController.event.on('setData',(data)=>{
+  contents.send( 'initData' ,data);
+})
+
+

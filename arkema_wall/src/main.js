@@ -1,11 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 const { ipcRenderer } = require('electron');
-// import urql from '@urql/vue';
-
-// app.use(urql, {
-//     url: 'http://localhost:1337/graphql',
-//   });
 
 import { gql,createClient  } from '@urql/core';
 const TodosQuery = gql`
@@ -117,29 +112,32 @@ const TodosQuery = gql`
   }
 `;
 
+
 const app = createApp(App);
 
-app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
+app.config.globalProperties.$APIURL = ""
 
-const client = createClient({
-    url: globalGonfig.backofficeURL+'/graphql',
-});
+// app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
 
-client
-  .query(TodosQuery, { id: 'test' })
-  .toPromise()
-  .then(result => {
-    app.config.globalProperties.$jsonData = sortData(result); // { data: ... }
-    app.mount("#app");
-});
+// const client = createClient({
+//     url: globalGonfig.backofficeURL+'/graphql',
+// });
+
+// client
+//   .query(TodosQuery, { id: 'test' })
+//   .toPromise()
+//   .then(result => {
+//     app.config.globalProperties.$jsonData = sortData(result.data); // { data: ... }
+//     app.mount("#app");
+// });
 
 function sortData(data){
   let bufData = {}
   //Wall 
-  bufData.homeBackgroundVideo = data.data.wallNavigation.data.attributes.homeBackgroundVideo;
-  bufData.wallNavigation = data.data.wallNavigation.data.attributes.wall_group;
+  bufData.homeBackgroundVideo = data.wallNavigation.data.attributes.homeBackgroundVideo;
+  bufData.wallNavigation = data.wallNavigation.data.attributes.wall_group;
   bufData.walls = {};
-  data.data.walls.data.forEach((item)=>{
+  data.walls.data.forEach((item)=>{
     bufData.walls[item.id] = item
   })
   // bufData.walls = data.data.walls.data;
@@ -163,36 +161,23 @@ ipcRenderer.on('tuioUpdate', (event, element) => { // IPC event listener
   pointer.style.top = window.innerHeight * element.yPosition+"px";
 });
 
-const click = (x, y) => {
-  const ev = document.createEvent("MouseEvent");
-  const el = document.elementFromPoint(x, y);
-  ev.initMouseEvent(
-    "click",
-    true /* bubble */,
-    true /* cancelable */,
-    window,
-    null,
-    x,
-    y,
-    x,
-    y /* coordinates */,
-    false,
-    false,
-    false,
-    false /* modifier keys */,
-    0 /*left*/,
-    null
-  );
-  el.dispatchEvent(ev);
-};
-
 ipcRenderer.on('tuioDelete', (event, element) => { // IPC event listener
   let pointer = pointerList[element.sessionId];
-  // click( window.innerWidth * element.xPosition, window.innerHeight * element.yPosition);
   pointer.remove();
   delete  pointerList[element.sessionId];
 });
 
-document.addEventListener('click',function(e){
-  console.log("clock",e)
-})
+ipcRenderer.on('initData', (event, result) => { // IPC event listener
+    app.config.globalProperties.$jsonData = sortData(result); 
+    document.querySelector('.message').remove()
+    app.mount("#app");
+});
+
+ipcRenderer.on('error', (event) => { // IPC event listener
+  document.querySelector('.message h2').innerHTML = "Erreur<br> Vérifiez votre connexion internet"
+
+});
+
+ipcRenderer.on('console', (event, result) => { // IPC event listener
+  console.log(result)
+});

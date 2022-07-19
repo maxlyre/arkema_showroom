@@ -71,6 +71,7 @@
     />
   </header>
     <section class="container">
+
         <Transition name="fade" mode="out-in">
 
           <Home v-if="this.id == 0" 
@@ -213,4 +214,5 @@ header {
     margin-top: -10px;
     pointer-events: none;
   }
+
 </style>
