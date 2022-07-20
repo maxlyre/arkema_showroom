@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-const { ipcRenderer } = require('electron');
+
 
 import { gql,createClient  } from '@urql/core';
 const TodosQuery = gql`
@@ -117,19 +117,6 @@ const app = createApp(App);
 
 app.config.globalProperties.$APIURL = ""
 
-// app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
-
-// const client = createClient({
-//     url: globalGonfig.backofficeURL+'/graphql',
-// });
-
-// client
-//   .query(TodosQuery, { id: 'test' })
-//   .toPromise()
-//   .then(result => {
-//     app.config.globalProperties.$jsonData = sortData(result.data); // { data: ... }
-//     app.mount("#app");
-// });
 
 function sortData(data){
   let bufData = {}
@@ -144,6 +131,29 @@ function sortData(data){
   return bufData;
 }
 
+// FOR WEB CONTENT
+// app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
+
+// const client = createClient({
+//     url: globalGonfig.backofficeURL+'/graphql',
+// });
+
+// client
+//   .query(TodosQuery, { id: 'test' })
+//   .toPromise()
+//   .then(result => {
+//     app.config.globalProperties.$jsonData = sortData(result.data); // { data: ... }
+//     document.querySelector('.message').remove()
+//     app.mount("#app");
+// });
+
+//END WEB CONTENT
+
+
+
+
+
+const { ipcRenderer } = require('electron');
 
 var pointerList = {}
 
@@ -181,3 +191,16 @@ ipcRenderer.on('error', (event) => { // IPC event listener
 ipcRenderer.on('console', (event, result) => { // IPC event listener
   console.log(result)
 });
+
+document.onkeyup = function(evt) {
+  evt = evt || window.event;
+  var isEscape = false;
+  if ("key" in evt) {
+      isEscape = (evt.key === "Escape" || evt.key === "Esc");
+  } else {
+      isEscape = (evt.keyCode === 27);
+  }
+  if (isEscape) {
+    ipcRenderer.send('close-me')
+  }
+};

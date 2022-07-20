@@ -198,7 +198,7 @@ export class DataController{
     async modifyData(result){   
 
         let str = JSON.stringify(result.data);
-        let filename = str.match(/\b[^/\s]+\.(?:jpeg|jpg|png|mp4|tsv|svg)/g);
+        let filename = str.match(/\b[^/\s]+\.(?:jpeg|jpg|png|mp4|tsv|svg|webm)/g);
 
         await this.downloadMedia(filename);
 

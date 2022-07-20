@@ -19,14 +19,10 @@
     "chart.js": "^3.8.0",
     "chartjs-plugin-datalabels": "^2.0.0",
     "fs-extra": "^10.1.0",
-    "got": "^12.1.0",
-    "graphql": "^16.5.0",
     "isomorphic-unfetch": "^3.1.0",
     "osc-msg": "^1.2.0",
     "swiper": "^8.3.1",
-    "tuio-extended": "^1.0.0",
-    "vue": "^3.2.37",
-    "vue-chartjs": "^4.1.1"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

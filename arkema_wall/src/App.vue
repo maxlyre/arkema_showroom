@@ -1,5 +1,5 @@
 <script>
-  import VideoBackground from "./components/videoBackground.vue"
+  import VideoBackground from "./components/videoBackground2.vue"
   import Navigation from "./components/Navigation.vue"
   import Pages from "./components/Pages.vue"
   import Home from "./components/Home.vue"

@@ -4,7 +4,7 @@ import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
-import { gql,createClient } from '@urql/core';
+const { ipcMain } = require('electron');
 
 var Tuio = require('./modules/TuioClass.js');
 import { DataController } from './modules/DataController.js'
@@ -95,6 +95,9 @@ if (isDevelopment) {
   }
 }
 
+ipcMain.on('close-me', (evt, arg) => {
+  win.close()
+})
 
 //TUIO
 
@@ -130,5 +133,3 @@ dataController.event.on('dataGetted',(data)=>{
  dataController.event.on('setData',(data)=>{
   contents.send( 'initData' ,data);
 })
-
-
