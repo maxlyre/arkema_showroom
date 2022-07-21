@@ -143,7 +143,6 @@ function sortData(data){
 //   .toPromise()
 //   .then(result => {
 //     app.config.globalProperties.$jsonData = sortData(result.data); // { data: ... }
-//     document.querySelector('.message').remove()
 //     app.mount("#app");
 // });
 

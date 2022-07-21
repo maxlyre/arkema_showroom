@@ -51,16 +51,18 @@
           let ind = this.listurls.indexOf(bgUrl);
           this.oldSlide = id;
           this.videoElement[ind].play();
-          this.swiper.slideTo(ind,50);
+          this.swiper.slideTo(ind,0);
 
           this.isTransition = false;
           this.$emit('transitionEnded')
         }
       },
       onSlideChange(){
-        console.log("pause ",this.oldSlide)
-        this.videoElement[this.swiper.previousIndex].pause();
-        this.videoElement[this.swiper.previousIndex].currentTime = 0;
+        setTimeout(() => {
+          this.videoElement[this.swiper.previousIndex].pause();
+          this.videoElement[this.swiper.previousIndex].currentTime = 0;
+        }, 50);
+
       }
     },
     setup() {
@@ -130,7 +132,8 @@
             @slideChangeTransitionEnd="onSlideChange"
           >
             <swiper-slide v-for="slide in listurls">
-               <video :src="this.$APIURL+slide" muted playsinline preload="auto"></video>
+               <video :src="'local-video://'+this.$APIURL+slide" muted playsinline preload="auto"></video>
+               <!-- <video :src="this.$APIURL+slide" muted playsinline preload="auto"></video> -->
             </swiper-slide>
           </swiper>
     </div>

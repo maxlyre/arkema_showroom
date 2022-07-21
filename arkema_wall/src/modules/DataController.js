@@ -202,7 +202,7 @@ export class DataController{
 
         await this.downloadMedia(filename);
 
-        let newJson = await str.replaceAll("/uploads/","./datas/files/")
+        let newJson = await str.replaceAll("/uploads/","datas/files/")
         this.localData.datas = await JSON.parse(newJson);
 
         await this.saveJsonData(this.localData);
