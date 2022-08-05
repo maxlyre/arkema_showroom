@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_table_components_data_blocks",
+  "info": {
+    "displayName": "Data Block",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Bullet_X": {
+      "type": "integer"
+    },
+    "Bullet_Y": {
+      "type": "integer"
+    },
+    "Title": {
+      "type": "richtext"
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "Extra_text": {
+      "type": "richtext"
+    }
+  }
+}
