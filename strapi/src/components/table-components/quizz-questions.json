@@ -2,37 +2,43 @@
   "collectionName": "components_table_components_quizz_questions",
   "info": {
     "displayName": "Quizz_questions",
-    "icon": "chess-bishop"
+    "icon": "chess-bishop",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Question": {
-      "type": "string"
-    },
     "Answer_A": {
       "type": "string"
     },
     "Answer_B": {
       "type": "string"
     },
-    "Actual_answer": {
-      "type": "string"
-    },
-    "Answer_text": {
-      "type": "text"
-    },
     "Media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Answer_color": {
       "type": "string"
+    },
+    "Actual_answer": {
+      "type": "enumeration",
+      "enum": [
+        "Answer_A",
+        "Answer_B"
+      ]
+    },
+    "Question": {
+      "type": "richtext"
+    },
+    "Answer_text": {
+      "type": "richtext"
     }
   }
 }

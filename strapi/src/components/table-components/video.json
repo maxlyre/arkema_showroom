@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_table_components_videos",
+  "info": {
+    "displayName": "Video",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "richtext"
+    },
+    "Subtitle": {
+      "type": "richtext"
+    },
+    "Call_to_action": {
+      "type": "richtext"
+    },
+    "Video_slide": {
+      "displayName": "Video Slider",
+      "type": "component",
+      "repeatable": true,
+      "component": "table-components.video-slider"
+    }
+  }
+}

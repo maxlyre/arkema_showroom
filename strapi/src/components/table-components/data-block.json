@@ -21,6 +21,16 @@
     },
     "Extra_text": {
       "type": "richtext"
+    },
+    "Media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
     "Logos": {
       "type": "media",
       "multiple": true,
@@ -17,6 +14,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "Title": {
+      "type": "richtext"
     }
   }
 }
