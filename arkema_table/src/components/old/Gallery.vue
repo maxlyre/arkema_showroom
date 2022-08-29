@@ -12,8 +12,7 @@
     },
     props:{
       content: {
-        type: Object,
-        required: true,
+        type: Object
       },
       index: {
         type: Number
@@ -50,13 +49,13 @@
       return {
         // onSwiper,
         // onSlideChange,
-        modules: [Navigation, Pagination,Autoplay],
+        modules: [Navigation],
       };
     },
   };
 </script>
 <template>
-  <div :class="['colonne','gallery', 'col-sm-'+content.column,{bottom: content.position == 'bottom',right: content.position == 'right' }, 'col-xs-12']">
+  <div class="home-menu">
     <swiper
       :modules="modules"
       :slides-per-view=content.slidesPerView

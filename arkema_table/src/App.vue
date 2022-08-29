@@ -1,38 +1,39 @@
 <script>
   // import VideoBackground from "./components/videoBackground2.vue"
   // import Navigation from "./components/Navigation.vue"
-  // import Pages from "./components/Pages.vue"
+   import MenuHome from "./components/Home_Menu.vue"
+   import ArticleMain from "./components/Article_Main.vue"
   export default {
       data() {
         return {
-          greeting: 'Hello World!',
           dataTable:this.$jsonData,
           id:0,
-          oldID : null,
           lang : "fr",
-          group : null,
-
+          dataID:-1
         }
       },
       components:{
-        // Navigation,Pages,VideoBackground
+         MenuHome,ArticleMain
       },
       computed:{
       },
       created(){
+        console.log(this.dataTable)
+        console.log(this.id)
       },
       methods:{
-        changeID(index,lang,group){
-          this.oldID = this.id;
+        changeID(index){
           this.id = index;
-          this.lang = lang;
-          this.group = group;
-          if(document.querySelector('.menu_content').classList.contains('nav_active')){
-              this.toggleMobileNavigation();
-          }
+          // if(document.querySelector('.menu_content').classList.contains('nav_active')){
+          //     this.toggleMobileNavigation();
+          // }
+          this.dataID = this.dataTable.findIndex(element => element.id ==this.id);
         },
-        changeIDHome(index,group){
-          this.$refs.navigation.changeIndex(index,group)
+        changeLang(lang){
+          this.lang = lang;
+          if(this.id != 0 && this.dataTable[this.dataID].attributes.locale != this.lang){
+            this.changeID(this.dataTable[this.dataID].attributes.localizations.data[0].id)
+          }
         },
         toggleMobileNavigation(){
           document.querySelector('.open_button').classList.toggle('nav_active');
@@ -40,9 +41,6 @@
           document.querySelector('.menu_content').classList.toggle('nav_active');
           document.querySelector('.lang_switcher').classList.toggle('nav_active');
         } ,
-        showPage(){
-          document.querySelector('.pageContainer').classList.remove('hide')
-        }
       },
       update(){
         console.log(this.lang)
@@ -51,26 +49,54 @@
 </script>
 
 <template>
-  <header>
-  </header>
-    <section class="container">
+    <div class="row">
+        <section id="main" class="col-xs-9">
+          <div v-if="this.id == 0" class="home">
+              <img src="./assets/logo_blanc.svg" alt="">
+              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+          </div>
 
-        <!-- <Transition name="fade" mode="out-in">
+          <!-- <Transition name="fade" mode="out-in">
 
-          <Home v-if="this.id == 0" 
-            :content= dataNavigation
-            :lang = lang
-            v-on:changeID = changeIDHome
-          />
-
-            <Pages v-else
-              :contents= dataWall[id] 
+            <Home v-if="this.id == 0" 
+              :content= dataNavigation
               :lang = lang
-              :key="id"
-              :oldID= oldID
+              v-on:changeID = changeIDHome
             />
-        </Transition> -->
-    </section>
+
+              <Pages v-else
+                :contents= dataWall[id] 
+                :lang = lang
+                :key="id"
+                :oldID= oldID
+              />
+          </Transition> -->
+            <ArticleMain
+              v-else
+              :content="this.dataTable[this.dataID]"
+            />
+        </section>
+        <section id="right" class="col-xs-3">
+          <header>
+            <div class="menu_icon" @click="changeID(0)">
+              Menu
+            </div>
+            <div class="lang_switch" :class="this.lang">
+              <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
+            </div>
+
+          </header>
+          <div class="right-container">
+            <MenuHome 
+              v-if="this.id == 0"
+              :content="this.dataTable"
+              :lang="this.lang"
+              v-on:changeID = changeID
+            />
+          </div>
+        </section>
+    </div>
+
     <!-- <VideoBackground
       :content= dataNavigation
       :homeURL = $jsonData.homeBackgroundVideo
@@ -80,12 +106,18 @@
 </template>
 
 <style>
-#app {
 
+#app {
+  min-height: 100vh;
   display: flex;
   font-weight: normal;
+  background: linear-gradient(90deg, #28285F -0.08%, #55BE9B 76.29%);
 }
-
+#app >.row{
+  width: 100%;
+  margin:0;
+  padding: 0;
+}
 header {
   line-height: 1.5;
 }
@@ -95,84 +127,57 @@ header {
   margin: 0 auto 2rem;
 }
 
+#main{
+  display: flex;
+}
+.home{
+  flex:1;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.home img{
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+#right{
+  border-left: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  height:100vh;
+}
+header{
+  height: 50px;
+}
+.lang_switch.en .en_toggle{
+  font-weight: 900;
+}
+.lang_switch.fr .fr_toggle{
+  font-weight: 900;
+}
+.right-container{
+    flex: 1;
+    border-top : 2px solid white;
+    border-left : 2px solid white;
+    border-top-left-radius: 80px 80px;
+    position:relative;
+    left:-2px;
+    height:100%;
+}
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-    width: 100%;
-  }
 
-  #app {
-    height: 100vh;
-    width: 100%;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
 }
 
-.container{
-  flex: 1;
-  max-height: 100vh;
-  overflow-y :auto;
-  position: relative;
-}
-.active{
-  text-decoration: underline;
-}
-.nav_button{
-  display: none;
-}
   @media screen and (max-width: 1400px) {
-      html{
-      font-size: 13px;
-    }
+
   }
   @media screen and (max-width: 1200px) {
 
-    #app{
-      height: 100vh;
-    }
-    header{
-      position: static;
-    }
-    .nav_button{
-      display: block;
-      position: absolute;
-      z-index: 100;
-      top : 10px;
-      left: 10px;
-      width: 25px
-    }
-    .nav_button .nav_active{
-      display: block;
-    }
-    .open_button{
-      display: none;
-    }
-    .close_button{
-      display: none;
-    }
-    .colonne{
-      margin-bottom: 3rem;
-    }
-    figure{
-      display:inline-block;
-    }
+
   }
   .fade-enter-active,
   .fade-leave-active {
@@ -184,18 +189,6 @@ header {
     opacity: 0;
   }
 
-  .pointer{
-    display: block;
-    position: absolute;
-    background: rgba(0,0,0,0);
-    border: 2px solid white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    z-index: 9000;
-    margin-left: -10px;
-    margin-top: -10px;
-    pointer-events: none;
-  }
+
 
 </style>

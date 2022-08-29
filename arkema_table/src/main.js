@@ -9,6 +9,12 @@ query  {
       data{
           id
           attributes{
+              locale
+              localizations{
+                  data{
+                    id
+                  }
+              }
               Product
               Thumbnail{
                 data{
@@ -104,7 +110,8 @@ query  {
                 }
               }  
                 ...on ComponentTableComponentsArticles {
-                  Article{
+                  Title
+                  article_post{
                     Title
                     Text
                     Media{
@@ -116,9 +123,7 @@ query  {
                     }
                 }
               }
-              }
-            
-              
+            }
           }
       }
   }

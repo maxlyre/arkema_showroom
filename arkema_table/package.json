@@ -1,5 +1,5 @@
 {
-  "name": "arkema_wall",
+  "name": "arkema_table",
   "version": "0.0.0",
   "scripts": {
     "build": "vite build",
