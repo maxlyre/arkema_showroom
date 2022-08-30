@@ -69,6 +69,7 @@ query  {
                   }
                 }
                 ...on ComponentTableComponentsQuizz {
+                  Title
                   Questions{
                     Question
                     Answer_A

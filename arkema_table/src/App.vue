@@ -1,8 +1,9 @@
 <script>
-  // import VideoBackground from "./components/videoBackground2.vue"
-  // import Navigation from "./components/Navigation.vue"
-   import MenuHome from "./components/Home_Menu.vue"
-   import ArticleMain from "./components/Article_Main.vue"
+  import MenuHome from "./components/Home_Menu.vue"
+  import ArticleMain from "./components/Article_Main.vue"
+  import WidgetMain from "./components/Widget_Main.vue"
+  import MediaPlayer from "./components/Media_Player.vue"
+  import MediaContent from "./components/Media_Content.vue"
   export default {
       data() {
         return {
@@ -13,7 +14,7 @@
         }
       },
       components:{
-         MenuHome,ArticleMain
+         MenuHome,ArticleMain,WidgetMain,MediaPlayer,MediaContent
       },
       computed:{
       },
@@ -49,6 +50,9 @@
 </script>
 
 <template>
+          <!-- <Transition name="fade" mode="out-in">
+
+          </Transition> -->
     <div class="row">
         <section id="main" class="col-xs-9">
           <div v-if="this.id == 0" class="home">
@@ -56,24 +60,12 @@
               <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
           </div>
 
-          <!-- <Transition name="fade" mode="out-in">
-
-            <Home v-if="this.id == 0" 
-              :content= dataNavigation
-              :lang = lang
-              v-on:changeID = changeIDHome
-            />
-
-              <Pages v-else
-                :contents= dataWall[id] 
-                :lang = lang
-                :key="id"
-                :oldID= oldID
-              />
-          </Transition> -->
             <ArticleMain
               v-else
               :content="this.dataTable[this.dataID]"
+            />
+            <MediaPlayer
+              url="http://arkema.backoffice.bonjour-lab.com/uploads/ARKEMA_CHAUSSURE_INOUT_f4a0c4721b.webm"
             />
         </section>
         <section id="right" class="col-xs-3">
@@ -87,12 +79,21 @@
 
           </header>
           <div class="right-container">
+
             <MenuHome 
               v-if="this.id == 0"
               :content="this.dataTable"
               :lang="this.lang"
               v-on:changeID = changeID
             />
+
+            <div v-else class="widget">
+              <WidgetMain
+              :content="this.dataTable[this.dataID].attributes.Widgets"
+              />
+            </div>
+            <!-- <MediaContent
+            /> -->
           </div>
         </section>
     </div>

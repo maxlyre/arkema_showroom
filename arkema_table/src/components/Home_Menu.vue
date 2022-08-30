@@ -81,7 +81,7 @@
 
 </template>
 
-<style>
+<style scope>
   .menu{
     width: 100%;
     height: 100%;

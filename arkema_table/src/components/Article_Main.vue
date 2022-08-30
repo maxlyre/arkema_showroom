@@ -20,7 +20,8 @@
   };
 </script>
 <template>
-  <ArticleHeader
+  <div scope>
+      <ArticleHeader
     :title="this.content.attributes.Title"
     :subtitle="this.content.attributes.Subtitle"
   />
@@ -31,8 +32,10 @@
     :excerpt="this.content.attributes.Infographics_excerpt"
     :dataBlocks="this.content.attributes.data_block"
   />
+  </div>
+
 </template>
 
 <style>
-
+  
 </style>
