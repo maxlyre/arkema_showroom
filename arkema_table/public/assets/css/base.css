@@ -90,3 +90,6 @@ img{
   font-display: swap;
 }
 
+sup{
+  line-height: 1;
+}

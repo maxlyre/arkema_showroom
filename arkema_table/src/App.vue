@@ -63,7 +63,8 @@
         <section id="main" class="col-xs-9">
           <div v-if="this.id == 0" class="home">
               <img src="./assets/logo_blanc.svg" alt="">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+              <h2 v-if="this.lang == 'fr'">Sélectionner un objet dans la colonne de droite</h2>
+              <h2 v-else>Select an object in the right column</h2>
           </div>
 
             <ArticleMain
@@ -77,17 +78,15 @@
         </section>
         <section id="right" class="col-xs-3">
           <header>
-            <div class="media_close" @click="closeMedia()">
-              X
+            <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="changeID(0)">
+              <img src="./assets/menu_icon.svg" alt="">
             </div>
-            <div class="menu_icon" @click="changeID(0)">
-              Menu
-            </div>
-            <div class="lang_switch" :class="this.lang">
+             
+              <img  v-if="urlMedia != null" class="media_close" @click="closeMedia()" src="./assets/close_icon.svg" alt="">
+            
+            <div v-else class="lang_switch" :class="this.lang">
               <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
             </div>
-
-
           </header>
           <div class="right-container">
 
@@ -146,6 +145,7 @@ header {
 
 #main{
   display: flex;
+  padding: 0;
 }
 .home{
   flex:1;
@@ -159,6 +159,15 @@ header {
   width: 100%;
   height: auto;
 }
+.home h2{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 120%;
+  /* identical to box height, or 30px */
+  margin-top: 2rem;
+  text-align: center;
+}
 #right{
   border-left: 2px solid white;
   display: flex;
@@ -167,14 +176,50 @@ header {
   height:100vh;
 }
 header{
-  height: 50px;
+  height: 4.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+    justify-content: flex-end;
+}
+
+.lang_switch{
+  float:right;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 27px;
+  align-self: center;
+  justify-self: right;
+
+}
+.lang_switch span{
+  cursor: pointer;
 }
 .lang_switch.en .en_toggle{
-  font-weight: 900;
+  color: #28285F;
 }
 .lang_switch.fr .fr_toggle{
-  font-weight: 900;
+  color: #28285F;
 }
+
+.media_close{
+  cursor: pointer;
+  width: auto;
+}
+
+.menu_icon{
+  justify-self: start;
+  flex: 1;
+}
+.menu_icon img{
+  width: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 .right-container{
     flex: 1;
     border-top : 2px solid white;
@@ -183,6 +228,7 @@ header{
     position:relative;
     left:-2px;
     height:100%;
+    background : linear-gradient(180deg, #188D6D 0%, #55BE9B 100%);
 }
 
 @media (min-width: 1024px) {

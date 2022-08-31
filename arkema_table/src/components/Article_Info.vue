@@ -91,7 +91,7 @@
               </li>
             </ul>
             <video id="info_video" :src="this.$APIURL+this.videoUrl"></video>
-            <h3 v-html="excerptText"></h3>
+            <h3 class="excerpt" v-html="excerptText"></h3>
         </div>
         <div class="menu_block">
             <swiper
@@ -119,12 +119,38 @@
 </template>
 
 <style scope>
-  
+  .main_info{
+    flex-basis: 77%;
+    max-height: 77%;
+  }
+
+
+  .graphic_block{
+    border-left : 2px solid white;
+    border-top : 2px solid white;
+    margin-top: -1px;
+    padding:0;
+    border-top-left-radius: 80px 80px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video_block{
+    /* height: 100%; */
+        flex-basis: 82%;
+    max-height: 82%;
+  }
+
   video{
     width: 100%;
-  }
-  .video_block{
     height: 100%;
+  }
+  .excerpt{
+    position: absolute;
+    top : 1rem;
+    left: 1rem;
+    z-index: 95;
   }
   .points{
     position: relative;
@@ -145,4 +171,22 @@
     list-style: none;
     transform:translate(-50%,-50%);
   }
+  .data_block{
+    padding-right: 0;
+    display: flex;
+  }
+  .menu_block{
+    flex-basis: 18%;
+    max-height: 18%;
+    border-top : 2px solid white;
+  }
+  .menu_block .swiper-slide{
+    border-right: 2px solid white;
+    border-bottom : none;
+  }
+  .menu .swiper-slide:last-child{
+    border-right: none;
+  }
+  
+
 </style>

@@ -20,7 +20,7 @@
   };
 </script>
 <template>
-  <div scope>
+  <div class="article_main">
       <ArticleHeader
     :title="this.content.attributes.Title"
     :subtitle="this.content.attributes.Subtitle"
@@ -36,6 +36,9 @@
 
 </template>
 
-<style>
-  
+<style scope>
+  .article_main{
+    display: flex;
+    flex-direction: column;
+  }
 </style>

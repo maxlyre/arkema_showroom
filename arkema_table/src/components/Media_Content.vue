@@ -37,7 +37,7 @@
     left:0;
     width: 100%;
     height: 100%;
-    background: black;
+    background: linear-gradient(180deg, #188D6D 0%, #55BE9B 100%);
     z-index: 100;
     overflow: auto;
   }

@@ -16,43 +16,14 @@
         type:String
       }
     },
-    data() {
-      return {
-        // swiperOption: {
-        //   slidesPerView: 4,
-        //   spaceBetween: 20,
-        //   pagination: {
-        //     el: '.' + this.customClassName + '__pagination',
-        //     clickable: true
-        //   },
-        //   navigation: {
-        //     nextEl: '.' + this.customClassName + '__next',
-        //     prevEl: '.' + this.customClassName + '__prev'
-        //   },
-        // }
-      }
-    },
-    computed:{
-    },
-    mounted(){
-      console.log(this.content)
-    },
     setup() {
-      
-      // const onSwiper = (swiper) => {
-      //   console.log(swiper);
-      // };
-      // const onSlideChange = () => {
-      //   console.log('slide change');
-      // };
       return {
-        // onSwiper,
-        // onSlideChange,
         modules: [Navigation],
       };
     },
   };
 </script>
+
 <template>
   <div class="menu">
     <swiper
@@ -61,8 +32,8 @@
       :space-between="0"
       :direction="'vertical'"
       :navigation="{
-          nextEl: '.button-next',
-          prevEl: '.button-prev',
+          nextEl: '.button-next-home',
+          prevEl: '.button-prev-home',
       }"
     >
       <template v-for="slide in content">
@@ -73,8 +44,8 @@
       </template>
     </swiper>
     <div class="control" >
-      <div :class="'button-next'" class='swiper-button-next'></div>
-      <div :class="'button-prev'" class='swiper-button-prev'></div>
+      <div :class="'button-next-home'" class='swiper-button-next'></div>
+      <div :class="'button-prev-home'" class='swiper-button-prev'></div>
     </div>
 
   </div>
@@ -111,13 +82,12 @@
   }
   .control{
     position: absolute;
-    width: 40px;
-    /* margin-top: 0.5rem; */
-    /* margin-bottom: 1rem; */
-    border: 1px solid white;
+    width: 3rem;
+    border: 2px solid white;
     bottom: 0;
     height: 80px;
-    left: -40px;
+    left: -3rem;
+    border-top-left-radius: 60px 60px;
   }
 
   .gallery .swiper-button-prev,.gallery .swiper-button-next{
