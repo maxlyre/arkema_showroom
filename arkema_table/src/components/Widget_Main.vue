@@ -17,11 +17,15 @@
       }
     },
     computed:{
+      videoContent(){
+        return this.content.find(element => element.__typename == "ComponentTableComponentsVideo")
+      }
     }
   };
 </script>
 <template>
   <div>
+    <!-- {{videoContent}} -->
     <template v-for="(widget,index) in content">
       <li v-if="widget.__typename == 'ComponentTableComponentsWidgets'">
        <WidgetBrands 
@@ -43,6 +47,11 @@
        />
       </li>
     </template>
+    <div class="video_button" 
+      v-if="videoContent!=undefined" 
+      @click="$emit('showVideo',videoContent)"
+    >VIDEO
+    </div>
 
   </div>
 

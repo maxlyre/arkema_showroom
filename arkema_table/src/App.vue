@@ -10,7 +10,9 @@
           dataTable:this.$jsonData,
           id:0,
           lang : "fr",
-          dataID:-1
+          dataID:-1,
+          urlMedia : null,
+          contentMedia : null
         }
       },
       components:{
@@ -25,9 +27,6 @@
       methods:{
         changeID(index){
           this.id = index;
-          // if(document.querySelector('.menu_content').classList.contains('nav_active')){
-          //     this.toggleMobileNavigation();
-          // }
           this.dataID = this.dataTable.findIndex(element => element.id ==this.id);
         },
         changeLang(lang){
@@ -36,16 +35,23 @@
             this.changeID(this.dataTable[this.dataID].attributes.localizations.data[0].id)
           }
         },
-        toggleMobileNavigation(){
-          document.querySelector('.open_button').classList.toggle('nav_active');
-          document.querySelector('.close_button').classList.toggle('nav_active');
-          document.querySelector('.menu_content').classList.toggle('nav_active');
-          document.querySelector('.lang_switcher').classList.toggle('nav_active');
-        } ,
+        showVideo(content){
+          this.urlMedia = content.Video_slide[0].Video.data.attributes.url;
+          this.contentMedia = content;
+        },
+        showMedia(url){
+
+          this.urlMedia = url;
+          if(this.contentMedia == null){
+            this.contentMedia = "";
+          }
+                    console.log(this.contentMedia)
+        },
+        closeMedia(){
+          this.urlMedia = null;
+          this.contentMedia = null;
+        }
       },
-      update(){
-        console.log(this.lang)
-      }
 };
 </script>
 
@@ -65,17 +71,22 @@
               :content="this.dataTable[this.dataID]"
             />
             <MediaPlayer
-              url="http://arkema.backoffice.bonjour-lab.com/uploads/ARKEMA_CHAUSSURE_INOUT_f4a0c4721b.webm"
+              v-if="urlMedia != null"
+              :url="urlMedia"
             />
         </section>
         <section id="right" class="col-xs-3">
           <header>
+            <div class="media_close" @click="closeMedia()">
+              X
+            </div>
             <div class="menu_icon" @click="changeID(0)">
               Menu
             </div>
             <div class="lang_switch" :class="this.lang">
               <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
             </div>
+
 
           </header>
           <div class="right-container">
@@ -90,10 +101,15 @@
             <div v-else class="widget">
               <WidgetMain
               :content="this.dataTable[this.dataID].attributes.Widgets"
+              v-on:showVideo="showVideo"
               />
             </div>
-            <!-- <MediaContent
-            /> -->
+            
+            <MediaContent
+            v-if="this.contentMedia != null"
+            :content= contentMedia
+            v-on:showMedia="showMedia"
+            />
           </div>
         </section>
     </div>

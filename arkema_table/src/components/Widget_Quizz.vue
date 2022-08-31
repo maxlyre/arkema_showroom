@@ -61,7 +61,7 @@
                 </div>
                 <div class="answer">
                   <p class="answer_text"><span :style="'color:'+question.Answer_color">{{question[question.Actual_answer]}}</span> <span v-html="question.Answer_text.replaceAll('<p>','').replaceAll('</p>','')"></span></p>
-                  <img :src="this.$APIURL+question.Media.data.attributes.url" alt="">
+                  <img :src="this.$APIURL+question.Media.data.attributes.url" alt="" @click="this.$root.showMedia(question.Media.data.attributes.url)">
                 </div>
               </div>
 

@@ -19,8 +19,8 @@
 </script>
 <template>
   <div class="media_player">
-    <video v-if="this.fileFormat == 'webm' || this.fileFormat == 'mp4' " :src="this.url" controls></video>
-    <img v-else :src="this.url" alt="">
+    <video autoplay v-if="this.fileFormat == 'webm' || this.fileFormat == 'mp4' " :src="this.$APIURL+this.url" controls></video>
+    <img v-else :src="this.$APIURL+this.url" alt="">
   </div>
 </template>
 

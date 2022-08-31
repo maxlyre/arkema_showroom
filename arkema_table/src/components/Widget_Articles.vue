@@ -48,7 +48,7 @@
               <div class="article_container">
                   <h4>{{article.Title}}</h4>
                   <div class="article_text" v-html="article.Text"></div>
-                  <img v-if="article.Media.data != null" :src="this.$APIURL+article.Media.data.attributes.url" alt="">
+                  <img v-if="article.Media.data != null" :src="this.$APIURL+article.Media.data.attributes.url" alt=""  @click="this.$root.showMedia(article.Media.data.attributes.url)">
               </div>
 
             </swiper-slide>
