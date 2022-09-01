@@ -17,11 +17,11 @@
   </div>
 </template>
 
-<style scope>
+<style>
   .main_header{
     border-bottom:2px solid white;
     display: flex;
-    padding: 2rem;
+    padding: 3rem;
     flex-basis: 23%;
     max-height: 23%;
   }
@@ -32,15 +32,15 @@
     font-size: 2.8rem;
     line-height: 125%;
   }
-  .main_header h2 .text-big{
-    font-weight: bold;
+  .main_header .text-big{
+    font-weight: 600;
   }
   .main_header div{
-    padding-left: 1rem;
+    padding-left: 2rem;
     flex: 1;
     font-style: normal;
-    font-weight: 700;
-    font-size: 0.85rem;
+    font-weight: 600;
+    font-size: 0.90rem;
     line-height: 125%;
     margin-top: 0.75rem;
   }

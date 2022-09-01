@@ -28,7 +28,7 @@
   <div class="menu">
     <swiper
       :modules="modules"
-      :slides-per-view="3.5"
+      :slides-per-view="3.2"
       :space-between="0"
       :direction="'vertical'"
       :navigation="{
@@ -44,20 +44,21 @@
       </template>
     </swiper>
     <div class="control" >
-      <div :class="'button-next-home'" class='swiper-button-next'></div>
       <div :class="'button-prev-home'" class='swiper-button-prev'></div>
+      <div :class="'button-next-home'" class='swiper-button-next'></div>
+
     </div>
 
   </div>
 
 </template>
 
-<style scope>
+<style scoped>
   .menu{
     width: 100%;
     height: 100%;
     position:relative;
-    
+    border-top-left-radius: 80px 80px;
   }
   .swiper{
     height:100%;
@@ -69,7 +70,7 @@
   }
   .swiper-slide{
     text-align: center;
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 2rem 3rem 4.5rem 3rem;
     border-bottom: 2px solid white;
     cursor:pointer;
   }
@@ -79,27 +80,42 @@
   }
   .swiper-slide h3{
     text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.4rem;
   }
   .control{
     position: absolute;
-    width: 3rem;
-    border: 2px solid white;
+    width: 50px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
     bottom: 0;
-    height: 80px;
-    left: -3rem;
-    border-top-left-radius: 60px 60px;
+    left: -52px;
+    padding-top : 20px;
+    border-top-left-radius: 80px 80px;
   }
 
-  .gallery .swiper-button-prev,.gallery .swiper-button-next{
-    color: white;
+  
+  .menu .swiper-button-next,.menu .swiper-button-prev{
+    height: 50px;
+    width: 50px;
+    transform:rotate(90deg);
+    margin-top : 0;
+    display: block;
+    position: relative;
   }
-  .gallery .swiper-button-prev:after,.gallery .swiper-button-next:after{
-    font-size : 22px;
+  .menu .swiper-button-next{
+    right: 0;
   }
-  .gallery .swiper-button-prev{
+  .menu .swiper-button-prev{
     left: 0;
   }
-  .gallery .swiper-button-next{
-    right: 0;
+  .menu .swiper-button-next::after,.menu .swiper-button-prev::after{
+    color: white;
+    font-size: 1.6rem;
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
   }
 </style>

@@ -32,7 +32,7 @@
   };
 </script>
 <template>
-  <div>
+  <div class="widget_article">
     <h3>{{content.Title}}</h3>
     <div class="quizz_block">
       <swiper
@@ -53,35 +53,53 @@
 
             </swiper-slide>
       </swiper>
-      <div class="control" >
         <div :class="'button-next-'+index" class='swiper-button-next'></div>
         <div :class="'button-prev-'+index" class='swiper-button-prev'></div>
-      </div>
-
-
-    
       
-
-     
     </div>
   </div>
 
 </template>
 
-<style scope>
-  .answer_block span{
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid white;
+<style>
+  .widget_article h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #AFE4D3;
+    margin-bottom : 1.5rem;
+  }
+
+  .widget_article h4{
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 120%;
+
+    text-align: center;
+    padding: 0 2rem;
+    margin-bottom : 1.5rem;
+  }
+  .widget_article .article_container img{
     cursor:pointer;
   }
-  .close .answer{
-    display: none;
+  .widget_article .swiper-button-next,.widget_article .swiper-button-prev{
+    height: auto;
+    width: auto;
+    transform:translateY(-50%);
+    margin-top : 0;
+    top : 1.5rem;
   }
-  .close .answer_block{
-    display: block;
+  .widget_article .article_text p{
+    font-size: 0.9rem;
+    line-height: 130%;
   }
-  .answer_block{
-    display: none;
+  .widget_article .swiper-button-next{
+    right: 0;
+  }
+  .widget_article .swiper-button-prev{
+    left: 0;
+  }
+  .widget_article .swiper-button-next::after,.widget_article .swiper-button-prev::after{
+    color: white;
+    font-size: 1.8rem;
   }
 </style>

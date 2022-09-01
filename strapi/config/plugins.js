@@ -62,6 +62,9 @@ module.exports = () => ({
             ],
             supportAllValues: false
           },
+          image:{
+            resizeUnit: 'px',
+          }
         }
       }
     },

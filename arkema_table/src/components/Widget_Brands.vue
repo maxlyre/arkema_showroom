@@ -30,12 +30,15 @@
   };
 </script>
 <template>
-  <div>
-    <div v-html="content.Title"></div>
-    <swiper
+  <div class="widget_brand">
+    <div class="title" v-html="content.Title"></div>
+    <div class="slider">
+      <swiper
+
         :modules="modules"
         :slides-per-view="3"
-        :space-between="0"
+        :space-between="25"
+        :loop="true"
         :navigation="{
             nextEl: '.button-next-'+index,
             prevEl: '.button-prev-'+index,
@@ -45,14 +48,45 @@
             <img :src="this.$APIURL+logo.attributes.url" alt="">
           </swiper-slide>
     </swiper>
-    <div class="control" >
       <div :class="'button-next-'+index" class='swiper-button-next'></div>
       <div :class="'button-prev-'+index" class='swiper-button-prev'></div>
     </div>
+
   </div>
 
 </template>
 
-<style scope>
-  
+<style>
+    .widget_brand{
+      margin-bottom: 2.5rem;
+    }
+    .widget_brand .title{
+      font-weight: 500;
+      font-size: 0.90rem;
+      line-height: 125%;
+      margin-bottom: 0.75rem;
+    }
+    .widget_brand .slider{
+      padding: 0 2rem;
+    }
+    .widget_brand .swiper-wrapper{
+      align-items: center;
+
+    }
+    .widget_brand .swiper-button-next,.widget_brand .swiper-button-prev{
+      height: auto;
+      width: auto;
+      transform:translateY(-50%);
+      margin-top : 0;
+    }
+    .widget_brand .swiper-button-next{
+      right: 0;
+    }
+    .widget_brand .swiper-button-prev{
+      left: 0;
+    }
+    .widget_brand .swiper-button-next::after,.widget_brand .swiper-button-prev::after{
+      color: white;
+      font-size: 1.8rem;
+    }
 </style>

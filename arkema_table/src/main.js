@@ -34,7 +34,14 @@ query  {
               }
               Background_loop
               Infographics_excerpt
-              Infographics_video{
+              Infographics_video_WEBM{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              Infographics_video_MP4{
                 data{
                   attributes{
                     url

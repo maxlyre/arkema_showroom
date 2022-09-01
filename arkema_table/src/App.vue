@@ -97,12 +97,12 @@
               v-on:changeID = changeID
             />
 
-            <div v-else class="widget">
+
               <WidgetMain
+              v-else
               :content="this.dataTable[this.dataID].attributes.Widgets"
               v-on:showVideo="showVideo"
               />
-            </div>
             
             <MediaContent
             v-if="this.contentMedia != null"
@@ -113,12 +113,6 @@
         </section>
     </div>
 
-    <!-- <VideoBackground
-      :content= dataNavigation
-      :homeURL = $jsonData.homeBackgroundVideo
-      :group = group
-      v-on:transitionEnded = showPage
-    /> -->
 </template>
 
 <style>
@@ -170,7 +164,6 @@ header {
 }
 #right{
   border-left: 2px solid white;
-  display: flex;
   flex-direction: column;
   padding: 0;
   height:100vh;
@@ -204,7 +197,7 @@ header{
 
 .media_close{
   cursor: pointer;
-  width: auto;
+  width: 25px;
 }
 
 .menu_icon{
@@ -227,7 +220,8 @@ header{
     border-top-left-radius: 80px 80px;
     position:relative;
     left:-2px;
-    height:100%;
+    height:calc(100% - 4.5rem);
+    width: calc(100% + 2px);
     background : linear-gradient(180deg, #188D6D 0%, #55BE9B 100%);
 }
 

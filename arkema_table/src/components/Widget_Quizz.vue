@@ -38,7 +38,7 @@
   };
 </script>
 <template>
-  <div>
+  <div class="widget_quizz">
     <h3>{{content.Title}}</h3>
     <div class="quizz_block">
       <swiper
@@ -60,34 +60,57 @@
                   <span @click="answerQuizz(index)">{{question.Answer_B}}</span>
                 </div>
                 <div class="answer">
-                  <p class="answer_text"><span :style="'color:'+question.Answer_color">{{question[question.Actual_answer]}}</span> <span v-html="question.Answer_text.replaceAll('<p>','').replaceAll('</p>','')"></span></p>
+                  <p class="answer_text"><span class="actual_answer" :style="'color:'+question.Answer_color">{{question[question.Actual_answer]}}.</span> <span v-html="question.Answer_text.replaceAll('<p>','').replaceAll('</p>','')"></span></p>
                   <img :src="this.$APIURL+question.Media.data.attributes.url" alt="" @click="this.$root.showMedia(question.Media.data.attributes.url)">
                 </div>
               </div>
 
             </swiper-slide>
       </swiper>
-      <div class="control" >
         <div :class="'button-next-'+index" class='swiper-button-next'></div>
-        <div :class="'button-prev-'+index" class='swiper-button-prev'></div>
-      </div>
-
-
-    
-      
-
-     
+        <div :class="'button-prev-'+index" class='swiper-button-prev'></div>  
     </div>
   </div>
 
 </template>
 
-<style scope>
+<style scoped>
+  .widget_quizz{
+
+  }
+  .widget_quizz h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #AFE4D3;
+    margin-bottom : 1.5rem;
+  }
+  .widget_quizz .question_text{
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 120%;
+
+    text-align: center;
+    color: #28285F;
+    padding: 0 2rem;
+    margin-bottom : 1.5rem;
+  }
+  .answer_block{
+    display: none;
+    padding: 0 2rem;
+  }
   .answer_block span{
     display: inline-block;
     padding: 10px;
-    border: 1px solid white;
+    border: 2px solid white;
     cursor:pointer;
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .answer_block span:last-child{
+    margin-left: -2px;
   }
   .close .answer{
     display: none;
@@ -95,7 +118,38 @@
   .close .answer_block{
     display: block;
   }
-  .answer_block{
-    display: none;
+
+  .answer .actual_answer{
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .answer_text{
+    font-weight: 400;
+    font-size: 0.90rem;
+    line-height: 120%;
+    margin-bottom : 0.5rem;
+  }
+  .answer img{
+    cursor:pointer;
+  }
+
+  .widget_quizz .swiper-button-next,.widget_quizz .swiper-button-prev{
+    height: auto;
+    width: auto;
+    transform:translateY(-50%);
+    margin-top : 0;
+    top : 1.5rem;
+  }
+  .widget_quizz .swiper-button-next{
+    right: 0;
+  }
+  .widget_quizz .swiper-button-prev{
+    left: 0;
+  }
+  .widget_quizz .swiper-button-next::after,.widget_quizz .swiper-button-prev::after{
+    color: white;
+    font-size: 1.8rem;
   }
 </style>

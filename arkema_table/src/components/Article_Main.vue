@@ -26,7 +26,7 @@
     :subtitle="this.content.attributes.Subtitle"
   />
   <ArticleInfo
-    :videoUrl="this.content.attributes.Infographics_video.data.attributes.url"
+    :videoUrl="{webm:this.content.attributes.Infographics_video_WEBM.data.attributes.url,mp4:this.content.attributes.Infographics_video_MP4.data.attributes.url}"
     :soundUrl="this.content.attributes.background_sound.data.attributes.url"
     :soundLoop="this.content.attributes.Background_loop"
     :excerpt="this.content.attributes.Infographics_excerpt"
@@ -36,9 +36,10 @@
 
 </template>
 
-<style scope>
+<style scoped>
   .article_main{
     display: flex;
     flex-direction: column;
+    width:100%;
   }
 </style>
