@@ -58,7 +58,7 @@
     max-width: 250px;
     display: inline-block;
     text-align:center;
-    padding: 0.5rem;
+    padding: 1rem;
     border-bottom: 1px solid white;
 
   }

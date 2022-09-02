@@ -119,11 +119,6 @@ tuioElement.event.on('update',(element)=>{
 
 tuioElement.event.on('delete',(element)=>{
     contents.send( 'tuioDelete' , element);
-    let size= win.getContentSize();
-    let x = size[0]*element.xPosition;
-    let y = size[1]*element.yPosition;
-    contents.sendInputEvent({type:'mouseDown', x:x, y: y, button:'left', clickCount: 1});
-    setTimeout(()=>{contents.sendInputEvent({type:'mouseUp', x:x, y: y, button:'left', clickCount: 1})},100);
 })
 
 dataController.event.on('dataGetted',(data)=>{

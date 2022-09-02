@@ -22,14 +22,13 @@
     border-bottom:2px solid white;
     display: flex;
     padding: 3rem;
-    flex-basis: 23%;
-    max-height: 23%;
+    min-height: 19%;
   }
   .main_header h2{
     flex: 1;
     font-style: normal;
     font-weight: 400;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     line-height: 125%;
   }
   .main_header .text-big{

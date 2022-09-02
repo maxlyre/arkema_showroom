@@ -11,7 +11,7 @@
     },
     props:{
       videoUrl: {
-        type: String,      
+        type: Object,      
       },
       soundUrl: {
         type: String,      
@@ -32,7 +32,9 @@
         activeData :0,
         infoVideo : null,
         slideByView : 0,
-        swiper: null
+        swiper: null,
+        intro : true,
+        showElements : false
       }
     },
     computed:{
@@ -44,13 +46,21 @@
       }
     },
     methods:{
+      goToHome(){
+         this.infoVideo.play();
+         this.showElements =false;
+      },
       changeBlock(ind){
         this.activeData=ind;
         this.swiper.slideTo(ind);
       },
       videoPlay(){
-        if(this.infoVideo.currentTime > this.infoVideo.duration/2){
+        if(this.infoVideo.currentTime > this.infoVideo.duration/2 && this.intro){
           this.infoVideo.pause();
+          this.intro = false;
+          this.showElements =true;
+        }else if(this.infoVideo.currentTime >= this.infoVideo.duration){
+          console.log("end video")
         }
       }
     },
@@ -85,49 +95,64 @@
 <template>
   <div class="main_info row">
     <div class="data_block col-xs-3">
-
-      <ArticleInfoBlock
-      :content = dataBlocks[this.activeData]
-      />
+      <Transition  name="fade" appear>  
+        <ArticleInfoBlock
+        v-show="showElements"
+        :content = dataBlocks[this.activeData]
+        />
+       </Transition>
     </div>
     <div class="graphic_block col-xs-9">
-        <div class="video_block">
-            <ul class="points">
-              <li v-for="point,index in this.dataBlocks" 
-                class="data_points" 
-                :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%'" 
-                @click="changeBlock(index)" 
-                :class="index == activeData ? 'active' : ''">
-                <span>{{index+1}}</span>
-              </li>
+        <div class="video_block" >
+          
+            <ul class="points" v-show="showElements">
+              <TransitionGroup  name="fade" appear >  
+                <li v-for="point,index in this.dataBlocks" 
+                  class="data_points" 
+                  :key="index"
+                  :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%;'" 
+                  @click="changeBlock(index)" 
+                  :class="index == activeData ? 'active' : ''">
+                  <span>{{index+1}}</span>
+                </li>
+                </TransitionGroup>
             </ul>
             <video muted playsinline id="info_video">
                 <source :src="this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
                 <source :src="this.$APIURL+this.videoUrl.webm" type="video/webm">
             </video>
-            <h3 class="excerpt" v-html="excerptText"></h3>
+            <Transition  name="fade" appear>  
+            <h3 class="excerpt" v-html="excerptText" v-if="showElements"></h3>
+            </Transition>
         </div>
-        <div class="menu_block">
+        <Transition  name="fademenu" appear>  
+        <div class="menu_block" v-show="showElements">
             <swiper
               class="menu_block_swiper"
               :modules="modules"
               :slides-per-view="slideByView"
               :space-between="0"
+
               :navigation="{
                   nextEl: '.button-next',
                   prevEl: '.button-prev',
               }"
             >
+
+
                 <swiper-slide v-for="slide,index in dataBlocks" @click="changeBlock(index)" :class="index == activeData ? 'active' : ''">
                   <div class="number">{{index+1}}</div> 
                   <div class="block_title" v-html="slide.Title.replaceAll('p>','h3>').replaceAll('/uploads',this.$APIURL+'/uploads')"  ></div>
                 </swiper-slide>
+
+              
             </swiper>
             <div class="control" >
               <div :class="'button-prev'" class='swiper-button-prev'></div>
               <div :class="'button-next'" class='swiper-button-next'></div>
             </div>
         </div>
+        </Transition>
     </div>
 
 
@@ -136,8 +161,8 @@
 
 <style>
   .main_info{
-    flex-basis: 77%;
-    max-height: 77%;
+    flex-basis: 81%;
+    max-height: 81%;
     margin: 0;
     width: 100%;
   }
@@ -293,5 +318,22 @@
     left: 50%;
     transform:translate(-50%,-50%);
   }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
 
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .fademenu-enter-active,
+  .fademenu-leave-active {
+    transition: opacity 0.5s ease 0.5s;
+  }
+
+  .fademenu-enter-from,
+  .fademenu-leave-to {
+    opacity: 0;
+  }
 </style>

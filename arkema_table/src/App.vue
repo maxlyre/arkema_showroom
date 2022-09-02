@@ -18,16 +18,13 @@
       components:{
          MenuHome,ArticleMain,WidgetMain,MediaPlayer,MediaContent
       },
-      computed:{
-      },
-      created(){
-        console.log(this.dataTable)
-        console.log(this.id)
-      },
       methods:{
         changeID(index){
           this.id = index;
           this.dataID = this.dataTable.findIndex(element => element.id ==this.id);
+        },
+        goToHome(){
+          this.$refs.articleMain.goToHome();
         },
         changeLang(lang){
           this.lang = lang;
@@ -45,7 +42,7 @@
           if(this.contentMedia == null){
             this.contentMedia = "";
           }
-                    console.log(this.contentMedia)
+          console.log(this.contentMedia)
         },
         closeMedia(){
           this.urlMedia = null;
@@ -56,9 +53,8 @@
 </script>
 
 <template>
-          <!-- <Transition name="fade" mode="out-in">
 
-          </Transition> -->
+
     <div class="row">
         <section id="main" class="col-xs-9">
           <div v-if="this.id == 0" class="home">
@@ -68,8 +64,10 @@
           </div>
 
             <ArticleMain
+              ref="articleMain"
               v-else
               :content="this.dataTable[this.dataID]"
+
             />
             <MediaPlayer
               v-if="urlMedia != null"
@@ -78,7 +76,7 @@
         </section>
         <section id="right" class="col-xs-3">
           <header>
-            <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="changeID(0)">
+            <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="goToHome()">
               <img src="./assets/menu_icon.svg" alt="">
             </div>
              

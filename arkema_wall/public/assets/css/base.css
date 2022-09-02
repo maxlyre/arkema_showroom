@@ -6,6 +6,9 @@
   margin: 0;
   position: relative;
 }
+/* *{
+  cursor: none !important;
+} */
 html{
   min-height: 100vh;
 }

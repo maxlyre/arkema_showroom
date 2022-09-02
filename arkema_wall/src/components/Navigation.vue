@@ -132,6 +132,7 @@
   }
   .menu_content{
     position:relative;
+    margin-top: 30px;
   }
   #navigation_container:before{
     content:"";
@@ -192,6 +193,9 @@
     margin-bottom: 20px;
     display:inline-block;
     margin-left : 15px;
+    position: absolute;
+    left: 98px;
+    top: -30px;
   }
   .lang_switcher button{
     background-color: rgba(0,0,0,0); /* Green */
@@ -204,6 +208,7 @@
     font-family: 'Futura Std';
     font-weight: 600;
     cursor:pointer;
+    font-size: 1rem;
 
   }
   .lang_switcher .langActive{
@@ -214,7 +219,7 @@
   .navigation{
     display:inline-block;
     position: absolute;
-    left : 90px;
+    left : 85px;
   }
   .navigation button{
     background-color: rgba(0,0,0,0); /* Green */
@@ -223,8 +228,8 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin: 0 15px;
     cursor:pointer;
   }
@@ -259,6 +264,8 @@
       justify-content: center;
       display: none;
       top : 0;
+      margin-top : 0;
+      
     }
     .lang_switcher{
       position: absolute;
@@ -267,6 +274,7 @@
       margin: 0;
       z-index: 101;
       display: none;
+      top : auto;
     }
     .lang_switcher.nav_active{
       display: block;

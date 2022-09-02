@@ -114,7 +114,8 @@
 
 <style>
   .planete{
-    position: relative
+    position: relative;
+    min-height: 70vh;
   }
   .planete canvas{
     position: absolute;

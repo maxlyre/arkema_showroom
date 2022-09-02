@@ -11,11 +11,10 @@
         required: true,
       }
     },
-    data() {
-      return {
-      }
-    },
-    computed:{
+    methods:{
+      goToHome(){
+        this.$refs.info.goToHome();
+      },
     }
   };
 </script>
@@ -31,6 +30,7 @@
     :soundLoop="this.content.attributes.Background_loop"
     :excerpt="this.content.attributes.Infographics_excerpt"
     :dataBlocks="this.content.attributes.data_block"
+    ref="info"
   />
   </div>
 

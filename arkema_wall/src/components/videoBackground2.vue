@@ -132,8 +132,8 @@
             @slideChangeTransitionEnd="onSlideChange"
           >
             <swiper-slide v-for="slide in listurls">
-               <video :src="'local-video://'+this.$APIURL+slide" muted playsinline preload="auto"></video>
-               <!-- <video :src="this.$APIURL+slide" muted playsinline preload="auto"></video> -->
+               <video v-if="$ELECTRONENV" :src="'local-video://'+this.$APIURL+slide" muted playsinline preload="auto"></video>
+               <video v-else :src="this.$APIURL+slide" muted playsinline preload="auto"></video> 
             </swiper-slide>
           </swiper>
     </div>

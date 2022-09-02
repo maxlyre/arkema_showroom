@@ -97,6 +97,7 @@
 </template>
 
 <style>
+
 #app {
 
   display: flex;
