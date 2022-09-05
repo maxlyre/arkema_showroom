@@ -5,133 +5,150 @@ const fs = require("fs-extra");
 const axios = require('axios');
 
 const contentQuery = gql`
-    query  {
-        wallNavigation{
+query  {
+    tables(pagination: { start: 0, limit: 100 },locale:"all"){
         data{
             id
             attributes{
-            homeBackgroundVideo{
-                data{
-                attributes{
-                    url
+                locale
+                localizations{
+                    data{
+                      id
+                    }
                 }
+                Product
+                Thumbnail{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
                 }
-            }
-            wall_group{
                 Title
-                EnglishTitle
-                positionX
-                positionY
-                videoTransition{
-                data{
+                Subtitle
+                background_sound{
+                  data{
                     attributes{
-                    url
+                      url
                     }
+                  }
                 }
-                }
-                videoBackground{
-                data{
+                Background_loop
+                Infographics_excerpt
+                Infographics_video_WEBM{
+                  data{
                     attributes{
-                    url
+                      url
                     }
+                  }
                 }
+                Infographics_video_MP4{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
                 }
-                menu_entry{
-                                wall{
+                data_block{
+                  id
+                  Bullet_X
+                  Bullet_Y
+                  Title
+                  Text
+                  Extra_text
+                  Media{
                     data{
-                    id
-                    attributes{
-                        Title
-                        localizations {
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+                Widgets{
+                  __typename
+                   ...on ComponentTableComponentsWidgets {
+                    Title
+                    Logos{
+                      data{
+                        attributes{
+                          url
+                        }
+                      }
+                    }
+                  }
+                  ...on ComponentTableComponentsQuizz {
+                    Title
+                    Questions{
+                      Question
+                      Answer_A
+                      Answer_B
+                      Actual_answer
+                      Answer_color
+                      Answer_text
+                      Media{
                         data{
-                            id
-                            attributes{
-                            Title
-                            }
+                          attributes{
+                            url
+                          }
                         }
+                      }
+                    }
+                  }
+  
+                  ...on ComponentTableComponentsVideo {
+                    Title
+                    Subtitle
+                    Call_to_action
+                    Video_slide{
+                      Title
+                      Subtitle
+                      Video{
+                        data{
+                          attributes{
+                            url
+                          }
                         }
+                      }
+                      Poster{
+                        data{
+                          attributes{
+                            url
+                          }
                         }
-                    }
+                      }
+                  }
+                }  
+                  ...on ComponentTableComponentsArticles {
+                    Title
+                    article_post{
+                      Title
+                      Text
+                      Media{
+                        data{
+                          attributes{
+                            url
+                          }
+                        }
+                      }
+                  }
                 }
-                }
-
+              }
             }
-            }
-        }
-        }
-        walls(pagination: { start: 0, limit: 100 },locale:"all"){
-        data{
-            id
-            attributes{
-            Title
-            Contenu{
-                __typename
-                ...on ComponentWallComponentText {
-                Text
-                column
-                }
-                ...on ComponentWallComponentGallerie {
-                image{
-                    data{
-                    attributes{
-                        url
-                    }
-                    }
-                }
-                column
-                position
-                slidesPerView
-                }
-                ...on ComponentWallComponentPlanete {
-                PlanetCSV{
-                    data{
-                    attributes{
-                        url
-                    }
-                    }
-                }
-                column
-                }
-                ...on ComponentWallComponentCamembert {
-                Titre
-                pourcentages{
-                    Titre
-                    pourcentage
-                    hexColor
-                }
-                pourcentage_externe{
-                    Titre
-                    pourcentage
-                    hexColor
-                }
-                column
-                }
-            }
-            }
-        }
         }
     }
+  }
 `;
 
 const timeQuery  = gql`
     query  {
-        wallNavigation{
-            data{
-                id
-                attributes{
-                    updatedAt
-                }
-                
+        tables(pagination: { start: 0, limit: 100 },locale:"all"){
+        data{
+            id
+            attributes{
+                updatedAt
             }
         }
-        walls(pagination: { start: 0, limit: 100 },locale:"all"){
-            data{
-                id
-                attributes{
-                    updatedAt
-                }
-            }
-        }
+    }
     }
 `;
 
@@ -198,7 +215,7 @@ export class DataController{
     async modifyData(result){   
 
         let str = JSON.stringify(result.data);
-        let filename = str.match(/\b[^/\s]+\.(?:jpeg|jpg|png|mp4|tsv|svg|webm)/g);
+        let filename = str.match(/\b[^/\s]+\.(?:jpeg|jpg|png|mp4|tsv|svg|webm|mp3)/g);
 
         await this.downloadMedia(filename);
 

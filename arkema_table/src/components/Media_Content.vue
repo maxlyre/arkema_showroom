@@ -20,12 +20,15 @@
       }
     },
     mounted(){
-      const sizeObserver = new ResizeObserver(entries => {
-        this.isOverflow = this.isOverflown(entries[0].target);
-        
-      });
-      this.widgetContainer = document.querySelector('.video');
-      sizeObserver.observe(this.widgetContainer);
+      if(typeof this.content == 'object'){
+        const sizeObserver = new ResizeObserver(entries => {
+          this.isOverflow = this.isOverflown(entries[0].target);
+          
+        });
+        this.widgetContainer = document.querySelector('.video');
+        sizeObserver.observe(this.widgetContainer);
+      }
+
     }
   };
 </script>

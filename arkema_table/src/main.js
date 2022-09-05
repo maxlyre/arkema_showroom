@@ -142,7 +142,7 @@ query  {
 const app = createApp(App);
 
 app.config.globalProperties.$APIURL = ""
-
+app.config.globalProperties.$ELECTRONENV = globalGonfig.electronEnv
 
 function sortData(data){
   let bufData = []
@@ -152,6 +152,9 @@ function sortData(data){
   // bufData.walls = data.data.walls.data;
   return bufData;
 }
+
+if(!globalGonfig.electronEnv){
+
 
 // FOR WEB CONTENT
 app.config.globalProperties.$APIURL = globalGonfig.backofficeURL
@@ -172,58 +175,58 @@ client
 
 //END WEB CONTENT
 
+}else{
 
+const { ipcRenderer } = require('electron');
 
+var pointerList = {}
 
+ipcRenderer.on('tuioAdd', (event, element) => { // IPC event listener
+  let pointer = document.createElement("div");
+  pointer.classList.add('pointer')
+  pointer.style.left = window.innerWidth * element.xPosition+"px";
+  pointer.style.top = window.innerHeight * element.yPosition+"px";
+  document.body.appendChild(pointer);
+  pointerList[element.sessionId] = pointer;
+});
+ipcRenderer.on('tuioUpdate', (event, element) => { // IPC event listener
+  let pointer = pointerList[element.sessionId];
+  pointer.style.left = window.innerWidth * element.xPosition+"px";
+  pointer.style.top = window.innerHeight * element.yPosition+"px";
+});
 
-// const { ipcRenderer } = require('electron');
+ipcRenderer.on('tuioDelete', (event, element) => { // IPC event listener
+  let pointer = pointerList[element.sessionId];
+  pointer.remove();
+  delete  pointerList[element.sessionId];
+});
 
-// var pointerList = {}
+ipcRenderer.on('initData', (event, result) => { // IPC event listener
+    app.config.globalProperties.$jsonData = sortData(result); 
+    document.querySelector('.message').remove()
+    app.mount("#app");
+});
 
-// ipcRenderer.on('tuioAdd', (event, element) => { // IPC event listener
-//   let pointer = document.createElement("div");
-//   pointer.classList.add('pointer')
-//   pointer.style.left = window.innerWidth * element.xPosition+"px";
-//   pointer.style.top = window.innerHeight * element.yPosition+"px";
-//   document.body.appendChild(pointer);
-//   pointerList[element.sessionId] = pointer;
-// });
-// ipcRenderer.on('tuioUpdate', (event, element) => { // IPC event listener
-//   let pointer = pointerList[element.sessionId];
-//   pointer.style.left = window.innerWidth * element.xPosition+"px";
-//   pointer.style.top = window.innerHeight * element.yPosition+"px";
-// });
+ipcRenderer.on('error', (event) => { // IPC event listener
+  document.querySelector('.message h2').innerHTML = "Erreur<br> Vérifiez votre connexion internet"
 
-// ipcRenderer.on('tuioDelete', (event, element) => { // IPC event listener
-//   let pointer = pointerList[element.sessionId];
-//   pointer.remove();
-//   delete  pointerList[element.sessionId];
-// });
+});
 
-// ipcRenderer.on('initData', (event, result) => { // IPC event listener
-//     app.config.globalProperties.$jsonData = sortData(result); 
-//     document.querySelector('.message').remove()
-//     app.mount("#app");
-// });
+ipcRenderer.on('console', (event, result) => { // IPC event listener
+  console.log(result)
+});
 
-// ipcRenderer.on('error', (event) => { // IPC event listener
-//   document.querySelector('.message h2').innerHTML = "Erreur<br> Vérifiez votre connexion internet"
+document.onkeyup = function(evt) {
+  evt = evt || window.event;
+  var isEscape = false;
+  if ("key" in evt) {
+      isEscape = (evt.key === "Escape" || evt.key === "Esc");
+  } else {
+      isEscape = (evt.keyCode === 27);
+  }
+  if (isEscape) {
+    ipcRenderer.send('close-me')
+  }
+};
 
-// });
-
-// ipcRenderer.on('console', (event, result) => { // IPC event listener
-//   console.log(result)
-// });
-
-// document.onkeyup = function(evt) {
-//   evt = evt || window.event;
-//   var isEscape = false;
-//   if ("key" in evt) {
-//       isEscape = (evt.key === "Escape" || evt.key === "Esc");
-//   } else {
-//       isEscape = (evt.keyCode === 27);
-//   }
-//   if (isEscape) {
-//     ipcRenderer.send('close-me')
-//   }
-// };
+}

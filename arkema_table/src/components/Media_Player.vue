@@ -19,7 +19,9 @@
 </script>
 <template>
   <div class="media_player">
-    <video autoplay v-if="this.fileFormat == 'webm' || this.fileFormat == 'mp4' " :src="this.$APIURL+this.url" controls></video>
+    <video autoplay v-if="this.fileFormat == 'webm' || this.fileFormat == 'mp4' && $ELECTRONENV" :src="'local-video://'+this.$APIURL+this.url" playsinline controls></video>
+    <video autoplay v-else-if="this.fileFormat == 'webm' || this.fileFormat == 'mp4' && !$ELECTRONENV" :src="this.$APIURL+this.url" playsinline controls></video>
+
     <img v-else :src="this.$APIURL+this.url" alt="">
   </div>
 </template>

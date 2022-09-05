@@ -64,7 +64,7 @@
   }
   .header{
     opacity: 0;
-    transition: opacity 0.25s ease 0.2s;
+    transition: opacity 0.5s ease;
   }
   .header.visible{
     opacity: 1;

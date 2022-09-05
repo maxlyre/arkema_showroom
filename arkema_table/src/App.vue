@@ -22,10 +22,12 @@
         changeID(index){
           this.id = index;
           this.dataID = this.dataTable.findIndex(element => element.id ==this.id);
+          document.querySelector('#right').classList.remove('open')
         },
         goToHome(){
           this.$refs.articleMain.goToHome();
           this.$refs.widget.show(false);
+          document.querySelector('#right').classList.remove('open')
         },
         showWidget(){
           this.$refs.widget.show(true);
@@ -46,11 +48,15 @@
           if(this.contentMedia == null){
             this.contentMedia = "";
           }
-          console.log(this.contentMedia)
         },
         closeMedia(){
           this.urlMedia = null;
           this.contentMedia = null;
+        },
+        togglePanel(){
+          const right = document.querySelector('#right');
+          right.classList.toggle('open')
+            
         }
       },
 };
@@ -59,9 +65,8 @@
 <template>
 
 
-    <div class="row">
-      
-        <section id="main" class="col-xs-9">
+    <div class="row" :class="[this.id == 0 ? 'homepage':'articles',this.contentMedia != null ? 'media':'']">
+        <section id="main" class=" col-xs-12 col-sm-9">
           <Transition  name="fade" appear mode="out-in">  
             <div v-if="this.id == 0" class="home">
                 <img src="./assets/logo_blanc.svg" alt="">
@@ -84,7 +89,10 @@
             />
           </Transition>
         </section>
-        <section id="right" class="col-xs-3">
+        <section id="right" class="col-sm-3">
+          <div class="open_bar" @click="togglePanel">
+            <img src="/assets/img/arrow.svg" alt="">
+          </div>
           <header>
             <Transition  name="fade" appear >  
               <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="goToHome()">
@@ -147,6 +155,7 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+
 }
 
 #main{
@@ -165,7 +174,7 @@ header {
 }
 .home img{
   max-width: 900px;
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 .home h2{
@@ -182,6 +191,9 @@ header {
   flex-direction: column;
   padding: 0;
   height:100vh;
+}
+#right .open_bar{
+  display: none;
 }
 header{
   height: 4.5rem;
@@ -240,16 +252,94 @@ header{
     background : linear-gradient(180deg, #188D6D 0%, #55BE9B 100%);
 }
 
-@media (min-width: 1024px) {
-
-}
-
-  @media screen and (max-width: 1400px) {
+  @media (min-width: 1024px) {
 
   }
-  @media screen and (max-width: 1200px) {
 
+  @media screen and (max-width: 1400px) {
+    html{
+      font-size: 14px;
+    }
+  }
 
+  @media screen and (max-width: 1250px) {
+    html{
+      font-size: 13px;
+    }
+    #app{
+      overflow:hidden;
+    }
+    #main{
+      flex-basis: 100%;
+      max-width: 100%;
+      
+    }
+    .articles .article_main {
+      padding-right: 40px;
+    }
+    #main .home{
+      padding-right: 350px;
+    }
+    #right{
+      position: absolute;
+      right: 0;
+      width: 350px;
+      flex-basis: initial;
+      max-width: none;
+      z-index: 200;
+      background-color: rgba(85,190,155,1);
+      transition: transform 0.5s ease;
+    }
+    .articles #right.open{
+       transform:translateX(0%);
+    }
+    .articles #right{
+      transform:translateX(100%);
+      
+    }
+    .articles #right .open_bar{
+      display: block;
+      height : 100%;
+      width: 40px;
+      position : absolute;
+      left: -42px;
+      border-left: 2px solid white;
+      background: rgba(85,190,155,1);
+    }
+    .articles #right .open_bar img{
+      display: block;
+      height : 30px;
+      width: 30px;
+      left: 4px;
+      position : absolute;
+      top : 50%;
+      transform:translateY(-50%) rotate(180deg);
+    }
+    .articles #right.open .open_bar img{
+      transform:translateY(-50%);
+    }
+
+    .media_player{
+      padding-right: 350px;
+    }
+    .media #right .open_bar{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    body:before{
+      content:"The minimum resolution for this website is 1024px of width";
+      display: block;
+      position : absolute;
+      width: 100%;
+      height : 100%;
+      background : rgba(85,190,155,1);
+      z-index: 999;
+      padding: 40vh 30px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
   }
   .fade-enter-active,
   .fade-leave-active {

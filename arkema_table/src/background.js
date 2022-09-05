@@ -6,7 +6,6 @@ import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const { ipcMain } = require('electron');
 const path = require('path');
-var Tuio = require('./modules/TuioClass.js');
 import { DataController } from './modules/DataController.js'
 let win
 let contents;
@@ -101,30 +100,7 @@ ipcMain.on('close-me', (evt, arg) => {
   win.close()
 })
 
-//TUIO
 
-
-const tuioElement = new Tuio( "0.0.0.0",3333);
-
-tuioElement.event.on('listening',(address)=>{
-    console.log("TuioServer listening on: " + address.address + ":" + address.port);
-})
-
-tuioElement.event.on('add',(element)=>{
-    contents.send( 'tuioAdd' ,element);
-})
-tuioElement.event.on('update',(element)=>{
-    contents.send( 'tuioUpdate' ,element);
-})
-
-tuioElement.event.on('delete',(element)=>{
-    contents.send( 'tuioDelete' , element);
-    let size= win.getContentSize();
-    let x = size[0]*element.xPosition;
-    let y = size[1]*element.yPosition;
-    contents.sendInputEvent({type:'mouseDown', x:x, y: y, button:'left', clickCount: 1});
-    setTimeout(()=>{contents.sendInputEvent({type:'mouseUp', x:x, y: y, button:'left', clickCount: 1})},100);
-})
 
 dataController.event.on('dataGetted',(data)=>{
   contents.send('console',"dataGetted")

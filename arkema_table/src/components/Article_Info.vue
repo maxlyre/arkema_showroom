@@ -70,7 +70,11 @@
       }
     },
     mounted(){
-      this.audioPlayer = new Audio(this.$APIURL+this.soundUrl)
+      if(this.$ELECTRONENV){
+        this.audioPlayer = new Audio('local-video://'+this.$APIURL+this.soundUrl)
+      }else{
+        this.audioPlayer = new Audio(this.$APIURL+this.soundUrl)
+      }
       this.audioPlayer.loop = this.soundLoop;
       this.audioPlayer.play();
 
@@ -108,17 +112,21 @@
             <ul class="points" >
               <TransitionGroup  name="fade" appear >  
                 <li v-for="point,index in this.dataBlocks" 
-                v-show="showElements"
+                  v-show="showElements"
                   class="data_points" 
                   :key="index"
-                  :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%;'" 
+                  :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%'" 
                   @click="changeBlock(index)" 
                   :class="index == activeData ? 'active' : ''">
                   <span>{{index+1}}</span>
                 </li>
                 </TransitionGroup>
             </ul>
-            <video muted playsinline id="info_video">
+            <video v-if="$ELECTRONENV" muted playsinline id="info_video">
+                <source :src="'local-video://'+this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
+                <source :src="'local-video://'+this.$APIURL+this.videoUrl.webm" type="video/webm">
+            </video>
+            <video v-else muted playsinline id="info_video">
                 <source :src="this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
                 <source :src="this.$APIURL+this.videoUrl.webm" type="video/webm">
             </video>
@@ -202,7 +210,7 @@
     font-weight: 600;
     line-height: 125%;
     font-size: 1.4rem;
-    transition-delay: 0.2s !important;
+    transition-delay: 0.30s !important;
   }
   .excerpt .text-big{
     font-weight: 700;
@@ -323,20 +331,25 @@
     left: 50%;
     transform:translate(-50%,-50%);
   }
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s ease;
+
+  .fade-enter-active{
+    transition: opacity 0.5s ease 0.25s;
   }
 
+  .fade-leave-active {
+    transition: opacity 0.5s ease 0.15s;
+  }
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
   }
-  .fademenu-enter-active,
-  .fademenu-leave-active {
+  .fademenu-enter-active{
     transition: opacity 0.5s ease 0.5s;
   }
 
+  .fademenu-leave-active {
+    transition: opacity 0.5s ease;
+  }
   .fademenu-enter-from,
   .fademenu-leave-to {
     opacity: 0;
