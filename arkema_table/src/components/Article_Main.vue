@@ -5,6 +5,11 @@
     components:{
         ArticleHeader,ArticleInfo
     },
+    data() {
+      return {
+        showElements : false
+      }
+    },
     props:{
       content: {
         type: Object,
@@ -14,24 +19,39 @@
     methods:{
       goToHome(){
         this.$refs.info.goToHome();
+        this.showElements=false
       },
+      closeArticle(){
+        this.$emit('videoEnded')
+      },
+      videoShowed(){
+        this.showElements =true
+        this.$emit('videoShowed')
+      },
+      pauseSound(){
+        this.$refs.info.pauseSound();
+      }
     }
   };
 </script>
 <template>
   <div class="article_main">
       <ArticleHeader
-    :title="this.content.attributes.Title"
-    :subtitle="this.content.attributes.Subtitle"
-  />
-  <ArticleInfo
-    :videoUrl="{webm:this.content.attributes.Infographics_video_WEBM.data.attributes.url,mp4:this.content.attributes.Infographics_video_MP4.data.attributes.url}"
-    :soundUrl="this.content.attributes.background_sound.data.attributes.url"
-    :soundLoop="this.content.attributes.Background_loop"
-    :excerpt="this.content.attributes.Infographics_excerpt"
-    :dataBlocks="this.content.attributes.data_block"
-    ref="info"
-  />
+        class="header"
+        :class="showElements? 'visible' :''"
+        :title="this.content.attributes.Title"
+        :subtitle="this.content.attributes.Subtitle"
+      />
+    <ArticleInfo
+      :videoUrl="{webm:this.content.attributes.Infographics_video_WEBM.data.attributes.url,mp4:this.content.attributes.Infographics_video_MP4.data.attributes.url}"
+      :soundUrl="this.content.attributes.background_sound.data.attributes.url"
+      :soundLoop="this.content.attributes.Background_loop"
+      :excerpt="this.content.attributes.Infographics_excerpt"
+      :dataBlocks="this.content.attributes.data_block"
+      ref="info"
+      @videoEnded ="closeArticle()"
+      @videoShowed ="videoShowed()"
+    />
   </div>
 
 </template>
@@ -42,4 +62,12 @@
     flex-direction: column;
     width:100%;
   }
+  .header{
+    opacity: 0;
+    transition: opacity 0.25s ease 0.2s;
+  }
+  .header.visible{
+    opacity: 1;
+  }
+
 </style>

@@ -16,7 +16,8 @@
     data() {
       return {
         isOverflow:false,
-        widgetContainer : null
+        widgetContainer : null,
+        showElements :false
       }
     },
     methods:{
@@ -25,6 +26,9 @@
       },
       scroll(direction){
         this.widgetContainer.scrollTop = this.widgetContainer.scrollTop + 200*direction;
+      },
+      show(active){
+        this.showElements = active;
       }
     },
     computed:{
@@ -44,7 +48,7 @@
 
 </script>
 <template>
-  <div  class="widget">
+  <div  class="widget" v-show="showElements">
     <!-- {{videoContent}} -->
     <ul class="widget_container">
       <template v-for="(widget,index) in content">

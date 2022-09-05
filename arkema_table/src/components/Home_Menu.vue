@@ -57,7 +57,7 @@
   .menu{
     width: 100%;
     height: 100%;
-    position:relative;
+    position:absolute;
     border-top-left-radius: 80px 80px;
   }
   .swiper{

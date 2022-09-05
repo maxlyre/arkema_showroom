@@ -25,6 +25,10 @@
         },
         goToHome(){
           this.$refs.articleMain.goToHome();
+          this.$refs.widget.show(false);
+        },
+        showWidget(){
+          this.$refs.widget.show(true);
         },
         changeLang(lang){
           this.lang = lang;
@@ -35,9 +39,9 @@
         showVideo(content){
           this.urlMedia = content.Video_slide[0].Video.data.attributes.url;
           this.contentMedia = content;
+          this.$refs.articleMain.pauseSound();
         },
         showMedia(url){
-
           this.urlMedia = url;
           if(this.contentMedia == null){
             this.contentMedia = "";
@@ -56,57 +60,67 @@
 
 
     <div class="row">
+      
         <section id="main" class="col-xs-9">
-          <div v-if="this.id == 0" class="home">
-              <img src="./assets/logo_blanc.svg" alt="">
-              <h2 v-if="this.lang == 'fr'">Sélectionner un objet dans la colonne de droite</h2>
-              <h2 v-else>Select an object in the right column</h2>
-          </div>
+          <Transition  name="fade" appear mode="out-in">  
+            <div v-if="this.id == 0" class="home">
+                <img src="./assets/logo_blanc.svg" alt="">
+                <h2 v-if="this.lang == 'fr'">Sélectionner un objet dans la colonne de droite</h2>
+                <h2 v-else>Select an object in the right column</h2>
+            </div>
 
-            <ArticleMain
-              ref="articleMain"
-              v-else
-              :content="this.dataTable[this.dataID]"
-
-            />
+              <ArticleMain
+                ref="articleMain"
+                v-else
+                :content="this.dataTable[this.dataID]"
+                @videoEnded ="changeID(0)"
+                @videoShowed="showWidget()"
+              />
+          </Transition>
+          <Transition  name="fade" appear >  
             <MediaPlayer
               v-if="urlMedia != null"
               :url="urlMedia"
             />
+          </Transition>
         </section>
         <section id="right" class="col-xs-3">
           <header>
-            <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="goToHome()">
-              <img src="./assets/menu_icon.svg" alt="">
-            </div>
-             
+            <Transition  name="fade" appear >  
+              <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="goToHome()">
+                <img src="./assets/menu_icon.svg" alt="">
+              </div>
+            </Transition>
               <img  v-if="urlMedia != null" class="media_close" @click="closeMedia()" src="./assets/close_icon.svg" alt="">
             
-            <div v-else class="lang_switch" :class="this.lang">
-              <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
-            </div>
+              <div v-else class="lang_switch" :class="this.lang">
+                <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
+              </div>
           </header>
+
           <div class="right-container">
-
-            <MenuHome 
-              v-if="this.id == 0"
-              :content="this.dataTable"
-              :lang="this.lang"
-              v-on:changeID = changeID
-            />
-
+            <Transition  name="fade" appear mode="out-in">  
+              <MenuHome 
+                v-if="this.id == 0"
+                :content="this.dataTable"
+                :lang="this.lang"
+                v-on:changeID = changeID
+              />
 
               <WidgetMain
               v-else
               :content="this.dataTable[this.dataID].attributes.Widgets"
               v-on:showVideo="showVideo"
+              ref="widget"
               />
-            
-            <MediaContent
-            v-if="this.contentMedia != null"
-            :content= contentMedia
-            v-on:showMedia="showMedia"
-            />
+            </Transition>
+            <Transition  name="fade" appear >  
+              <MediaContent
+              v-if="this.contentMedia != null"
+              :content= contentMedia
+              v-on:showMedia="showMedia"
+              />
+            </Transition>
           </div>
         </section>
     </div>
@@ -145,6 +159,9 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .home img{
   max-width: 900px;

@@ -49,25 +49,25 @@
       goToHome(){
          this.infoVideo.play();
          this.showElements =false;
+         this.intro = false;
+      },
+      pauseSound(){
+        this.audioPlayer.pause();
       },
       changeBlock(ind){
         this.activeData=ind;
         this.swiper.slideTo(ind);
       },
       videoPlay(){
-        if(this.infoVideo.currentTime > this.infoVideo.duration/2 && this.intro){
+        if(this.infoVideo.currentTime > this.infoVideo.duration/2-0.5 && this.intro){
           this.infoVideo.pause();
           this.intro = false;
           this.showElements =true;
+          this.$emit('videoShowed')
         }else if(this.infoVideo.currentTime >= this.infoVideo.duration){
-          console.log("end video")
+          this.$emit('videoEnded');
         }
       }
-    },
-    compute:{
-      // slideByView(){
-      //   return 
-      // }
     },
     mounted(){
       this.audioPlayer = new Audio(this.$APIURL+this.soundUrl)
@@ -102,12 +102,13 @@
         />
        </Transition>
     </div>
-    <div class="graphic_block col-xs-9">
+    
+    <div class="graphic_block col-xs-9" :class="showElements?'showBorder' : ''">
         <div class="video_block" >
-          
-            <ul class="points" v-show="showElements">
+            <ul class="points" >
               <TransitionGroup  name="fade" appear >  
                 <li v-for="point,index in this.dataBlocks" 
+                v-show="showElements"
                   class="data_points" 
                   :key="index"
                   :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%;'" 
@@ -169,16 +170,19 @@
 
 
   .graphic_block{
-    border-left : 2px solid white;
-    border-top : 2px solid white;
+    border-left : 2px solid rgba(255,255,255,0);
+    border-top : 2px solid rgba(255,255,255,0);
     margin-top: -2px;
     padding:0;
     border-top-left-radius: 80px 80px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: border-color 0.5s ease;
   }
-
+  .graphic_block.showBorder{
+    border-color: white;
+  }
   .video_block{
     /* height: 100%; */
         flex-basis: 85%;
@@ -198,6 +202,7 @@
     font-weight: 600;
     line-height: 125%;
     font-size: 1.4rem;
+    transition-delay: 0.2s !important;
   }
   .excerpt .text-big{
     font-weight: 700;
