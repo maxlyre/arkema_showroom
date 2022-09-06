@@ -93,6 +93,7 @@
       border-top-left-radius: 80px 80px;
       overflow: hidden;
       padding-bottom: 75px;
+      transition-delay: 0.5s;
     }
     .widget_container{
       margin: 0;

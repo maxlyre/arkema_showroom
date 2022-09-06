@@ -63,7 +63,7 @@
     width:100%;
   }
   .header{
-    opacity: 0;
+    /* opacity: 0; */
     transition: opacity 0.5s ease;
   }
   .header.visible{

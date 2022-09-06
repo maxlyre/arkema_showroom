@@ -34,7 +34,8 @@
         slideByView : 0,
         swiper: null,
         intro : true,
-        showElements : false
+        showElements : false,
+        showPoints : false
       }
     },
     computed:{
@@ -48,8 +49,7 @@
     methods:{
       goToHome(){
          this.infoVideo.play();
-         this.showElements =false;
-         this.intro = false;
+         this.showPoints = false;
       },
       pauseSound(){
         this.audioPlayer.pause();
@@ -62,14 +62,17 @@
         if(this.infoVideo.currentTime > this.infoVideo.duration/2-0.5 && this.intro){
           this.infoVideo.pause();
           this.intro = false;
-          this.showElements =true;
+          this.showPoints = true;
           this.$emit('videoShowed')
         }else if(this.infoVideo.currentTime >= this.infoVideo.duration){
           this.$emit('videoEnded');
+          this.infoVideo.pause();
+          this.showElements = false;
         }
       }
     },
     mounted(){
+       this.showElements =true;
       if(this.$ELECTRONENV){
         this.audioPlayer = new Audio('local-video://'+this.$APIURL+this.soundUrl)
       }else{
@@ -80,7 +83,10 @@
 
       this.infoVideo = document.querySelector('#info_video');
       this.infoVideo.addEventListener("timeupdate", this.videoPlay);
-      this.infoVideo.play()
+      setTimeout(() => {
+        this.infoVideo.play()
+      }, 1250);
+
       this.slideByView = this.dataBlocks.length < 6 ? this.dataBlocks.length : 5.1;
       this.swiper = document.querySelector('.menu_block_swiper').swiper
     },
@@ -108,11 +114,12 @@
     </div>
     
     <div class="graphic_block col-xs-9" :class="showElements?'showBorder' : ''">
-        <div class="video_block" >
-            <ul class="points" >
-              <TransitionGroup  name="fade" appear >  
+        <div class="video_block" :class="showElements?'show' : ''">
+            <Transition  name="fade" appear >  
+              <ul class="points" v-show="this.showPoints">
+              
                 <li v-for="point,index in this.dataBlocks" 
-                  v-show="showElements"
+                  
                   class="data_points" 
                   :key="index"
                   :style="'left:'+point.Bullet_X+'%;top:'+point.Bullet_Y+'%'" 
@@ -120,22 +127,23 @@
                   :class="index == activeData ? 'active' : ''">
                   <span>{{index+1}}</span>
                 </li>
-                </TransitionGroup>
+
             </ul>
-            <video v-if="$ELECTRONENV" muted playsinline id="info_video">
+            </Transition>
+            <video v-if="$ELECTRONENV" muted playsinline id="info_video" >
                 <source :src="'local-video://'+this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
                 <source :src="'local-video://'+this.$APIURL+this.videoUrl.webm" type="video/webm">
             </video>
-            <video v-else muted playsinline id="info_video">
+            <video v-else muted playsinline id="info_video" >
                 <source :src="this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
                 <source :src="this.$APIURL+this.videoUrl.webm" type="video/webm">
             </video>
             <Transition  name="fade" appear>  
-            <h3 class="excerpt" v-html="excerptText" v-if="showElements"></h3>
+            <h3 class="excerpt" v-html="excerptText" v-if="this.showPoints"></h3>
             </Transition>
         </div>
         <Transition  name="fademenu" appear>  
-        <div class="menu_block" v-show="showElements">
+        <div class="menu_block">
             <swiper
               class="menu_block_swiper"
               :modules="modules"
@@ -186,17 +194,22 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.5s ease;
+    transition: border-color 0.5s ease 0.2s;
   }
   .graphic_block.showBorder{
     border-color: white;
   }
   .video_block{
     /* height: 100%; */
-        flex-basis: 85%;
+    flex-basis: 85%;
     max-height: 85%;
+    background: #0c0d20;
+    opacity: 0;
+    transition: opacity 1s ease 0.75s;
   }
-
+  .video_block.show{
+    opacity: 1;
+  }
   #info_video{
     width: 100%;
     height: 100%;
@@ -210,7 +223,7 @@
     font-weight: 600;
     line-height: 125%;
     font-size: 1.4rem;
-    transition-delay: 0.30s !important;
+    transition-delay: 0.4s !important;
   }
   .excerpt .text-big{
     font-weight: 700;
@@ -221,6 +234,7 @@
     height: 100%;
     z-index: 99;
     position: absolute;
+    transition-delay: O.25s !important;
   }
   .data_points{
     position: absolute;
