@@ -28,7 +28,7 @@
     flex: 1;
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 125%;
   }
   .main_header .text-big{
@@ -39,7 +39,7 @@
     flex: 1;
     font-style: normal;
     font-weight: 600;
-    font-size: 0.90rem;
+    font-size: 0.95rem;
     line-height: 125%;
     margin-top: 0.75rem;
   }

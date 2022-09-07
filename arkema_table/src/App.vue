@@ -95,8 +95,8 @@
           </div>
           <header>
             <Transition  name="fade" appear >  
-              <div v-if="id != 0 && urlMedia == null" class="menu_icon" @click="goToHome()">
-                <img src="./assets/menu_icon.svg" alt="">
+              <div v-if="id != 0 && urlMedia == null" class="menu_icon" >
+                <img src="./assets/menu_icon.svg" alt="" @click="goToHome()">
               </div>
             </Transition>
               <img  v-if="urlMedia != null" class="media_close" @click="closeMedia()" src="./assets/close_icon.svg" alt="">
@@ -136,7 +136,9 @@
 </template>
 
 <style>
-
+html{
+  font-size: 15px;
+}
 #app {
   min-height: 100vh;
   display: flex;
