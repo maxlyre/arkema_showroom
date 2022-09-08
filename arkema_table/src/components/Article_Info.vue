@@ -11,7 +11,7 @@
     },
     props:{
       videoUrl: {
-        type: Object,      
+        type: String,      
       },
       soundUrl: {
         type: String,      
@@ -135,12 +135,10 @@
             </ul>
             </Transition>
             <video v-if="$ELECTRONENV" muted playsinline id="info_video" >
-                <source :src="'local-video://'+this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
-                <source :src="'local-video://'+this.$APIURL+this.videoUrl.webm" type="video/webm">
+                <source :src="'local-video://'+this.$APIURL+this.videoUrl" type='video/mp4'>
             </video>
             <video v-else muted playsinline id="info_video" >
-                <source :src="this.$APIURL+this.videoUrl.mp4" type='video/mp4;codecs=hvc1'>
-                <source :src="this.$APIURL+this.videoUrl.webm" type="video/webm">
+                <source :src="this.$APIURL+this.videoUrl" type='video/mp4'>
             </video>
             <Transition  name="fade" appear>  
             <h3 class="excerpt" v-html="excerptText" v-if="this.showPoints"></h3>

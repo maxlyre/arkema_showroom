@@ -124,7 +124,7 @@
             </Transition>
             <Transition  name="fade" appear >  
               <MediaContent
-              v-if="this.contentMedia != null"
+              v-if="urlMedia != null"
               :content= contentMedia
               v-on:showMedia="showMedia"
               />

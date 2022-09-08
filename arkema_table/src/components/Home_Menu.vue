@@ -1,8 +1,9 @@
 <script>
-  import { Navigation } from 'swiper';
+  import { Navigation ,Mousewheel } from 'swiper';
   import { Swiper, SwiperSlide} from 'swiper/vue';
   import 'swiper/css';
   import 'swiper/css/navigation';
+  import 'swiper/css/mousewheel';
   export default {
     components: {
       Swiper,
@@ -18,7 +19,7 @@
     },
     setup() {
       return {
-        modules: [Navigation],
+        modules: [Navigation,Mousewheel],
       };
     },
   };
@@ -35,6 +36,7 @@
           nextEl: '.button-next-home',
           prevEl: '.button-prev-home',
       }"
+      :mousewheel="true"
     >
       <template v-for="slide in content">
         <swiper-slide v-if="slide.attributes.locale == this.lang" :index="slide.id" @click="$emit('changeID',slide.id)">
