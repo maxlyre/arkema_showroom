@@ -6,7 +6,7 @@ const axios = require('axios');
 
 const contentQuery = gql`
 query  {
-    tables(pagination: { start: 0, limit: 100 },locale:"all"){
+    tables(pagination: { start: 0, limit: 100 },locale:"all",sort: "id:desc"){
         data{
             id
             attributes{

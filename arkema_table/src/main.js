@@ -5,7 +5,7 @@ import App from "./App.vue";
 import { gql,createClient  } from '@urql/core';
 const TodosQuery = gql`
 query  {
-  tables(pagination: { start: 0, limit: 100 },locale:"all"){
+  tables(pagination: { start: 0, limit: 100 },locale:"all",sort: "id:desc"){
       data{
           id
           attributes{
