@@ -34,7 +34,6 @@
     mounted(){
       const sizeObserver = new ResizeObserver(entries => {
         this.isOverflow = this.isOverflown(entries[0].target);
-        console.log(this.isOverflow)
       });
       this.dataContainer = document.querySelector('.data');
       sizeObserver.observe(this.dataContainer);

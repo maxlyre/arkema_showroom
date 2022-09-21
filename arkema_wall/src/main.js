@@ -121,6 +121,7 @@ app.config.globalProperties.$APIURL = ""
 app.config.globalProperties.$ELECTRONENV = electronEnv
 
 function sortData(data){
+
   let bufData = {}
   //Wall 
   bufData.homeBackgroundVideo = data.wallNavigation.data.attributes.homeBackgroundVideo;

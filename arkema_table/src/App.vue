@@ -8,6 +8,7 @@
       data() {
         return {
           dataTable:this.$jsonData,
+          dataNav : this.$jsonNav,
           id:0,
           lang : "fr",
           dataID:-1,
@@ -96,7 +97,12 @@
           <header>
             <Transition  name="fade" appear >  
               <div v-if="id != 0 && urlMedia == null" class="menu_icon" >
-                <img src="./assets/menu_icon.svg" alt="" @click="goToHome()">
+                <div class="menu_container"  @click="goToHome()">
+                  <img src="./assets/menu_icon.svg" alt="">
+                  <h4 v-if="this.lang == 'fr'">Menu principal</h4>
+                   <h4 v-else>Main menu</h4>
+                </div>
+
               </div>
             </Transition>
               <img  v-if="urlMedia != null" class="media_close" @click="closeMedia()" src="./assets/close_icon.svg" alt="">
@@ -111,6 +117,7 @@
               <MenuHome 
                 v-if="this.id == 0"
                 :content="this.dataTable"
+                :nav="this.dataNav[this.lang]"
                 :lang="this.lang"
                 v-on:changeID = changeID
               />
@@ -233,13 +240,26 @@ header{
   justify-self: start;
   flex: 1;
 }
-.menu_icon img{
-  width: auto;
-  display: block;
+.menu_icon .menu_container{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+.menu_icon h4{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size:1.2rem;
+  line-height: 1;
+}
+.menu_icon img{
+  width: auto;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .right-container{

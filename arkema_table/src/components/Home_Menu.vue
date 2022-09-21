@@ -13,8 +13,16 @@
       content: {
         type: Object
       },
+      nav: {
+        type: Object
+      },
       lang:{
         type:String
+      }
+    },
+    data() {
+      return {
+        idContent:{}
       }
     },
     setup() {
@@ -22,6 +30,11 @@
         modules: [Navigation,Mousewheel],
       };
     },
+    beforeMount(){
+      for(const c in this.content){
+        this.idContent[this.content[c].id] = this.content[c]
+      }
+    }
   };
 </script>
 
@@ -38,10 +51,10 @@
       }"
       :mousewheel="true"
     >
-      <template v-for="slide in content">
-        <swiper-slide v-if="slide.attributes.locale == this.lang" :index="slide.id" @click="$emit('changeID',slide.id)">
-          <img :src="this.$APIURL+slide.attributes.Thumbnail.data.attributes.url" alt="">
-          <h3>{{slide.attributes.Product}}</h3>
+      <template v-for="slide in nav">
+        <swiper-slide v-if="this.idContent[slide].attributes.locale == this.lang" :index="this.idContent[slide].id" @click="$emit('changeID',slide)">
+          <img :src="this.$APIURL+this.idContent[slide].attributes.Thumbnail.data.attributes.url" alt="">
+          <h3>{{this.idContent[slide].attributes.Product}}</h3>
         </swiper-slide>
       </template>
     </swiper>

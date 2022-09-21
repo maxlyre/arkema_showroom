@@ -129,6 +129,27 @@ query  {
             }
         }
     }
+    tableNavigation{
+      data{
+          attributes{
+              MenuTable{
+                table{
+                  data{
+                    id
+                    attributes{
+                      localizations{
+                        data{
+                          id
+                        }
+                      }
+                    }
+                  }
+                }
+  
+              }
+          }
+      }
+    }
   }
 `;
 
@@ -206,7 +227,6 @@ export class DataController{
         .then(result => {this.modifyData(result)});
     }
     async modifyData(result){   
-
         let str = JSON.stringify(result.data);
         let filename = str.match(/\b[^/\s]+\.(?:jpeg|jpg|png|mp4|tsv|svg|webm|mp3)/g);
 

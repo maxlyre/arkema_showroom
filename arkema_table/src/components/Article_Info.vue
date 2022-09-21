@@ -197,6 +197,7 @@
     display: flex;
     flex-direction: column;
     transition: border-color 0.5s ease 0.2s;
+    z-index: 0;
   }
   .graphic_block.showBorder{
     border-color: white;
@@ -313,7 +314,7 @@
   }
   .menu_block .block_title img{
     max-width: 100%;
-    transform: scale(0.8) translateY(5px);
+    transform: scale(0.8) translateY(3px);
     transform-origin: center left;
   }
   .menu_block .control{

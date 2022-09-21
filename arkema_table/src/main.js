@@ -128,6 +128,27 @@ query  {
           }
       }
   }
+  tableNavigation{
+    data{
+        attributes{
+            MenuTable{
+              table{
+                data{
+                  id
+                  attributes{
+                    localizations{
+                      data{
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+        }
+    }
+  }
 }
 `;
 
@@ -139,11 +160,17 @@ app.config.globalProperties.$ELECTRONENV = globalGonfig.electronEnv
 
 function sortData(data){
   let bufData = []
+  let bufNav = {}
   data.tables.data.forEach((item)=>{
     bufData.push(item)
   })
-  // bufData.walls = data.data.walls.data;
-  return bufData;
+  bufNav.fr = []
+  bufNav.en = []
+  data.tableNavigation.data.attributes.MenuTable.forEach((item)=>{
+    bufNav.fr.push(item.table.data.id)
+    bufNav.en.push(item.table.data.attributes.localizations.data[0].id)
+  })
+  return {bufData,bufNav};
 }
 
 if(!globalGonfig.electronEnv){
@@ -160,10 +187,10 @@ client
   .query(TodosQuery, { id: 'test' })
   .toPromise()
   .then(result => {
-   
-     app.config.globalProperties.$jsonData = sortData(result.data); // { data: ... }
-     console.log(app.config.globalProperties.$jsonData)
-    app.mount("#app");
+    const dataSort = sortData(result.data);
+     app.config.globalProperties.$jsonData = dataSort.bufData; // { data: ... }
+     app.config.globalProperties.$jsonNav = dataSort.bufNav;    
+     app.mount("#app");
 });
 
 //END WEB CONTENT
@@ -195,7 +222,9 @@ ipcRenderer.on('tuioDelete', (event, element) => { // IPC event listener
 });
 
 ipcRenderer.on('initData', (event, result) => { // IPC event listener
-    app.config.globalProperties.$jsonData = sortData(result); 
+    const dataSort = sortData(result);
+    app.config.globalProperties.$jsonData = dataSort.bufData; // { data: ... }
+    app.config.globalProperties.$jsonNav = dataSort.bufNav;    
     document.querySelector('.message').remove()
     app.mount("#app");
 });
