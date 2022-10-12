@@ -91,7 +91,7 @@
     line-height: 120%;
 
     text-align: center;
-    color: #28285F;
+    color: #ffffff;
     padding: 0 2rem;
     margin-bottom : 1.5rem;
   }
