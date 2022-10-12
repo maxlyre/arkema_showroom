@@ -115,7 +115,7 @@ query  {
                     Title
                     article_post{
                       Title
-                      Text
+                      Content
                       Media{
                         data{
                           attributes{

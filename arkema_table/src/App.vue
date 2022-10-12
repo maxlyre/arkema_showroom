@@ -125,6 +125,7 @@
               <WidgetMain
               v-else
               :content="this.dataTable[this.dataID].attributes.Widgets"
+              :lang="this.lang"
               v-on:showVideo="showVideo"
               ref="widget"
               />

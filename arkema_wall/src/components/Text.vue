@@ -12,7 +12,7 @@
     },
     computed:{
       imgBody(){
-        return this.content.Text.replaceAll('img src="', 'img src="'+this.$APIURL);
+        return this.content.Text.replaceAll('/uploads/', this.$APIURL+'/uploads/');
       }
     }
   };

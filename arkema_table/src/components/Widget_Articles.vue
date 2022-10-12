@@ -33,7 +33,7 @@
 </script>
 <template>
   <div class="widget_article">
-    <h3>{{content.Title}}</h3>
+    <h3 v-if="content.Title != ''">{{content.Title}}</h3>
     <div class="quizz_block">
       <swiper
           :modules="modules"
@@ -46,10 +46,10 @@
         >
             <swiper-slide v-for="article,index in content.article_post" >
               <div class="article_container">
-                  <div class="article_title">
+                  <div class="article_title" v-if="article.Title != null">
                     <h4 v-html="article.Title"></h4>
                   </div>
-                  <div class="article_text" v-html="article.Text"></div>
+                  <div class="article_text" v-html="article.Content"></div>
                   <img v-if="article.Media.data != null" :src="this.$APIURL+article.Media.data.attributes.url" alt=""  @click="this.$root.showMedia(article.Media.data.attributes.url)">
               </div>
 
@@ -67,12 +67,12 @@
   .widget_article h3{
     font-weight: 700;
     font-size: 1.6rem;
-    color: #AFE4D3;
+    color: #ffffff;
     
   }
   .widget_article .article_title{
     height: 30px;
-    margin-bottom : 1rem;
+    margin-bottom : 1.75rem;
   }
   .widget_article h4{
     font-weight: 600;
@@ -97,15 +97,15 @@
     margin-top : 0;
     top : 2.5rem;
   }
-  .widget_article .article_text{
+  /* .widget_article .article_text{
     padding-top: 0.75rem;
-  }
+  } */
   .widget_article .article_text p{
     font-size: 0.9rem;
     line-height: 130%;
   }
   .widget_article .swiper{
-    padding-top : 1.5rem;
+    padding-top : 1rem;
   }
   .widget_article .swiper-button-next{
     right: 0;

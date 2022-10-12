@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 
-const electronEnv = false;
+const electronEnv = globalGonfig.electronEnv;
 
 import { gql,createClient  } from '@urql/core';
 const TodosQuery = gql`

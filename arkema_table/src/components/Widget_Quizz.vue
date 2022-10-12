@@ -56,12 +56,13 @@
                   <div class="question_text" v-html="question.Question"></div>
                 </div>
                 <div class="answer_block" >
-                  <span @click="answerQuizz(index)">{{question.Answer_A}}</span>
-                  <span @click="answerQuizz(index)">{{question.Answer_B}}</span>
+                  <span v-bind:style="question.Actual_answer == null ? 'width: 100%; margin-left: 0': ''" @click="answerQuizz(index)">{{question.Answer_A}}</span>
+                  <span v-if="question.Actual_answer != null" @click="answerQuizz(index)">{{question.Answer_B}}</span>
                 </div>
+                
                 <div class="answer">
-                  <p class="answer_text"><span class="actual_answer" :style="'color:'+question.Answer_color">{{question[question.Actual_answer]}}.</span> <span v-html="question.Answer_text.replaceAll('<p>','').replaceAll('</p>','')"></span></p>
-                  <img :src="this.$APIURL+question.Media.data.attributes.url" alt="" @click="this.$root.showMedia(question.Media.data.attributes.url)">
+                  <p class="answer_text"><span v-if="question.Actual_answer != null" class="actual_answer" :style="'color:'+question.Answer_color">{{question[question.Actual_answer]}}.</span> <span v-html="question.Answer_text.replaceAll('<p>','').replaceAll('</p>','')"></span></p>
+                  <img  v-if="question.Media.data != null" :src="this.$APIURL+question.Media.data.attributes.url" alt="" @click="this.$root.showMedia(question.Media.data.attributes.url)">
                 </div>
               </div>
 
@@ -81,7 +82,7 @@
   .widget_quizz h3{
     font-weight: 700;
     font-size: 1.6rem;
-    color: #AFE4D3;
+    color: #ffffff;
     margin-bottom : 1.5rem;
   }
   .widget_quizz .question_text{
@@ -129,7 +130,7 @@
     font-weight: 400;
     font-size: 0.90rem;
     line-height: 120%;
-    margin-bottom : 0.5rem;
+    margin-bottom : 1rem;
   }
   .answer img{
     cursor:pointer;

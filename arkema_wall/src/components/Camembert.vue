@@ -13,6 +13,9 @@
       },
       index: {
         type: Number
+      },
+      lang:{
+        type:String
       }
     },
     data() {
@@ -22,6 +25,7 @@
     computed:{
     },
     mounted(){
+      let lang = this.lang;
       let data = {
         datasets: [{
             backgroundColor: [
@@ -70,7 +74,7 @@
               },
               padding: 6,
               formatter: function(value, context) {
-                  return Math.round(value) + '%';
+                  return lang == 'fr' ? value.toString().replace('.',',') + '%' : value + '%';
               }
             },
             tooltip:{
@@ -101,7 +105,7 @@
     </ul>
     <ul v-if="content.pourcentage_externe.length > 0" class="color_list">
         <li v-for="line in content.pourcentage_externe" class="color_data">
-          <span :style={backgroundColor:line.hexColor} class="color_line"></span>{{line.pourcentage}}% {{line.Titre}}
+          <span :style={backgroundColor:line.hexColor} class="color_line"></span>{{this.lang == 'fr' ? line.pourcentage.toString().replace('.',',') + '%' : line.pourcentage + '%'}} {{line.Titre}}
         </li>  
     </ul>
   </div>

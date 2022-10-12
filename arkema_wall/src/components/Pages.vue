@@ -41,6 +41,7 @@
                   v-else-if="content.__typename == 'ComponentWallComponentCamembert'" 
                   :content= content
                   :index = index
+                  :lang = lang
                 />
                 <Gallery 
                   v-else-if="content.__typename == 'ComponentWallComponentGallerie'" 

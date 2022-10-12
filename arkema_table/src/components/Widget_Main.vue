@@ -11,6 +11,9 @@
       content: {
         type: Object,
         required: true,
+      },
+      lang :{
+        type: String
       }
     },
     data() {
@@ -80,7 +83,9 @@
     <div class="video_button" 
       v-if="videoContent!=undefined" 
       @click="$emit('showVideo',videoContent)"
-    >VIDEOS
+    >
+      <span v-if="this.lang == 'fr'">VIDÉOS</span>
+      <span v-else>VIDEOS</span>
     </div>
 
   </div>
@@ -104,6 +109,7 @@
     }
     .widget_container li{
       list-style: none;
+      margin-bottom : 2.5rem;
     }
     .widget .video_button{
       position:  absolute;
