@@ -13,7 +13,8 @@
           lang : "fr",
           dataID:-1,
           urlMedia : null,
-          contentMedia : null
+          contentMedia : null,
+          rotate:false
         }
       },
       components:{
@@ -57,7 +58,14 @@
         togglePanel(){
           const right = document.querySelector('#right');
           right.classList.toggle('open')
-            
+        },
+        toggleRotate(){
+          this.rotate = !this.rotate;
+          if(this.rotate){
+            document.querySelector('body').style.transform = "rotate(180deg)"
+          }else{
+            document.querySelector('body').style.transform = "rotate(0)"
+          }
         }
       },
 };
@@ -110,6 +118,7 @@
               <div v-else class="lang_switch" :class="this.lang">
                 <span class="fr_toggle" @click="changeLang('fr')">FR</span>/<span class="en_toggle" @click="changeLang('en')">EN</span>
               </div>
+              <div class="rotate_icon" v-if="this.$ELECTRONENV"><img @click="toggleRotate()" src="./assets/refresh-02.svg" alt="" srcset=""></div>
           </header>
 
           <div class="right-container">
@@ -230,6 +239,12 @@ header{
 }
 .lang_switch.fr .fr_toggle{
   color: #28285F;
+}
+
+.rotate_icon{
+    display: flex;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 .media_close{
