@@ -41,6 +41,7 @@ module.exports = () => ({
               'alignment',
               'specialCharacters',
               'removeFormat',
+              'htmlEmbed',
               '|',
               'bulletedList',
               'numberedList',
