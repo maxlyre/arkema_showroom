@@ -41,7 +41,7 @@
         <div  class="subtitle" v-html="content.Subtitle"></div>
         <ul>
           <li class="video_list" v-for="video,index in content.Video_slide">
-            <h3>{{index}}. {{video.Title}}</h3>
+            <h3>{{index+1}}. {{video.Title}}</h3>
             <img :src="this.$APIURL+video.Poster.data.attributes.url" alt="" @click="$emit('showMedia',video.Video.data.attributes.url)">
             <div class="text" v-html="video.Subtitle"></div>
           </li>

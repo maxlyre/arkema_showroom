@@ -105,7 +105,7 @@
     </ul>
     <ul v-if="content.pourcentage_externe.length > 0" class="color_list">
         <li v-for="line in content.pourcentage_externe" class="color_data">
-          <span :style={backgroundColor:line.hexColor} class="color_line"></span>{{this.lang == 'fr' ? line.pourcentage.toString().replace('.',',') + '%' : line.pourcentage + '%'}} {{line.Titre}}
+          <span :style={backgroundColor:line.hexColor} class="color_line"></span> {{line.Titre}}
         </li>  
     </ul>
   </div>
