@@ -70,7 +70,6 @@
           let json={
             data : self.csvToArray(tsv)
           } 
-
           app.fire("set:json", json)
           app.fire("lang:change",self.lang);
         }).catch(function(error) {

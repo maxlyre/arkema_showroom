@@ -10,7 +10,7 @@ var Tuio = require('./modules/TuioClass.js');
 import { DataController } from './modules/DataController.js'
 let win
 let contents;
-let dataController = new DataController('http://arkema.backoffice.bonjour-lab.com');
+let dataController = new DataController('https://arkema.backoffice.bonjour-lab.com');
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true,supportFetchAPI: true } }
