@@ -1,99 +1,55 @@
 window.ASSET_PREFIX = "planete/";
 window.SCRIPT_PREFIX = "planete/";
-let SCENE_PATH = "1737211.json";
-window.CONTEXT_OPTIONS = {
-    'antialias': true,
-    'alpha': true,
-    'preserveDrawingBuffer': false,
-    'preferWebGl2': true,
-    'powerPreference': "default"
-};
-window.SCRIPTS = [ 132215217, 132215218, 132215199, 132215186, 132215192, 132215222, 132215202, 132215224, 132215216, 132215223, 132215190 ];
 let CONFIG_FILENAME = "planete/config.json";
-let INPUT_SETTINGS = {
-    useKeyboard: true,
-    useMouse: true,
-    useGamepads: false,
-    useTouch: true
-};
-pc.script.legacy = false;
-let PRELOAD_MODULES = [
-    {'moduleName' : 'Ammo', 'glueUrl' : 'files/assets/132215207/1/ammo.wasm.js', 'wasmUrl' : 'files/assets/132215196/1/ammo.wasm.wasm', 'fallbackUrl' : 'files/assets/132215194/1/ammo.js', 'preload' : true},
-];
-
 let loaded = false;
 
 
-var loadModules = function (modules, urlPrefix, doneCallback) {
-
-    // check for wasm module support
-    function wasmSupported() {
-        try {
-            if (typeof WebAssembly === "object" && typeof WebAssembly.instantiate === "function") {
-                const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00));
-                if (module instanceof WebAssembly.Module)
-                    return new WebAssembly.Instance(module) instanceof WebAssembly.Instance;
-            }
-        } catch (e) { }
-        return false;
-    }
-
-    // load a script
-    function loadScriptAsync(url, doneCallback) {
-        var tag = document.createElement('script');
-        tag.onload = function () {
-            doneCallback();
-        };
-        tag.onerror = function () {
-            throw new Error('failed to load ' + url);
-        };
-        tag.async = true;
-        tag.src = url;
-        tag.crossOrigin = 'anonymous';
-        document.head.appendChild(tag);
-    }
-
-    // load and initialize a wasm module
-    function loadWasmModuleAsync(moduleName, jsUrl, binaryUrl, doneCallback) {
-        loadScriptAsync(jsUrl, function () {
-            var lib = window[moduleName];
-            window[moduleName + 'Lib'] = lib;
-            lib({ locateFile: function () { return binaryUrl; } } ).then( function (instance) {
-                window[moduleName] = instance;
-                doneCallback();
-            });
-        });
-    }
+var loadModules = function (modules, urlPrefix, doneCallback) { // eslint-disable-line no-unused-vars
 
     if (typeof modules === "undefined" || modules.length === 0) {
         // caller may depend on callback behaviour being async
         setTimeout(doneCallback);
     } else {
-        var asyncCounter = modules.length;
-        var asyncCallback = function () {
-            asyncCounter--;
-            if (asyncCounter === 0) {
+        let remaining = modules.length;
+        const moduleLoaded = () => {
+            if (--remaining === 0) {
                 doneCallback();
             }
         };
 
-        var wasm = wasmSupported();
         modules.forEach(function (m) {
+            pc.WasmModule.setConfig(m.moduleName, {
+                glueUrl: urlPrefix + m.glueUrl,
+                wasmUrl: urlPrefix + m.wasmUrl,
+                fallbackUrl: urlPrefix + m.fallbackUrl
+            });
+
             if (!m.hasOwnProperty('preload') || m.preload) {
-                if (wasm) {
-                    loadWasmModuleAsync(m.moduleName, urlPrefix + m.glueUrl, urlPrefix + m.wasmUrl, asyncCallback);
-                } else {
-                    if (!m.fallbackUrl) {
-                        throw new Error('wasm not supported and no fallback supplied for module ' + m.moduleName);
+                if (m.moduleName === 'BASIS') {
+                    // preload basis transcoder
+                    pc.basisInitialize();
+                    moduleLoaded();
+                } else if (m.moduleName === 'DracoDecoderModule') {
+                    // preload draco decoder
+                    if (pc.dracoInitialize) {
+                        // 1.63 onwards
+                        pc.dracoInitialize();
+                        moduleLoaded();
+                    } else {
+                        // 1.62 and earlier
+                        pc.WasmModule.getInstance(m.moduleName, () => { moduleLoaded(); });
                     }
-                    loadWasmModuleAsync(m.moduleName, urlPrefix + m.fallbackUrl, "", asyncCallback);
+                } else {
+                    // load remaining modules in global scope
+                    pc.WasmModule.getInstance(m.moduleName, () => { moduleLoaded(); });
                 }
             } else {
-                asyncCallback();
+                moduleLoaded();
             }
         });
     }
 };
+
 
 // Shared Lib
 var CANVAS_ID = 'application-canvas';

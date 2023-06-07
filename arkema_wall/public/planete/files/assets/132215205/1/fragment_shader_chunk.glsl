@@ -17,7 +17,7 @@ uniform float uTechnique;
 void getAlbedo()
 {
      
-    vec3 color = vec3(1.0,0.1,0.1);
+    vec3 color = vec3(.0,.0,0.0);
     vec2 uv = $UV;
 
     if(uv.x < uUsine){
