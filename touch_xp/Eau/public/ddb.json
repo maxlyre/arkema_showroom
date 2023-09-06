@@ -1,0 +1,138 @@
+{
+    "header":{
+        "showOnCycle" : 0,
+        "en":{
+            "title":"<strong>Water Filtration Membranes Made with Kynar<sup>®</sup>,</strong><\br>a Plunge into the Infinitely Small",
+            "subtitle":"Turn the wheel to zoom in or out on membranes made with Kynar<sup>®</sup>. </br>You can push the blue button at any time to launch the filter cleaning process."
+        },
+        "fr":{
+            "title":"<strong>Membranes de filtration de l’eau en Kynar<sup>®</sup> :</strong><\br>plongée dans l’infiniment petit",
+            "subtitle":"Tournez la molette pour zoomer ou dé-zoomer sur les membranes en Kynar<sup>®</sup>. </br> Á tout moment, vous pouvez appuyer sur le bouton bleu pour lancer le procédé de nettoyage des filtres."
+        }
+    },
+    "cycle":[
+        {
+            "media":{
+                "transitionUp": null,
+                "clip" : "Phase_00",
+                "transitionDown": "Phase00_to_01"
+            },
+            "text":{
+                "en":{
+                    "title" : "Filtration Modules</br>in a Water Treatment Plant",
+                    "text" : "More and more, membrane filtration is</br>being used to clean water in the</br>manufacturing industry. The water is</br>purified as it flows through hundreds of</br>tubular modules like these. "
+                },
+                "fr":{
+                    "title" : "Modules de filtration</br>de l'eau d'une station d'épuration",
+                    "text" : "Pour rendre l’eau potable, les professionnels</br>utilisent de plus en plus le procédé de</br>filtration membranaire. L’eau est purifiée en</br>passant dans des centaines de modules</br>tubulaires comme ceux-ci. "
+                }
+            }
+        },
+        {
+            "media":{
+                "transitionUp": "Phase01_to_00",
+                "clip" : "Phase_01",
+                "transitionDown": "Phase01_to_02"
+            },
+            "text":{
+                "en":{
+                    "title" : "Inside a Water<br>Filtration System",
+                    "text" : "This module contains a bundle of long, hollow fibers</br>with Kynar<sup>®</sup> membranes. They are semipermeable</br>and porous and have a diameter of 1 to 2 millimeters."
+                },
+                "fr":{
+                    "title" : "À l’intérieur d’un module<br>de filtration de l’eau",
+                    "text" : "Ce module contient un faisceau de longues fibres creuses<br>avec des membranes en Kynar<sup>®</sup>.<br>Semi-perméables, ces fibres sont poreuses et possèdent<br>un diamètre de 1 à 2 mm. "
+                }
+            }
+        },
+        {
+            "media":{
+                "transitionUp": "Phase02_to_01",
+                "clip" : "Phase_02",
+                "transitionDown": "Phase02_to_03"
+            },
+            "text":{
+                "en":{
+                    "title" : "Between the Fibers<br>of a Filtration Module",
+                    "text" : "Unclean water is fed into the filtration module.<br>All of the bacteria in the water — as well as most of<br>the viruses — have a diameter that is too large for<br>them to pass through the Kynar<sup>®</sup> fibers, so they remain<br>on the outside."
+                },
+                "fr":{
+                    "title" : "Entre les fibres du module de filtration",
+                    "text" : "L’eau sale est injectée dans le module de filtration.<br>Toutes les bactéries présentes dans cette eau<br>- ainsi que la plupart des virus - ont un diamètre trop<br>important pour entrer à l’intérieur des fibres en Kynar<sup>®</sup>.<br>Ils restent donc à l’extérieur."
+                }
+            }
+        },
+        {
+            "media":{
+                "transitionUp": "Phase03_to_02",
+                "clip" : "Phase_03",
+                "transitionDown": "Phase03_to_04"
+            },
+            "text":{
+                "en":{
+                    "title" : "Inside a Kynar<sup>®</sup> Fiber",
+                    "text" : "Water flows through the fiber. Stripped of bacteria and most viruses, it is now clean."
+                },
+                "fr":{
+                    "title" : "À l’intérieur d’une fibre en Kynar<sup>®</sup>",
+                    "text" : "L’eau circule à l’intérieur de la fibre.<br>Débarrassée des bactéries et de la plupart des virus,<br>elle est purifiée."
+                }
+            }
+        },
+        {
+            "media":{
+                "transitionUp": "Phase04_to_03",
+                "clip" : "Phase_04",
+                "transitionDown": null
+            },
+            "text":{
+                "en":{
+                    "title" : "At the Tip of a Kynar<sup>®</sup> Fiber",
+                    "text" : "Clean water flows out of the tip of the fiber, on its path to new uses."
+                },
+                "fr":{
+                    "title" : "À l’extrémité de la fibre en Kynar<sup>®</sup>",
+                    "text" : "L’eau propre s’évacue à l’extrémité de la fibre et poursuit son chemin vers de nouveaux usages."
+                }
+            }
+        }
+    ],
+    "flush":{
+        "clip" : "Phase_Flush",
+        "text":[
+            {
+                "timecode":0,
+                "en" : {
+                    "title":"Gradual Clogging<br>of the Filter",
+                    "text":"After a while, bacteria and viruses build up between the filter’s <br>fibers. This residue clogs the fibers’ pores and the throughput of filtered <br>water gradually diminishes."
+                },
+                "fr" : {
+                    "title":"Encrassage progressif du filtre",
+                    "text":"À la longue, les bactéries et les virus s’accumulent entre<br> les fibres du filtre.Ces résidus colmatent les pores des fibres.<br>Le débit d’eau traitée diminue peu à peu."
+                }
+            },
+            {
+                "timecode":4000,
+                "en" : {
+                    "title":"Triggering the Cleaning Process",
+                    "text":"When the filter becomes too clogged, a cleaning process</br>is automatically activated. The flow of water is reversed in each module so that it runs from the inside to the outside of the fibers. "
+                },
+                "fr" : {
+                    "title":"Déclenchement du procédé de nettoyage",
+                    "text":"Quand le niveau d’encrassage devient trop important,</br>un procédé de nettoyage s’active automatiquement.</br>En pratique, le flux de l’eau s’inverse au sein de chaque module : il part à présent du cœur des fibres pour aller</br>vers l’extérieur. "
+                }
+            },
+            {
+                "timecode":10000,
+                "en" : {
+                    "title":"Removing the Residues",
+                    "text":"The residues that have built up in the fibers’ pores are</br>removed by reversing the flow of water, which flushes</br>them out of the filtration module.</br>The filter then returns to normal operating mode."
+                },
+                "fr" : {
+                    "title":"Éjection des résidus",
+                    "text":"Les résidus accumulés dans les pores des fibres sont éjectés</br>par le flux inversé de l’eau et évacués hors du module</br>de filtration. Le filtre reprend ensuite</br>son fonctionnement normal."
+                }
+            }
+        ]
+    }   
+}
