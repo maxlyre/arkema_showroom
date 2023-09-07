@@ -1,21 +1,16 @@
 <script setup>
   import { ref,watch,nextTick, onMounted  } from 'vue'
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { EffectFade } from 'swiper/modules';
-  import 'swiper/css/effect-fade';
 
-  // Import Swiper styles
-  import 'swiper/css';
-
-  const props = defineProps(['datas','wantedID'])
-
+  const props = defineProps(['datas','wantedID','activateFlush'])
+  const emit = defineEmits(['video:time','video:flushEnd'])
   const clipsArray = ref([])
   const datasMap= ref([ ... props.datas.cycle])
   const currentID = ref(0)
+  const currentVideoID = ref(0)
+  const refVideo = ref([])
   let currentVideo = null;
-  let oldVideo = null;
-  let swiperInstance = null;
   let type="clip"  
+  const refFlush = ref(null)
 
   //Remap Media
   let index = 0;
@@ -38,22 +33,27 @@
   }
 
   onMounted(()=>{
-    // currentVideo = swiperInstance.slides[0].children[0]
-    // currentVideo.play()
-    // currentVideo.addEventListener('ended',videoEnded)
-    for(let i=0;i<clipsArray.value.length;i++){
-      preloadVideo(clipsArray.value[i],i)
-    }
 
+    for(let i=0;i<clipsArray.value.length;i++){
+      preloadVideo(clipsArray.value[i], refVideo.value[i].children[0])
+      refVideo.value[i].children[0].addEventListener('ended',videoEnded.bind(null, i), false)
+      refVideo.value[i].children[0].addEventListener('timeupdate',sendTime.bind(null, 'cycle'), false)
+      if(i == 0){
+          currentVideo = refVideo.value[0].children[0]
+          currentVideo.play()
+      }
+    }
+    preloadVideo(props.datas.flush.clip,refFlush.value.children[0])
+    refFlush.value.children[0].addEventListener('ended',flushEnd, false)
+    refFlush.value.children[0].addEventListener('timeupdate',sendTime.bind(null, 'flush'), false)
   })
 
-  function preloadVideo(url,i){
-    console.log(url)
+  function preloadVideo(url,video){
     var req = new XMLHttpRequest();
       req.open('GET', 'video/'+url+'.webm', true);
       req.responseType = 'blob';
-
-      req.onload = function() {
+      const videobuf = video;
+      req.onload = function(){
         // Onload is triggered even on 404
         // so we need to check the status code
         if (this.status === 200) {
@@ -61,8 +61,7 @@
             var vid = URL.createObjectURL(videoBlob); // IE10+
             // Video is now downloaded
             // and we can set it as source on the video element
-            swiperInstance.slides[i].children[0].src = vid;
-            swiperInstance.slides[i].children[0].addEventListener('ended',videoEnded)
+            videobuf.src = vid;
         }
       }
       req.onerror = function() {
@@ -71,32 +70,27 @@
 
       req.send();
   }
-  //SWIPER EVENT
-  const onSwiper = (s) => {
-    swiperInstance = s;
-  };
-
-  // const beforeChange = (e) => {
-  //   oldVideo = currentVideo;
-  //   currentVideo = swiperInstance.slides[e.activeIndex].children[0]
-  //   currentVideo.play()
-  //   currentVideo.addEventListener('ended',videoEnded)
-  // }
-  const onSlideChange = (e) => {
-    if(oldVideo != null){
-      setTimeout(() => {
-        oldVideo.pause()
-        oldVideo.currentTime = 0;
-      },100)
-    }
-  }
-
+  
+  //WATCH
 
   watch(()=>props.wantedID,async (key)=>{
     await nextTick()
     changeSection()
   })
+  watch(()=>props.activateFlush,async (key)=>{
+    await nextTick()
+    if(key){
+      refFlush.value.children[0].play()
+    }else{
+      setTimeout(() => {
+        refFlush.value.children[0].pause()
+        refFlush.value.children[0].currentTime = 0;
+      }, 350);
+    }
+    sendTime('flush')
+  })
 
+  //VIDEO EVENT
   function changeSection(){
     let direction = props.wantedID > currentID.value ? 1 : -1;
     let transition = direction == 1 ? 'transitionDown' : 'transitionUp'
@@ -104,58 +98,106 @@
     slideTo(datasMap.value[currentID.value].media[transition])
     currentID.value += direction;
     type = 'transition'
+    sendTime('cycle')
   }
 
   function slideTo(index){
-    oldVideo = currentVideo;
-    currentVideo = swiperInstance.slides[index].children[0]
+    const oldVideo = currentVideo;
+    currentVideo = refVideo.value[index].children[0]
     currentVideo.play()
-    swiperInstance.slideTo(index)
+    setTimeout(() => {
+      currentVideoID.value= index;
+      stopOld(oldVideo)
+    }, 25);
   }
-
-  function videoEnded(){
-    if(props.wantedID == currentID.value){
-      if(type == 'transition'){
-        oldVideo = currentVideo;
-        slideTo(datasMap.value[currentID.value].media.clip)
-        type = 'clip'
-      }else{
-        currentVideo.play()
-      }
-    }else{
-      changeSection()
+  const stopOld = (video) => {
+    if(video != null){
+      setTimeout(() => {
+        video.pause()
+        video.currentTime = 0;
+      },50)
     }
   }
+  function videoEnded(i){
+    if(i == currentVideoID.value){
+      if(props.wantedID == currentID.value){
+        if(type == 'transition'){
+          slideTo(datasMap.value[currentID.value].media.clip)
+          type = 'clip'
+        }else{
+          currentVideo.play()
+        }
+      }else{
+        changeSection()
+      }
+    }
+  }
+  function flushEnd(){
+    emit('video:flushEnd')
+  }
+  function sendTime(i){
+    if(props.activateFlush && i == 'flush'){
+      emit('video:time',{
+        type: 'flush',
+        time : refFlush.value.children[0].currentTime
+      })
+    }else if(!props.activateFlush){
+      emit('video:time',{
+        type: type,
+        time : currentVideo.currentTime,
+        id:currentID.value
+      })
+    }
 
+  }
 </script>
 
 <template>
-   <swiper
-    class="swiper-container"
-    :modules="[EffectFade]" 
-    effect="fade"
-    :fadeEffect="{
-      crossFade : true
-    }"
-    :slides-per-view="1"
-    :space-between="0"
-    :pagination="false"
-    :longSwipes="true"
-    :shortSwipes="true"
-    :speed="0"
-    @swiper="onSwiper"
-    @transitionEnd="onSlideChange"
-  >
-    <swiper-slide v-for="item in clipsArray">
-      <video muted playsinline></video>
-    </swiper-slide>
-  </swiper>
+    <div class="videoPlayer">
+      <div class="video_container flush" :class="[props.activateFlush ? 'show' : '']" ref="refFlush">
+        <video muted playsinline></video>
+      </div>
+      <div v-for="(item,index) in clipsArray"
+        ref="refVideo"
+        class="video_container"
+        :class="[currentVideoID == index ? 'show' : '']"
+      >
+        <video muted playsinline></video>
+      </div>
+    </div>
+
 </template>
 
 <style scoped>
-  .swiper-container{
+  .videoPlayer{
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .video_container{
     height: 100%;
     /* pointer-events: none; */
     background-color: black;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.01;
+  }
+  .video_container.show{
+    opacity: 1;
+
+  }
+  .video_container video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .video_container.flush{
+    z-index: 99;
+    transition: opacity 0.35s ease;
   }
 </style>

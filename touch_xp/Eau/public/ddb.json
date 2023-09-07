@@ -2,11 +2,11 @@
     "header":{
         "showOnCycle" : 0,
         "en":{
-            "title":"<strong>Water Filtration Membranes Made with Kynar<sup>®</sup>,</strong><\br>a Plunge into the Infinitely Small",
+            "title":"<strong>Water Filtration Membranes Made with Kynar<sup>®</sup>,</strong></br>a Plunge into the Infinitely Small",
             "subtitle":"Turn the wheel to zoom in or out on membranes made with Kynar<sup>®</sup>. </br>You can push the blue button at any time to launch the filter cleaning process."
         },
         "fr":{
-            "title":"<strong>Membranes de filtration de l’eau en Kynar<sup>®</sup> :</strong><\br>plongée dans l’infiniment petit",
+            "title":"<strong>Membranes de filtration de l’eau en Kynar<sup>®</sup> :</strong></br>plongée dans l’infiniment petit",
             "subtitle":"Tournez la molette pour zoomer ou dé-zoomer sur les membranes en Kynar<sup>®</sup>. </br> Á tout moment, vous pouvez appuyer sur le bouton bleu pour lancer le procédé de nettoyage des filtres."
         }
     },
@@ -71,7 +71,7 @@
             "text":{
                 "en":{
                     "title" : "Inside a Kynar<sup>®</sup> Fiber",
-                    "text" : "Water flows through the fiber. Stripped of bacteria and most viruses, it is now clean."
+                    "text" : "Water flows through the fiber. </br>Stripped of bacteria and most viruses,</br>it is now clean."
                 },
                 "fr":{
                     "title" : "À l’intérieur d’une fibre en Kynar<sup>®</sup>",
@@ -88,11 +88,11 @@
             "text":{
                 "en":{
                     "title" : "At the Tip of a Kynar<sup>®</sup> Fiber",
-                    "text" : "Clean water flows out of the tip of the fiber, on its path to new uses."
+                    "text" : "Clean water flows out of the tip of the fiber, </br>on its path to new uses."
                 },
                 "fr":{
                     "title" : "À l’extrémité de la fibre en Kynar<sup>®</sup>",
-                    "text" : "L’eau propre s’évacue à l’extrémité de la fibre et poursuit son chemin vers de nouveaux usages."
+                    "text" : "L’eau propre s’évacue à l’extrémité de la fibre et </br>poursuit son chemin vers de nouveaux usages."
                 }
             }
         }
@@ -115,11 +115,11 @@
                 "timecode":4000,
                 "en" : {
                     "title":"Triggering the Cleaning Process",
-                    "text":"When the filter becomes too clogged, a cleaning process</br>is automatically activated. The flow of water is reversed in each module so that it runs from the inside to the outside of the fibers. "
+                    "text":"When the filter becomes too clogged, a cleaning process</br>is automatically activated. The flow of water is reversed </br>in each module so that it runs from the inside to the outside of the fibers. "
                 },
                 "fr" : {
                     "title":"Déclenchement du procédé de nettoyage",
-                    "text":"Quand le niveau d’encrassage devient trop important,</br>un procédé de nettoyage s’active automatiquement.</br>En pratique, le flux de l’eau s’inverse au sein de chaque module : il part à présent du cœur des fibres pour aller</br>vers l’extérieur. "
+                    "text":"Quand le niveau d’encrassage devient trop important,</br>un procédé de nettoyage s’active automatiquement.</br>En pratique, le flux de l’eau s’inverse au sein de chaque module : </br>il part à présent du cœur des fibres pour aller vers l’extérieur. "
                 }
             },
             {
