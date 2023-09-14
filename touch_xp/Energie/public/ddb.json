@@ -1,0 +1,72 @@
+{
+    "phases":[
+        {
+            "media":{
+                "clip" : "EnergiesNouvelles_nokinar_decharge"
+            },
+            "text":{
+                "en":{
+                    "title" : "<strong>Inside a Smartphone Battery</strong></br>(made without Arkema’s Kynar<sup>®</sup> PVDF resin)",
+                    "cta" : "The device’s battery is running low. To recharge it, put your hand on the white circle.</br>To see a battery made with Kynar<sup>®</sup>, touch the red circle.",                    
+                    "text" : "In this lithium-ion battery made without</br> Arkema’s Kynar<sup>®</sup> PVDF, the ions </br>and the electrons flow in an inefficient </br>path between the cathode and the anode. </br>The separator between the electrodes is </br>subject to strong force."
+                },
+                "fr":{
+                    "title" : "<strong>Au cœur d’une batterie de smartphone</strong></br>(Sans PVDF Kynar<sup>®</sup> d’Arkema)",
+                    "cta" : "L’appareil se décharge. Pour le recharger, posez la main sur le cercle blanc tactile.  </br>Pour observer une batterie avec Kynar<sup>®</sup>, touchez le cercle rouge tactile.",
+                    "text" : "Dans cette batterie ion-Lithium </br>sans PVDF Kynar<sup>®</sup> d’Arkema, </br>les ions et les électrons circulent </br>de manière chaotique entre </br>la cathode et l’anode. Le séparateur </br>entre les électrodes est très sollicité."
+                }
+            }
+        },
+        {
+            "media":{
+                "clip" : "EnergiesNouvelles_nokinar"
+            },
+            "text":{
+                "en":{
+                    "title" : "<strong>Inside a Smartphone Battery</strong></br>(made without Arkema’s Kynar<sup>®</sup> PVDF resin)",
+                    "cta" : "The device is recharging. To see a battery made with Kynar<sup>®</sup>, touch the red circle.",                    
+                    "text" : "Whether recharging or discharging, </br>the ions and electrons flow in an </br>inefficient path. This leads to losses </br>and wears down the separator and </br>the battery."
+                },
+                "fr":{
+                    "title" : "<strong>Au cœur d’une batterie de smartphone</strong></br>(Sans PVDF Kynar<sup>®</sup> d’Arkema)",
+                    "cta" : "L’appareil se recharge. Pour observer une batterie avec Kynar<sup>®</sup>, touchez le cercle rouge tactile.  ",
+                    "text" : "Comme en phase de décharge, </br>les ions et les électrons suivent </br>des trajectoires désordonnées. </br>Avec à la clé des déperditions </br>et une usure du séparateur </br>et de la batterie."
+                }
+            }
+        },
+        {
+            "media":{
+                "clip" : "EnergiesNouvelles_kinar_decharge"
+            },
+            "text":{
+                "en":{
+                    "title" : "<strong>Inside a Smartphone Battery</strong></br>(made with Arkema’s Kynar<sup>®</sup> PVDF resin)",
+                    "cta" : "The device’s battery is running low.  To recharge it, put your hand on the white circle.</br>To see a battery made without Kynar<sup>®</sup>, leave the red circle.",                    
+                    "text" : "Unlike the previous battery, </br>this one uses Kynar<sup>®</sup> PVDF </br>as a binder in electrode fabrication.</br> The ions and electrons flow</br>in an efficient path. </br>The Kynar<sup>®</sup> also protects</br>the separator more effectively. "
+                },
+                "fr":{
+                    "title" : "Au cœur d’une batterie de smartphone</strong></br>(Avec PVDF Kynar<sup>®</sup> d’Arkema)",
+                    "cta" : "L’appareil se décharge. Pour le recharger, posez la main sur le cercle blanc tactile.</br>Pour observer à nouveau une batterie sans Kynar<sup>®</sup>, relachez le cercle rouge tactile. ",
+                    "text" : "Contrairement à la batterie précédente, </br>celle-ci contient du PVDF Kynar<sup>®</sup>, </br>utilisé comme liant dans la fabrication </br>des électrodes. Les ions et les électrons </br>circulent plus efficacement. </br>Le Kynar<sup>®</sup> permet également de mieux </br>protéger le séparateur. "
+                }
+            }
+        },
+        {
+            "media":{
+                "clip" : "EnergiesNouvelles_kinar"
+            },
+            "text":{
+                "en":{
+                    "title" : "<strong>Inside a Smartphone Battery</strong></br>(made with Arkema’s Kynar<sup>®</sup> PVDF resin)",
+                    "cta" : "The device is recharging. To see a battery made without Kynar<sup>®</sup>, leave the red circle.",                    
+                    "text" : "Whether the battery is recharging </br>or discharging, the Kynar<sup>®</sup> ensures </br>that the active materials in the cathodes </br>and anodes adhere perfectly. </br>Kynar<sup>®</sup>’s very high electrochemical </br>resistance, extends battery life </br>and improves performance.</br>"
+                },
+                "fr":{
+                    "title" : "<strong>Au cœur d’une batterie de smartphone</strong></br>(Avec PVDF Kynar<sup>®</sup> d’Arkema)",
+                    "cta" : "L’appareil se recharge. Pour observer à nouveau une batterie sans Kynar<sup>®</sup>, relachez le cercle rouge tactile.  ",
+                    "text" : "En recharge comme en décharge,</br>le Kynar<sup>®</sup>assure une parfaite adhésion</br> des matériaux actifs des cathodes </br>et des anodes. Grâce à sa très grande </br>résistance électrochimique, il contribue </br>à la longévité des batteries et améliore </br>leurs performances.</br>"
+                }
+            }
+        }
+    ]
+}   
