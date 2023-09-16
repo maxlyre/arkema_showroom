@@ -1,0 +1,38 @@
+<svg width="67" height="729" viewBox="0 0 67 729" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_129_2)">
+<rect width="67" height="729" rx="19" fill="url(#paint0_linear_129_2)" fill-opacity="0.4"/>
+<rect x="0.5" y="0.5" width="66" height="728" rx="18.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+</g>
+<path d="M34 53L34 679" stroke="#55BE9B"/>
+<circle cx="34" cy="53" r="4.5" fill="#1D4B3C" stroke="#55BE9B"/>
+<circle cx="34" cy="148" r="4.5" fill="#1D4B3C" stroke="#55BE9B"/>
+<circle cx="34" cy="500" r="4.5" fill="#1D4B3C" stroke="#55BE9B"/>
+<circle cx="34" cy="324" r="4.5" fill="#1D4B3C" stroke="#55BE9B"/>
+<circle cx="34" cy="676" r="4.5" fill="#1D4B3C" stroke="#55BE9B"/>
+<path d="M46 30L34 23L22 30" stroke="#55BE9B" stroke-opacity="0.5"/>
+<path d="M46 22L34 15L22 22" stroke="#55BE9B" stroke-opacity="0.5"/>
+<path d="M22 699L34 706L46 699" stroke="#55BE9B" stroke-opacity="0.5"/>
+<path d="M22 707L34 714L46 707" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="1" y1="52.5" x2="20" y2="52.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="1" y1="147.5" x2="20" y2="147.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="47" y1="52.5" x2="66" y2="52.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="47" y1="147.5" x2="66" y2="147.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="1" y1="323.5" x2="20" y2="323.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="47" y1="323.5" x2="66" y2="323.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="1" y1="499.5" x2="20" y2="499.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="47" y1="499.5" x2="66" y2="499.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="1" y1="675.5" x2="20" y2="675.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<line x1="47" y1="675.5" x2="66" y2="675.5" stroke="#55BE9B" stroke-opacity="0.5"/>
+<defs>
+<filter id="filter0_b_129_2" x="-6" y="-6" width="79" height="741" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="3"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_129_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_129_2" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_129_2" x1="-145.824" y1="63.4019" x2="-45.7452" y2="716.86" gradientUnits="userSpaceOnUse">
+<stop stop-color="#55BE9B"/>
+<stop offset="1" stop-color="#55BE9B" stop-opacity="0.2"/>
+</linearGradient>
+</defs>
+</svg>
