@@ -52,6 +52,7 @@
       changeSection()
     }else{
       currentVideoID.value= -1;
+      
     }
 
   })
@@ -63,12 +64,14 @@
   }
 
   function slideTo(index){
+    console.log(index)
     const oldVideo = currentVideo;
     currentVideo = refVideo.value[index].children[0]
     currentVideo.play()
     setTimeout(() => {
+      if(currentVideoID.value != -1) stopOld(oldVideo)
       currentVideoID.value= index;
-      stopOld(oldVideo)
+
     }, 25);
   }
   const stopOld = (video) => {

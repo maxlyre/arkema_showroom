@@ -61,7 +61,9 @@
   font-display: swap;
 }
 
-
+*{
+  cursor: none;
+}
 html{
   font-size: 100%;
 }
@@ -81,6 +83,17 @@ body,html,#app {
 sup{
   line-height: 0
 }
+@media screen and (max-width: 2160px)  { 
+  html{
+    font-size: 200%;
+  }
+}
+@media screen and (max-width: 1080px)  { 
+  html{
+    font-size: 100%;
+  }
+}
+
 @media screen and (max-width: 1017px)  { 
   html{
     font-size: 90%;

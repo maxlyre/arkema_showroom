@@ -61,7 +61,9 @@
   font-display: swap;
 }
 
-
+*{
+  cursor: none;
+}
 html{
   font-size: 100%;
 }
@@ -79,8 +81,26 @@ body,html,#app {
 }
 
 sup{
-  line-height: 0
+  line-height: 0;
+  font-size: 0.6em;
 }
+@media screen and (max-height: 3840px)  { 
+  html{
+    font-size: 200%;
+  }
+  #knobContainer{
+    transform:scale(1.9)
+  }
+}
+@media screen and (max-height: 1920px)  { 
+  html{
+    font-size: 100%;
+  }
+  #knobContainer{
+    transform:scale(1)
+  }
+}
+
 @media screen and (max-height: 1800px)  { 
   html{
     font-size: 90%;
@@ -101,10 +121,10 @@ sup{
 
 @media screen and (max-height: 1200px)  { 
   html{
-    font-size: 70%;
+    font-size: 65%;
   }
   #knobContainer{
-    transform:scale(0.66)
+    transform:scale(0.63)
   }
 }
 @media screen and (max-height: 1000px)  { 
@@ -113,5 +133,14 @@ sup{
   }
   #knobContainer{
     transform:scale(0.55)
+  }
+}
+
+@media screen and (max-height: 900px)  { 
+  html{
+    font-size: 45%;
+  }
+  #knobContainer{
+    transform:scale(0.45)
   }
 }
