@@ -19,7 +19,7 @@
     "background_sound": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "audios"
       ],
@@ -38,7 +38,8 @@
           "localized": true
         }
       },
-      "component": "table-components.data-block"
+      "component": "table-components.data-block",
+      "required": true
     },
     "Background_loop": {
       "pluginOptions": {
@@ -52,7 +53,7 @@
     "Infographics_video": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "videos"
       ],
@@ -82,7 +83,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Title": {
       "pluginOptions": {
@@ -90,7 +92,11 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Subtitle": {
       "pluginOptions": {
@@ -98,7 +104,11 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Infographics_excerpt": {
       "pluginOptions": {
@@ -106,7 +116,24 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

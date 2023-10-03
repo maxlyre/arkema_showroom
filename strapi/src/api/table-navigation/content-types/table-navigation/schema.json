@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "table_navigations",
+  "info": {
+    "singularName": "table-navigation",
+    "pluralName": "table-navigations",
+    "displayName": "Table Navigation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MenuTable": {
+      "displayName": "Menu",
+      "type": "component",
+      "repeatable": true,
+      "component": "table-components.menu"
+    },
+    "test": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

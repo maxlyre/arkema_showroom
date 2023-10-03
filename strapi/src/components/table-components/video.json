@@ -7,13 +7,25 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Subtitle": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Call_to_action": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Video_slide": {
       "displayName": "Video Slider",

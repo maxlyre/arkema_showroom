@@ -7,7 +7,11 @@
   "options": {},
   "attributes": {
     "Text": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "column": {
       "type": "integer",

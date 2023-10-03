@@ -35,10 +35,18 @@
       ]
     },
     "Question": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Answer_text": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

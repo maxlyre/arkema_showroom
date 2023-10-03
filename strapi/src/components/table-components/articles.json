@@ -2,14 +2,15 @@
   "collectionName": "components_table_components_articles",
   "info": {
     "displayName": "Articles",
-    "icon": "book"
+    "icon": "book",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "Article": {
+    "article_post": {
       "displayName": "Article",
       "type": "component",
       "repeatable": true,

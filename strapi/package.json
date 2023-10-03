@@ -10,12 +10,12 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@_sh/strapi-plugin-ckeditor": "^1.1.1",
-    "@strapi/plugin-graphql": "^4.3.2",
-    "@strapi/plugin-i18n": "4.3.2",
-    "@strapi/plugin-users-permissions": "4.3.2",
-    "@strapi/strapi": "^4.3.2",
-    "sqlite3": "^5.0.11"
+    "@_sh/strapi-plugin-ckeditor": "^2.0.4",
+    "@strapi/plugin-graphql": "^4.14.2",
+    "@strapi/plugin-i18n": "4.14.2",
+    "@strapi/plugin-users-permissions": "4.14.2",
+    "@strapi/strapi": "^4.14.2",
+    "better-sqlite3": "8.5.0"
   },
   "overrides": {
     "@graphql-tools/merge": "8.3.0"

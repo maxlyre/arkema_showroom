@@ -1,0 +1,205 @@
+globalThis.CKEditorConfig = {
+
+    /* By default configs and theme
+    objects will be spread with
+    default configs and theme
+    these two properties specified below
+    allow you to redefine
+    default objects completely: */
+
+    //configsOverwrite:true,
+    //themeOverwrite:true,
+
+    /* Here you can redefine default configs
+    or add completely new ones.
+    Each config includes: 
+    "styles", "field" and "editorConfig" properties.
+    Property "field" is required. */
+
+    configs:{
+        toolbar:{
+            // styles:``,
+            // field:{},
+            // editorConfig:{}
+        },
+        custom:{
+            
+            /* Styles for this specific editor.
+            This will be passed into the editor's parent container. */
+
+            styles:`
+              .ck.ck-editor__main>.ck-editor__editable {
+                background: #ededf3 !important;
+              }
+            `,
+
+            /* Custom field option */
+            field: {
+                key: "custom",
+                value: "custom",
+                metadatas: {
+                  intlLabel: {
+                    id: "ckeditor5.preset.custom.label",
+                    defaultMessage: "Custom version",
+                  },
+                },
+            },
+            /* CKEditor configuration */
+            editorConfig:{
+                /* All available built-in plugins
+                you can find in admin/src/components/Input/CKEditor/configs/base.js */
+                plugins: [
+                    CKEditor5.paragraph.Paragraph,
+                    CKEditor5.fontWithPicker.FontSize,
+                    CKEditor5.basicStyles.Underline,
+                    CKEditor5.alignment.Alignment,
+                    CKEditor5.specialCharacters.SpecialCharacters,
+                    CKEditor5.removeFormat.RemoveFormat,
+                    CKEditor5.specialCharacters.SpecialCharactersLatin,
+                    CKEditor5.specialCharacters.SpecialCharactersText,
+                    CKEditor5.specialCharacters.SpecialCharactersMathematical,
+                    CKEditor5.specialCharacters.SpecialCharactersCurrency,
+                    CKEditor5.sourceEditing.SourceEditing,
+                    CKEditor5.htmlEmbed.HtmlEmbed,
+                    CKEditor5.autoformat.Autoformat,
+                    CKEditor5.basicStyles.Bold,
+                    CKEditor5.basicStyles.Italic,
+                    CKEditor5.basicStyles.Subscript,
+                    CKEditor5.basicStyles.Superscript,
+                    CKEditor5.essentials.Essentials,
+                    CKEditor5.heading.Heading,
+                    CKEditor5.image.Image,
+                    CKEditor5.image.ImageCaption,
+                    CKEditor5.image.ImageStyle,
+                    CKEditor5.image.ImageToolbar,
+                    CKEditor5.image.ImageUpload,
+                    CKEditor5.image.ImageResizeEditing,
+                    CKEditor5.image.ImageResizeHandles,
+                    CKEditor5.image.ImageResizeButtons,
+                    CKEditor5.indent.Indent,
+                    CKEditor5.link.Link,
+                    CKEditor5.list.List,
+                    CKEditor5.paragraph.Paragraph,
+                    CKEditor5.pasteFromOffice.PasteFromOffice,
+                    CKEditor5.table.Table,
+                    CKEditor5.table.TableToolbar,
+                    CKEditor5.table.TableColumnResize,
+                    CKEditor5.table.TableCaption,
+                    CKEditor5.strapiPlugins.StrapiMediaLib,
+                    CKEditor5.strapiPlugins.StrapiUploadAdapter,
+                  ],
+
+                  /* By default, for plugin's UI will use
+                  the language defined in this file
+                  or the preferred language from strapi's user config
+                  and 'en' as a fallback.
+                  language.ui -> preferred language -> 'en' */
+
+                  /* For content it will use language based on i18n (if! ignorei18n)
+                  or language.content defined here
+                  and it will use UI language as a fallback.
+                  ignorei18n ? language.content : i18n; -> language.ui */
+
+                  language:{
+                    // ignorei18n: true,
+                    // ui:'he',
+                    // content:'he'
+                  },
+                  toolbar: [
+                    'heading',
+                    'fontSize',
+                    '|',
+                    'bold',
+                    'italic',
+                    'underline',
+                    'superscript',
+                    'alignment',
+                    'specialCharacters',
+                    'removeFormat',
+                    '|',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'StrapiMediaLib',
+                    'insertTable',
+                    'link',
+                    '|',
+                    'sourceEditing',
+                    'htmlEmbed',
+                  ],
+                  heading: {
+                    options: [
+                      { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                      { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                      { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                    ]
+                  },
+                  image: {
+                    resizeUnit:"px",
+                    resizeOptions: [
+                      {
+                          name: 'resizeImage:original',
+                          value: null,
+                          icon: 'original'
+                      },
+                      {
+                          name: 'resizeImage:25',
+                          value: '25',
+                          icon: 'small'
+                      },
+                      {
+                          name: 'resizeImage:50',
+                          value: '50',
+                          icon: 'medium'
+                      },
+                      {
+                          name: 'resizeImage:75',
+                          value: '75',
+                          icon: 'large'
+                      }
+                    ],
+                    toolbar: [
+                      'imageStyle:inline',
+                      'imageStyle:block',
+                      'imageStyle:side',
+                      '|',
+                      'resizeImage:25',
+                      'resizeImage:50',
+                      'resizeImage:75',
+                      'resizeImage:original',
+                    ],
+
+                  },
+                  table: {
+                    contentToolbar: [
+                      'tableColumn',
+                      'tableRow',
+                      'mergeTableCells',
+                      '|',
+                      'toggleTableCaption'
+                    ]
+                  },
+                  fontSize: {
+                    options: [
+                      { model: 'tiny', title: 'Tiny', class: 'text-tiny' },
+                      { model: 'small', title: 'Small', class: 'text-small' },
+                      'default',
+                      { model: 'big', title: 'Big', class: 'text-big' },
+                      { model: 'huge', title: 'Huge', class: 'text-huge' },
+                    ],
+                    supportAllValues: false
+                  },
+            }
+        }
+    },
+
+    /* Here you can customize the plugin's theme.
+    This will be passed as "createGlobalStyle". */
+    theme:{
+        // common:``,
+        // light:``,
+        // dark:``,
+        // additional:``
+    }
+
+}

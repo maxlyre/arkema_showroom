@@ -14,13 +14,25 @@
       "type": "integer"
     },
     "Title": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Text": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Extra_text": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "Media": {
       "allowedTypes": [

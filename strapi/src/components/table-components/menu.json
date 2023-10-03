@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_table_components_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "table": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::table.table"
+    }
+  }
+}

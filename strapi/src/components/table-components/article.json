@@ -1,24 +1,28 @@
 {
-  "collectionName": "components_table_components_articles",
+  "collectionName": "components_table_components_article",
   "info": {
     "displayName": "Article",
-    "icon": "file-alt"
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "Text": {
-      "type": "richtext"
-    },
     "Media": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
