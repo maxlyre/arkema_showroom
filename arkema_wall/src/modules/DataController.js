@@ -20,6 +20,7 @@ const contentQuery = gql`
             wall_group{
                 Title
                 EnglishTitle
+                ChineseTitle
                 positionX
                 positionY
                 videoTransition{
@@ -37,7 +38,7 @@ const contentQuery = gql`
                 }
                 }
                 menu_entry{
-                                wall{
+                    wall{
                     data{
                     id
                     attributes{
@@ -46,7 +47,8 @@ const contentQuery = gql`
                         data{
                             id
                             attributes{
-                            Title
+                                Title
+                                locale
                             }
                         }
                         }

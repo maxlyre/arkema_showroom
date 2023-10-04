@@ -9,7 +9,8 @@
     data() {
       return {
         lang:"fr",
-        currentActive:0
+        currentActive:0,
+        navLangArray : []
       }
     },
     methods:{
@@ -48,37 +49,65 @@
           let active = document.querySelector('.active');
           let newIndex = 0;
           if(active != null && active.getAttribute('targetid')!=0){
-            let navItem = this.content[active.parentNode.getAttribute('groupindex')].menu_entry[active.parentNode.getAttribute('itemindex')].wall.data;
-            if(lang=="fr"){
-              newIndex = navItem.id
+            let navItem = this.navLangArray[active.parentNode.getAttribute('groupindex')].entries[active.parentNode.getAttribute('itemindex')];
+            if(navItem[lang]!= undefined){
+              newIndex = navItem[lang].id
             }else{
-              if(navItem.attributes.localizations.data.length>0){
-                newIndex = navItem.attributes.localizations.data[0].id;
-              }else{
-                newIndex=0
-              }
-              
+              newIndex = 0;
             }
           }else{
             newIndex=0;
           }
           
+          if(active != null){
+            active.classList.remove("active")
+          }
           this.lang = lang;
-          this.$emit("changeID",newIndex,this.lang,active.getAttribute('groupName'));
+          const groupName = newIndex == 0 ? null :active.getAttribute('groupName');
+          this.$emit("changeID",newIndex,this.lang,groupName);
           this.currentActive = newIndex;
         },
     },
     updated(){
+      
       document.querySelector('a[targetid="'+this.currentActive+'"]').classList.add("active")
     },
+    created(){
+      
+      for(let group of this.content){
+        let items = {
+          titles:{
+            fr:group.Title,
+            en:group.EnglishTitle,
+            zh:group.ChineseTitle
+          },
+          entries:[]
+        }
+        for(let entry of group.menu_entry){
+          let entriesObject = {
+            fr:{
+              id:entry.wall.data.id,
+              title: entry.wall.data.attributes.Title 
+            }
+          }
+          for(let local of entry.wall.data.attributes.localizations.data){
+            entriesObject[local.attributes.locale] = {
+              id:local.id,
+              title : local.attributes.Title
+            }
+          }
+          items.entries.push(entriesObject)
+        }
+        this.navLangArray.push(items)
+      }
+    }
   };
 </script>
 
 <template>
     <div class="menu">
       <div class="lang_switcher">
-          <button class="fr" v-bind:class="{ langActive: lang=='fr' }" @click="changeLang('fr')">FR</button>
-          <button class="en" v-bind:class="{ langActive: lang=='en' }" @click="changeLang('en')">EN</button>    
+          <button v-for="(langs) in Object.keys(navLangArray[0].titles)" :class="langs" v-bind:class="{ langActive: lang==langs }" @click="changeLang(langs)">{{langs.toUpperCase()}}</button>
       </div>
       <div class="navigation">
           <button class="prev" @click="arrowNav(-1)"><img src="/assets/img/arrow.svg"/></button>
@@ -95,18 +124,14 @@
               </li>
             </ul>
           </li>
-          <li v-for="(nav,groupindex) in content" class="navigation_content">
-            <div v-if="lang=='fr'" class="group_title">
-                  {{ nav.Title }}
+          <li v-for="(nav,groupindex) in navLangArray" class="navigation_content">
+            <div v-if="nav.entries[0][lang] != undefined" class="group_title">
+                  {{ nav.titles[lang] }}
             </div>
-            <div v-else class="group_title">
-                  {{ nav.EnglishTitle }}
-            </div>
-            <ul class="navigation_sub_container">
-              <template v-for="(data,index) in nav.menu_entry" >
-                <li :groupindex="groupindex" :itemindex="index" v-if="data.wall.data.attributes.localizations.data.length>0 || lang=='fr'" class="navigation_sub_content">
-                  <a  v-if="lang=='fr'" :targetid="data.wall.data.id" :groupName="nav.Title" @click="changeIndex(data.wall.data.id,nav.Title)">{{data.wall.data.attributes.Title}}</a>
-                  <a  v-else :targetid="data.wall.data.attributes.localizations.data[0].id" :groupName="nav.Title" @click="changeIndex(data.wall.data.attributes.localizations.data[0].id,nav.Title)">{{data.wall.data.attributes.localizations.data[0].attributes.Title}}</a>
+            <ul  v-if="nav.entries[0][lang] != undefined" class="navigation_sub_container">
+              <template v-for="(data,index) in nav.entries" >
+                <li :groupindex="groupindex" :itemindex="index" class="navigation_sub_content" v-if="data[lang] != undefined">
+                  <a :targetid="data[lang].id" :groupName="nav.titles.fr" @click="changeIndex(data[lang].id,nav.titles.fr)">{{data[lang].title}}</a>
                 </li>  
               </template>
             </ul>
@@ -194,7 +219,7 @@
     display:inline-block;
     margin-left : 15px;
     position: absolute;
-    left: 98px;
+    left: 100px;
     top: -30px;
   }
   .lang_switcher button{
@@ -204,12 +229,21 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border : 2px solid white;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px 1px;
     font-family: 'Futura Std';
     font-weight: 600;
     cursor:pointer;
     font-size: 1rem;
 
+  }
+  .lang_switcher button:first-child{
+    border-left : 2px solid white;
+    width: 31px;
+  }
+  .lang_switcher button:last-child{
+    border-right : 2px solid white;
   }
   .lang_switcher .langActive{
     background-color: white;
@@ -276,6 +310,7 @@
       display: none;
       top : auto;
     }
+    
     .lang_switcher.nav_active{
       display: block;
     }

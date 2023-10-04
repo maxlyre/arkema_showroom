@@ -21,6 +21,7 @@ const TodosQuery = gql`
           wall_group{
             Title
             EnglishTitle
+            ChineseTitle
             positionX
             positionY
             videoTransition{
@@ -48,6 +49,7 @@ const TodosQuery = gql`
                         id
                         attributes{
                           Title
+                          locale
                         }
                       }
                     }

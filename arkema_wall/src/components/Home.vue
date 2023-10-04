@@ -13,6 +13,7 @@
     },
     data() {
       return {
+       navLangArray:[]
       }
     },
     methods:{
@@ -20,21 +21,45 @@
         this.$emit("changeID",id,group);
       }
     },
-    update(){
-      console.log(this.lang)
+    created(){
+      
+      for(let group of this.content){
+        let items = {
+          titles:{
+            fr:group.Title,
+            en:group.EnglishTitle,
+            zh:group.ChineseTitle
+          },
+          positionX : group.positionX,
+          positionY : group.positionY,
+          entries:{}
+        }
+        let entriesObject = {
+          fr:{
+            id:group.menu_entry[0].wall.data.id,
+          }
+        }
+        for(let local of group.menu_entry[0].wall.data.attributes.localizations.data){
+          entriesObject[local.attributes.locale] = {
+            id:local.id,
+          }
+        }
+        items.entries = entriesObject
+
+        this.navLangArray.push(items)
+        
+      }
     }
   };
 </script>
 
 <template>
     <div class="content home">
-      <div v-for="(nav,groupindex) in content"
+      <div v-for="(nav) in navLangArray"
         class="menu_item"
         :style="{left:nav.positionX+'%',top:nav.positionY+'%'}"
       >
-        
-        <h3 v-if="this.lang =='fr'" @click="changeIndex(nav.menu_entry[0].wall.data.id,nav.Title)">{{nav.Title}}</h3>
-        <h3 v-else @click="changeIndex(nav.menu_entry[0].wall.data.attributes.localizations.data[0].id,nav.Title)">{{nav.EnglishTitle}}</h3>
+      <h3  v-if="nav.entries[lang] != undefined" @click="changeIndex(nav.entries[lang].id,nav.titles[lang])">{{nav.titles[lang]}}</h3>
       </div>
     </div>
 </template>
