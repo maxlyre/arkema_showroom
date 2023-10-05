@@ -1,0 +1,26 @@
+{
+    "fr":{
+        "employee":" Employés",
+        "usine":" Usine(s) de production",
+        "agence":" Agence(s) commercial(es)",
+        "rd":" Centre(s) R&D",
+        "siege":" Siège(s)",
+        "technique":" Centre(s) technique(s)"
+    },
+    "en":{
+        "employee":" Employees",
+        "usine":" Factory(ies)",
+        "agence":" Commercial agency(ies) ",
+        "rd":" R&D center(s)",
+        "siege":" Headquarter(s)",
+        "technique":" Technical center(s)"
+    },
+    "zh":{
+        "employee":" 员工",
+        "usine":" 工厂",
+        "agence":" 商业代理",
+        "rd":" 研发中心",
+        "siege":" 总部",
+        "technique":" 技术中心"
+    }
+ }

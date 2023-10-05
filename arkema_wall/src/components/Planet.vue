@@ -93,7 +93,7 @@
       //   });
     },
     beforeUnmount(){
-        this.app.app.destroy()
+      pc.Application.getApplication().destroy()
         this.app.app = undefined;
         this.app.device = undefined;
     },
