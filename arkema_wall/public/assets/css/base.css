@@ -95,7 +95,9 @@ img{
 table{
   width: 100%;
 }
-
+tbody{
+  vertical-align: top;
+}
 .planete .cam_left::after{
   content:url('../img/arrow.svg');
   display:block;

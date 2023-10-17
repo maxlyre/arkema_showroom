@@ -12,7 +12,9 @@
     },
     computed:{
       imgBody(){
-        return this.content.Text.replaceAll('/uploads/', this.$APIURL+'/uploads/');
+        let text = this.content.Text.replaceAll('/uploads/', this.$APIURL+'/uploads/');
+        text = text.replaceAll(this.$APIURL+this.$APIURL,this.$APIURL)
+        return text
       }
     }
   };
@@ -53,6 +55,9 @@
     font-size : 1.6rem;
     line-height: 1.5;
     margin-bottom: 0.8rem;
+  }
+  .text td{
+    padding: 0.5rem;
   }
 
   .text p strong{
