@@ -12,8 +12,14 @@
     },
     computed:{
       imgBody(){
-        let text = this.content.Text.replaceAll('/uploads/', this.$APIURL+'/uploads/');
-        text = text.replaceAll(this.$APIURL+this.$APIURL,this.$APIURL)
+        
+        let text = this.content.Text
+        if(!this.$ELECTRONENV){
+          text = text.replaceAll('http://localhost:1338/uploads/','/uploads/')
+          text = text.replaceAll(this.$APIURL+'/uploads/','/uploads/');
+          text = text.replaceAll('/uploads/', this.$APIURL+'/uploads/');
+        }
+
         return text
       }
     }

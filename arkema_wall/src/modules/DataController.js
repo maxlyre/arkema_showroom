@@ -139,6 +139,7 @@ const timeQuery  = gql`
 
 export class DataController{
     constructor(url){
+        
         //Event var
         this.event  = new EventEmitter();
         this.url = url;
@@ -205,6 +206,8 @@ export class DataController{
         await this.downloadMedia(filename);
 
         let newJson = await str.replaceAll("/uploads/","datas/files/")
+        newJson = newJson.replaceAll('http://localhost:1338datas','datas')
+        newJson = newJson.replaceAll(this.url+'datas','datas');
         this.localData.datas = await JSON.parse(newJson);
 
         await this.saveJsonData(this.localData);

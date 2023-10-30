@@ -152,6 +152,7 @@ if(!electronEnv){
       app.mount("#app");
   });
 }else{
+  
   const { ipcRenderer } = require('electron');
 
   var pointerList = {}

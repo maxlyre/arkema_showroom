@@ -50,6 +50,7 @@
           let newIndex = 0;
           if(active != null && active.getAttribute('targetid')!=0){
             let navItem = this.navLangArray[active.parentNode.getAttribute('groupindex')].entries[active.parentNode.getAttribute('itemindex')];
+            
             if(navItem[lang]!= undefined){
               newIndex = navItem[lang].id
             }else{
@@ -101,13 +102,14 @@
         this.navLangArray.push(items)
       }
     }
+    
   };
 </script>
 
 <template>
     <div class="menu">
       <div class="lang_switcher">
-          <button v-for="(langs) in Object.keys(navLangArray[0].titles)" :class="langs" v-bind:class="{ langActive: lang==langs }" @click="changeLang(langs)">{{langs.toUpperCase()}}</button>
+          <button v-for="langs in Object.keys(navLangArray[0].titles)" :class="langs" v-bind:class="{ langActive: lang==langs }" @click="changeLang(langs)">{{langs.replace('zh','cn').toUpperCase()}}</button>
       </div>
       <div class="navigation">
           <button class="prev" @click="arrowNav(-1)"><img src="/assets/img/arrow.svg"/></button>
@@ -120,7 +122,10 @@
             </div>
             <ul class="navigation_sub_container">
               <li :groupindex="-1" :itemindex="-1" class="navigation_sub_content">
-                <a targetID="0" class="active" @click="changeIndex(0)">Home</a>
+                <a targetID="0" class="active" @click="changeIndex(0)">
+                  <span v-if="lang != 'zh'" >Home</span>
+                  <span v-else>首页</span>
+                </a>
               </li>
             </ul>
           </li>
