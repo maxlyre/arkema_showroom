@@ -119,7 +119,14 @@
     background-color: black;
     aspect-ratio: 9 / 16;
   }
+  .ratio-9 .videoPlayer{
+    aspect-ratio: 9 / 16;
 
+  }
+  .ratio-10 .videoPlayer{
+    aspect-ratio: 10 / 16;
+    top : 43%;
+  }
   .video_container{
     height: 100%;
     /* pointer-events: none; */

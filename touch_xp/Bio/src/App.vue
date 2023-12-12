@@ -11,7 +11,8 @@ export default {
       return {
         currentID : 0,
         veilleTimer : null,
-        veille : false
+        veille : false,
+        ratio : true
       }
   },
   methods:{
@@ -30,6 +31,11 @@ export default {
       this.veille = false;
       clearTimeout(this.veilleTimer)
       this.startTimer()
+    },
+    resizeWindow(){
+      document.querySelector('html').style.fontSize = (100 * window.innerHeight / 1920 ) + "%";
+      document.querySelector('#knobContainer').style.transform = `scale(${1 * window.innerHeight / 1920})`
+      this.ratio = (window.innerWidth / window.innerHeight) > 0.6 ? false : true;
     }
   },
   mounted(){
@@ -39,15 +45,21 @@ export default {
         this.currentID = parseInt(key.key)
       }
     }
+
+    this.resizeWindow()
+    window.addEventListener("resize", ()=>{
+      this.resizeWindow()
+    });
   },
 }
 </script>
   
 <template>
-    <main>
+    <main :class="[ratio ? 'ratio-9' : 'ratio-10']">
       <TextContainer
         :datas="$datas"
         :currentVideo = "currentID"
+        :ratio = "ratio"
       />
 
       <VideoPlayer 
@@ -71,9 +83,15 @@ export default {
       width: auto;
       height: 100%;
       z-index: 5000;
-      aspect-ratio: 9 / 16;
+      
       position: relative;
       margin: auto;
+  }
+  main.ratio-9{
+    aspect-ratio: 9 / 16;
+  }
+  main.ratio-10{
+    aspect-ratio: 10 / 16;
   }
   .bandeau{
     width: 100%;
@@ -83,11 +101,19 @@ export default {
     position: absolute;
     z-index: 6000;
   }
-  .bandeauUp{
+
+  .ratio-9 .bandeauUp{
     top: 33%;
   }
-  .bandeauDown{
+  .ratio-10 .bandeauUp{
+    top: 29.8%;
+  }
+
+  .ratio-9 .bandeauDown{
     top: 77.7%;
+  }
+  .ratio-10 .bandeauDown{
+    top : 79.5%;
   }
   .controller{
     position: absolute;

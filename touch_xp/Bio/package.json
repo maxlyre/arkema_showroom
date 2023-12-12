@@ -4,15 +4,22 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "build-android": "vite build && npx cap sync",
     "build": "vite build && electron-builder",
-    "preview": "vite preview"
+    "preview": "vite build && vite preview"
   },
   "dependencies": {
+    "@awesome-cordova-plugins/android-full-screen": "^6.4.0",
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/core": "^5.5.1",
+    "@capacitor/status-bar": "^5.0.6",
+    "cordova-plugin-fullscreen": "^1.3.0",
     "gsap": "^3.12.2",
     "vue": "^3.3.4",
     "vue-glsl": "^1.1.27"
   },
   "devDependencies": {
+    "@capacitor/cli": "^5.5.1",
     "@vitejs/plugin-vue": "^4.3.4",
     "electron": "^26.1.0",
     "electron-builder": "^24.6.4",

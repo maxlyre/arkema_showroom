@@ -1,16 +1,19 @@
 <script setup>
-  import { ref} from 'vue'
+  import { ref,computed} from 'vue'
 
-  const props = defineProps(['text'])
+  const props = defineProps(['text','ratio'])
+  const y = computed(() => {
+      return props.ratio == false ? 'y10' : 'y9';
+  })
 </script>
 
 <template>
     <div class="text_content">
-      <div class="en" :class="[props.text.line ? 'line':'']" :style="{top : props.text.en.y+'%', left : props.text.en.x+'%' }">
+      <div class="en" :class="[props.text.line ? 'line':'']" :style="{top : props.text.en[y]+'%', left : props.text.en.x+'%' }">
         <h3 v-html="props.text.en.title"></h3>
         <p v-html="props.text.en.text"></p>
       </div>
-      <div class="fr" :style="{top : props.text.fr.y+'%', left : props.text.fr.x +'%'}">
+      <div class="fr" :style="{top : props.text.fr[y]+'%', left : props.text.fr.x +'%'}">
         <h3 v-html="props.text.fr.title"></h3>
         <p v-html="props.text.fr.text"></p>
       </div>

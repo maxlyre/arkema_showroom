@@ -21,13 +21,15 @@
                     "title" : "Harvesting</br> Castor Beans",
                     "text" : "The castor oil plant is a renewable,<br> inedible resource that grows in poor<br> soil in semi-arid regions. Several crops <br>can be harvested in a single year.<br> Arkema is currently the only chemical <br>company in the world to produce Rilsan<sup>®</sup>,<br>a polyamide derived exclusively from<br> castor oil.",
                     "x":5,
-                    "y":18.5
+                    "y9":18.5,
+                    "y10":14.5
                 },
                 "fr":{
                     "title" : "Récolte<br> des graines de ricin",
                     "text" : "La plante de ricin est une ressource<br> renouvelable non comestible, cultivée <br>sur des sols pauvres semi-arides. <br>Elle permet plusieurs récoltes par an. <br>À ce jour, Arkema est le seul chimiste <br>au monde à produire le Rilsan<sup>®</sup>, <br>un polyamide 100 % issu de l’huile <br>de ricin.",
                     "x":32,
-                    "y":18.5
+                    "y9":18.5,
+                    "y10":14.5
                 },
                 "line":false
             }
@@ -41,13 +43,15 @@
                     "title" : "Extracting<br> the Castor Oil",
                     "text" : "The harvested beans <br> are crushed to extract <br>the castor oil.",
                     "x":11,
-                    "y":42
+                    "y9":42,
+                    "y10":40
                 },
                 "fr":{
                     "title" : "Extraction <br>de l’huile de ricin",
                     "text" : "Les graines récoltées </br>à l’étape précédente sont broyées</br>pour en extraire l’huile de ricin.",
                     "x":28,
-                    "y":42
+                    "y9":42,
+                    "y10":40
                 },
                 "line":false
 
@@ -62,13 +66,15 @@
                     "title" : "Producing <br>Rilsan<sup>®</sup> Clear",
                     "text" : "Using a polymerization process, </br>the castor oil is transformed into </br>small Rilsan<sup>®</sup> beads, which are </br>the main component of Rilsan<sup>®</sup> Clear, </br>an Arkema innovation used </br>to manufacture eyewear. ",
                     "x":11,
-                    "y":61
+                    "y9":61,
+                    "y10":62
                 },
                 "fr":{
                     "title" : "Production <br>du Rilsan<sup>®</sup> ",
                     "text" : "Grâce à un procédé de polymérisation,<br>l’huile de ricin  est transformée en billes <br>de Rilsan<sup>®</sup>. Celles-ci constituent <br>le composant principal du Rilsan<sup>®</sup> Clear, <br>une innovation d’Arkema dédiée <br>au marché de l’optique.",
                     "x":36,
-                    "y":61
+                    "y9":61,
+                    "y10":62
                 },
                 "line":false
             }
@@ -82,13 +88,15 @@
                     "title" : "Designing Eyewear Frames",
                     "text" : "The Rilsan<sup>®</sup> Clear produced in<br> the previous stage is used in the manufacture of <br>eyewear frames. Boasting exceptional transparency <br>and whiteness, it is suitable for all kinds of <br>design.  ",
                     "x":4,
-                    "y":82
+                    "y9":82,
+                    "y10":83.5
                 },
                 "fr":{
                     "title" : "Design des montures",
                     "text" : "Le Rilsan<sup>®</sup> Clear obtenu à <br>l’étape précédente est utilisé pour produire des <br>montures de lunettes. Grâce à ses propriétés <br>exceptionnelles de transparence et de coloration, <br>il se prête à tous les designs. ",
                     "x":4,
-                    "y":90
+                    "y9":90,
+                    "y10":91.5
                 },
                 "line":true
             }

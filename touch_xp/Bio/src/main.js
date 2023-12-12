@@ -6,11 +6,18 @@ import glsl from 'vue-glsl'
 // register();
 const app = createApp(App)
 app.use(glsl)
-window.ipcRenderer.on('init-data', (_event, message) => {
-  app.config.globalProperties.$datas = message;
-  app.mount('#app').$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))
-})
+// window.ipcRenderer.on('init-data', (_event, message) => {
+//   app.config.globalProperties.$datas = message;
+// })
 
+fetch("ddb.json")
+.then((res) => {
+return res.json();
+})
+.then((data) => {
+  app.config.globalProperties.$datas = data;
+  app.mount('#app').$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))
+});
 // createApp(App).mount('#app').$nextTick(() => {
 //   // Remove Preload scripts loading
 //   postMessage({ payload: 'removeLoading' }, '*')
@@ -20,3 +27,8 @@ window.ipcRenderer.on('init-data', (_event, message) => {
 //     console.log(message)
 //   })
 // })
+import { StatusBar } from '@capacitor/status-bar';
+
+const hideStatusBar = async () => {
+  await StatusBar.hide();
+};

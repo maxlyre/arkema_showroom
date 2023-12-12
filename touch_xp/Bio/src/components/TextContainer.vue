@@ -2,7 +2,7 @@
   import { ref,watch,nextTick, onMounted,computed   } from 'vue'
   import TextContent from './TextContent.vue'
 
-  const props = defineProps(['datas','currentVideo'])
+  const props = defineProps(['datas','currentVideo','ratio'])
   const emit = defineEmits([''])
   const text = computed(() => {
       if(props.currentVideo == 0) return null
@@ -35,6 +35,7 @@
           v-if="text != null"
           :key="text.en.title"
           :text="text"
+          :ratio = "props.ratio"
         />
       </Transition>
     </div>
@@ -51,6 +52,12 @@
     height: 100%;
     z-index: 5000;
     aspect-ratio: 9 / 16;
+  }
+  .ratio-9 .text_container{
+    aspect-ratio: 9 / 16;
+  }
+  .ratio-10 .text_container{
+    aspect-ratio: 10 / 16;
   }
   header{
     position: absolute;
