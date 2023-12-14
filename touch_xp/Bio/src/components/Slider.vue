@@ -9,7 +9,7 @@
   const knob = ref(null)
   const knobInstance = ref(null)
   const markerPos = [
-    43,136,312,488,665
+    37,130,306,482,659
   ]
   let currentPos = 0;
 
@@ -50,7 +50,7 @@ function dragEnd() {
 
 function resetPosition(){
   TweenLite.to(knob.value, 1 ,{
-      y:43,
+      y:37,
       onEnd:()=>{
         knobInstance.value.update();
         currentPos = 0;
@@ -59,7 +59,19 @@ function resetPosition(){
     });
     emit('controller:veille')
 }
-
+function changePosition(direction){
+  let newPos = currentPos+direction;
+  if(newPos < 0 || newPos > markerPos.length-1) return
+  TweenLite.to(knob.value, 1 ,{
+      y:[markerPos[newPos]],
+      onEnd:()=>{
+        knobInstance.value.update();
+        currentPos = newPos;
+        emit('controller:position',newPos)
+      }
+    });
+    emit('controller:veille')
+}
 watch(()=>props.veille,async (veille)=>{
     await nextTick()
     if(veille) resetPosition();
@@ -71,7 +83,7 @@ onMounted(()=>{
     type:"y",
     edgeResistance:1,
     inertia:true,
-    bounds: {minY:43, maxY:665},
+    bounds: {minY:37, maxY:665},
     onDragStart:killTweens,
     onDrag: onRotateKnob,
     onDragEnd:dragEnd
@@ -84,10 +96,13 @@ onMounted(()=>{
 
 <template>
   <div id="knobContainer">
-    
+    <div class="up button" @click="changePosition(-1)"></div>
+    <div class="down button"  @click="changePosition(1)"></div>
     <div id="back">
+
       <img src="../assets/slider_back.svg" alt="">
       <div class="pulse"></div>
+
     </div>
       <div id="knob" ref="knob">
       </div>
@@ -104,15 +119,15 @@ onMounted(()=>{
   }
 
   #knob{
-    width: 22px;
-    height: 22px;
+    width: 34px;
+    height: 34px;
     border-radius: 100%;
     background: linear-gradient(152deg, #FFF 10.82%, #585858 211.07%);
     position: absolute;
     z-index: 55;
     stroke:white 1px solid;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.20));
-    left: calc( 50% - 11px );
+    left: calc( 50% - 17px );
   }
   #back{
     flex-shrink: 0;
@@ -131,6 +146,19 @@ onMounted(()=>{
   #back img{
     width: 67px;
     height: 729px;
+  }
+  .button{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 500;
+  }
+  .up{
+    top : 0;
+  }
+  .down{
+    bottom: 0px;
   }
   .pulse{
     background-color: #55BE9B;

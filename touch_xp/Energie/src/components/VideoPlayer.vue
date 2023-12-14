@@ -112,7 +112,20 @@
     left: -2%;
     opacity: 0.0001;
     transition: opacity 0.5s ease 0.5s;
+  }*
+  .ratio-9 .video_container{
+    height: 104%;
+    width: 104%;
+    top: -4%;
+    left: -2%;
   }
+  .ratio-10 .video_container{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
   .video_container.show{
     opacity: 1;
     transition: opacity 0.5s ease;

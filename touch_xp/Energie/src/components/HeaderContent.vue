@@ -22,7 +22,7 @@
     position: absolute;
     top : 0;
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
   header:after{
     content:"";

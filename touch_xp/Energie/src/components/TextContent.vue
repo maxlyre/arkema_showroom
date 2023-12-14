@@ -19,9 +19,15 @@
 <style scoped>
   .text_content{
     position: absolute;
-    top : 50.4%;
+    
     left: 4rem;
     transform: translateY(-50%);
+  }
+  .ratio-9 .text_content{
+    top : 50.4%;
+  }
+  .ratio-10 .text_content{
+    top : 53%;
   }
   .text_content:after{
     content:"";

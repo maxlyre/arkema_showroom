@@ -13,7 +13,6 @@
 
   
   })
-  console.log(props.datas,props.currentVideo)
 </script>
 
 <template>

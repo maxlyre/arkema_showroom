@@ -13,7 +13,7 @@ app.use(glsl)
 fetch("ddb.json")
 .then((res) => {
 return res.json();
-})
+}) 
 .then((data) => {
   app.config.globalProperties.$datas = data;
   app.mount('#app').$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))
@@ -27,8 +27,11 @@ return res.json();
 //     console.log(message)
 //   })
 // })
-import { StatusBar } from '@capacitor/status-bar';
 
+import { StatusBar } from '@capacitor/status-bar';
+import { NavigationBar } from '@hugotomazi/capacitor-navigation-bar';
 const hideStatusBar = async () => {
   await StatusBar.hide();
 };
+hideStatusBar()
+NavigationBar.hide()

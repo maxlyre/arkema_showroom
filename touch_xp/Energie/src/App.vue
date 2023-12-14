@@ -10,10 +10,18 @@ export default {
   data() {
       return {
           chargeButton :false,
-          kynarButton: false
+          kynarButton: false,
+          ratio : true
       }
   },
   methods:{
+    resizeWindow(){
+      document.querySelector('html').style.fontSize = (100 * window.innerHeight / 1920 ) + "%";
+      // document.querySelector('.controller').style.transform = `scale(${1* window.innerHeight / 1920})` // Screen
+
+      document.querySelector('.controller').style.transform = `scale(${1 * window.innerHeight / 1920})` //Tablette
+      this.ratio = (window.innerWidth / window.innerHeight) > 0.6 ? false : true;
+    }
   },
   mounted(){
     document.onkeyup = (key)=>{
@@ -22,6 +30,10 @@ export default {
         this.currentID = parseInt(key.key)
       }
     }
+    this.resizeWindow()
+    window.addEventListener("resize", ()=>{
+      this.resizeWindow()
+    });
   },
   computed:{
     currentID(){
@@ -40,33 +52,49 @@ export default {
 </script>
   
 <template>
-  <TextContainer
-    :datas="$datas"
-    :currentID = "currentID"
-  />
+  <main :class="[ratio ? 'ratio-9' : 'ratio-10']">
+    <TextContainer
+      :datas="$datas"
+      :currentID = "currentID"
+    />
 
-  <VideoPlayer 
-    :datas="$datas"
-    :currentID = "currentID"
-  />
-  <div class="controller">
-    <Kynar
-      @pointerdown="kynarButton = true"
-      @pointerup="kynarButton = false"
-    ></Kynar>
-    <Button
-      @pointerdown="chargeButton = true"
-      @pointerup="chargeButton = false"
-    ></Button>
-  </div>
-
+    <VideoPlayer 
+      :datas="$datas"
+      :currentID = "currentID"
+    />
+    <div class="controller">
+      <Kynar
+        @pointerdown="kynarButton = true"
+        @pointerup="kynarButton = false"
+      ></Kynar>
+      <Button
+        @pointerdown="chargeButton = true"
+        @pointerup="chargeButton = false"
+      ></Button>
+    </div>
+  </main>
 </template>
 
 <style scoped>
+  main{
+      width: auto;
+      height: 100%;
+      z-index: 5000;
+      
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+  }
+  main.ratio-9{
+    aspect-ratio: 9 / 16;
+  }
+  main.ratio-10{
+    aspect-ratio: 10 / 16;
+  }
   .controller{
     position: absolute;
     z-index: 800;
-    bottom : 8%;
+    bottom : 11rem;
     left: 50%;
     transform: translateX(-50%)
   }

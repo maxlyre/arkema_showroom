@@ -34,7 +34,9 @@ export default {
     },
     resizeWindow(){
       document.querySelector('html').style.fontSize = (100 * window.innerHeight / 1920 ) + "%";
-      document.querySelector('#knobContainer').style.transform = `scale(${1 * window.innerHeight / 1920})`
+      // document.querySelector('#knobContainer').style.transform = `scale(${1* window.innerHeight / 1920})` // Screen
+
+      document.querySelector('#knobContainer').style.transform = `scale(${1.25 * window.innerHeight / 1920})` //Tablette
       this.ratio = (window.innerWidth / window.innerHeight) > 0.6 ? false : true;
     }
   },
@@ -50,6 +52,7 @@ export default {
     window.addEventListener("resize", ()=>{
       this.resizeWindow()
     });
+
   },
 }
 </script>
@@ -118,12 +121,17 @@ export default {
   .controller{
     position: absolute;
     z-index: 800;
-    top : 56%;
+    
     right: 2.5rem;
     transform: translateY(-50%);
     z-index: 9000;
   }
-  
+  .ratio-9 .controller{
+    top : 55.5%;
+  }
+  .ratio-10 .controller{
+    top : 54.8%;
+  }
   .controller.disable{
     pointer-events: none;
   }

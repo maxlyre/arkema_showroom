@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.bonjour.bio',
-  appName: 'arkema_bio',
+  appName: 'Arkema - Bio',
   webDir: 'dist',
   server: {
     androidScheme: 'https'
