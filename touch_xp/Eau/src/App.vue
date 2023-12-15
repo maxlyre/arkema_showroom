@@ -19,7 +19,8 @@ export default {
             id:0
           },
           veilleTimer : null,
-          veille : false
+          veille : false,
+          ratio : true
       }
   },
   methods:{
@@ -47,6 +48,13 @@ export default {
       this.veille = false;
       clearTimeout(this.veilleTimer)
       this.startTimer()
+    },
+    resizeWindow(){
+      document.querySelector('html').style.fontSize = (100 * window.innerHeight / 1920 ) + "%";
+      // document.querySelector('.controller').style.transform = `scale(${1* window.innerHeight / 1920})` // Screen
+
+      if((1.4 * window.innerHeight / 1920) < 1.45) document.querySelector('.controller').style.transform = `scale(${1.4 * window.innerHeight / 1920}) translateX(-50%)` //Tablette
+      this.ratio = (window.innerWidth / window.innerHeight) > 0.6 ? false : true;
     }
   },
   mounted(){
@@ -60,45 +68,66 @@ export default {
       }
       
     }
+    this.resizeWindow()
+    window.addEventListener("resize", ()=>{
+      this.resizeWindow()
+    });
   }
 }
 </script>
   
 <template>
-  <TextContainer
-    :datas="$datas"
-    :currentVideo="currentVideo"
-  />
-
-  <VideoPlayer 
-    :datas="$datas"
-    :wantedID = "wantedID"
-    :activateFlush="activateFlush"
-    @video:flushEnd="activateFlush = false"
-    @video:time="getTime"
-  />
-  <div class="controller" :class="[activateFlush ? 'disable' : '']">
-    <Knob 
-      ref="knob"
-      @controller:position="posChanged"
-      :veille="veille"
-      @controller:veille="startTimer"
+  <main :class="[ratio ? 'ratio-9' : 'ratio-10']">
+    <TextContainer
+      :datas="$datas"
+      :currentVideo="currentVideo"
     />
-    <Button
-      @controller:flush="flushChanged"
-      :flush="activateFlush"
-    ></Button>
-  </div>
 
+    <VideoPlayer 
+      :datas="$datas"
+      :wantedID = "wantedID"
+      :activateFlush="activateFlush"
+      @video:flushEnd="activateFlush = false"
+      @video:time="getTime"
+    />
+    <div class="controller" :class="[activateFlush ? 'disable' : '']">
+      <Knob 
+        ref="knob"
+        @controller:position="posChanged"
+        :veille="veille"
+        @controller:veille="startTimer"
+      />
+      <Button
+        @controller:flush="flushChanged"
+        :flush="activateFlush"
+      ></Button>
+    </div>
+  </main>
 </template>
 
 <style scoped>
+  main{
+      width: auto;
+      height: 100%;
+      z-index: 5000;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+  }
+  main.ratio-9{
+    aspect-ratio: 9 / 16;
+  }
+  main.ratio-10{
+    aspect-ratio: 10 / 16;
+  }
   .controller{
     position: absolute;
     z-index: 800;
-    bottom : 6%;
+    bottom : 5rem;
+    transform-origin: bottom left;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    height: 18rem;
   }
   .controller.disable{
     pointer-events: none;

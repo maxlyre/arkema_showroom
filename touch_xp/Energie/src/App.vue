@@ -19,7 +19,7 @@ export default {
       document.querySelector('html').style.fontSize = (100 * window.innerHeight / 1920 ) + "%";
       // document.querySelector('.controller').style.transform = `scale(${1* window.innerHeight / 1920})` // Screen
 
-      document.querySelector('.controller').style.transform = `scale(${1 * window.innerHeight / 1920})` //Tablette
+      if((1.3 * window.innerHeight / 1920) < 1.35)  document.querySelector('.controller').style.transform = `scale(${1.3 * window.innerHeight / 1920}) translateX(-50%)` //Tablette
       this.ratio = (window.innerWidth / window.innerHeight) > 0.6 ? false : true;
     }
   },
@@ -94,9 +94,11 @@ export default {
   .controller{
     position: absolute;
     z-index: 800;
-    bottom : 11rem;
+    bottom : 3rem;
     left: 50%;
-    transform: translateX(-50%)
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+    height: 16.519rem;
   }
   .controller.disable{
     pointer-events: none;

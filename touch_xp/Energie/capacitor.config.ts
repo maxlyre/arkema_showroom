@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.bonjour.eau',
+  appId: 'com.bonjour.energie',
   appName: 'Arkema - Energie',
   webDir: 'dist',
   server: {

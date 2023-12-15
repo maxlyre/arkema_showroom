@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Arkema - Eau</string>
-    <string name="title_activity_main">Arkema - Eau</string>
-    <string name="package_name">com.bonjour.eau</string>
-    <string name="custom_url_scheme">com.bonjour.eau</string>
+    <string name="app_name">Arkema - Energie</string>
+    <string name="title_activity_main">Arkema - Energie</string>
+    <string name="package_name">com.bonjour.energie</string>
+    <string name="custom_url_scheme">com.bonjour.energie</string>
 </resources>

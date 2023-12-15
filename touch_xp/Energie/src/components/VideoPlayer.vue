@@ -37,6 +37,7 @@
             // Video is now downloaded
             // and we can set it as source on the video element
             videobuf.src = vid;
+            videobuf.currentTime = 0.01;
         }
       }
       req.onerror = function() {
