@@ -87,4 +87,17 @@
     border-bottom: 1px solid white;
 
   }
+  @media only screen and (max-width: 600px) {
+    .home{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .menu_item{
+      position: static;
+      text-align: center;
+      margin: 15px 0;
+    }
+  }
+
 </style>

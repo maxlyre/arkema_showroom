@@ -306,6 +306,7 @@
       margin-top : 0;
       
     }
+
     .lang_switcher{
       position: absolute;
       bottom : 10px;
@@ -326,6 +327,30 @@
       text-align: right;
       z-index: 50;
     }
+    #navigation_container:before{
+      height: 100%;
+    }
   }
-
+  @media screen and (max-width: 500px) {
+    .group_title{
+      font-size: 1.1rem;
+    }
+  }
+  @media screen and (max-height: 700px) {
+    .lang_switcher.nav_active{
+      bottom : 0;
+      left: 0;
+      padding: 10px;
+      background-color: black;
+      width: calc( 100% - 10px );
+    }
+    .menu_content.nav_active{
+      overflow-y: auto;
+      align-items: flex-start;
+    }
+    #navigation_container{
+      height: fit-content;
+      margin: 45px 0;
+    }
+  }
 </style>
