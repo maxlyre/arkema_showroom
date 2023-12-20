@@ -155,11 +155,7 @@ header {
 .nav_button{
   display: none;
 }
-  @media screen and (max-width: 1500px) {
-      html{
-      font-size: 13px;
-    }
-  }
+
   @media screen and (max-width: 1200px) {
 
     #app{

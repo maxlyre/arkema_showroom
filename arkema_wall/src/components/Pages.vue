@@ -87,4 +87,12 @@
     opacity: 0;
      transition: opacity 0.6s ease;
   }
+  @media only screen and (max-width: 800px) {
+    h1{
+      padding: 5rem 4rem 0 4rem;
+    }
+    .content{
+      margin: 0;
+    }
+  }
 </style>

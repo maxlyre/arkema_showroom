@@ -150,5 +150,13 @@
     vertical-align: middle;
     margin-right: 0.25rem;
   }
-
+  @media screen and (max-width: 800px) {
+    h3{
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .colonne{
+      margin-bottom: 4rem;
+    }
+  }
 </style>

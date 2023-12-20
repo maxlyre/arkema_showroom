@@ -8,6 +8,7 @@
     },
     data() {
       return {
+        windowWidth : 1920
       }
     },
     computed:{
@@ -21,12 +22,23 @@
         }
 
         return text
+      },
+      finalText(){
+        let text = this.imgBody;
+        if(this.windowWidth < 800){
+          text = text.replaceAll('<p>&nbsp;</p>','')
+        }
+        return text;
       }
+    },
+    mounted(){
+      this.windowWidth = window.innerWidth;
+      window.addEventListener("resize", ()=>{this.windowWidth = window.innerWidth});
     }
   };
 </script>
 <template>
-  <div :class="['colonne','text', 'col-sm-'+content.column, 'col-xs-12']" v-html="imgBody">
+  <div :class="['colonne','text', 'col-sm-'+content.column, 'col-xs-12']" v-html="finalText">
   </div>
 </template>
 
@@ -96,7 +108,22 @@
     .text .table td td{
       margin-bottom: 0;
     }
-
+    .text{
+      margin-bottom: 4rem;
+    }
+    .text td{
+      padding: 0;
+    }
+    p img{
+      width: 100% !important;
+      margin-bottom: 0.5rem;
+    }
+    figure{
+      width: 100% !important;
+    }
+    p:empty{
+      background-color: red;
+    }
   }
 
 </style>

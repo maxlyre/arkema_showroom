@@ -96,7 +96,7 @@
     .menu_item{
       position: static;
       text-align: center;
-      margin: 15px 0;
+      margin: 20px 0;
     }
   }
 

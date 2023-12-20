@@ -136,3 +136,18 @@ tbody{
 iframe{
   max-width: 100%;
 }
+
+
+@media screen and (max-width: 1500px) {
+  html{
+  font-size: 13px;
+}
+}
+@media screen and (max-width: 800px) {
+  iframe{
+    width: 100%;
+  }
+  html{
+    font-size: 12px;
+  }
+}

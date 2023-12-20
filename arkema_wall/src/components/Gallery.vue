@@ -106,6 +106,7 @@
     position: relative;
     bottom : 0;
     height: 100%;
+    padding: 0 30px;
   }
   .gallery .swiper-pagination-bullet{
     border-radius : 0;

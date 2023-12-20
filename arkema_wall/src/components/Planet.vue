@@ -188,7 +188,7 @@
     .planete canvas{
           height: calc(100vw - 50px) !important;
           position : static;
-          margin-top: 80px !important;
+          margin-top: 20px !important;
     }
     .planete .legend{
       max-width: 100%;
@@ -197,6 +197,11 @@
     .planete .dataContainer{
       top : -40px;
       right:-40px;
+    }
+    .planete .nav{
+      top : 0%;
+      left: auto;
+      right: 0px;
     }
   
   }
