@@ -296,7 +296,7 @@
     .menu_content{
       position: absolute;
       background-color: black;
-      height: 100vh;
+      height: 100dvh;
       width: 100%;
       z-index: 99;
       align-items: center;

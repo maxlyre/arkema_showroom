@@ -122,7 +122,7 @@ header {
   }
 
   #app {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
   }
 
@@ -159,7 +159,7 @@ header {
   @media screen and (max-width: 1200px) {
 
     #app{
-      height: 100vh;
+      height: 100dvh;
     }
     header{
       position: static;

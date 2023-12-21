@@ -43,7 +43,9 @@
 </template>
 
 <style>
-  
+  .colonne{
+    margin-bottom: 1rem;
+  }
   h2{
     font-family: 'Work Sans';
     text-transform:uppercase;
@@ -118,7 +120,7 @@
       width: 100% !important;
       margin-bottom: 0.5rem;
     }
-    figure{
+    .colonne>figure{
       width: 100% !important;
     }
     p:empty{

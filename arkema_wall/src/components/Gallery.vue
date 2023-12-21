@@ -106,7 +106,10 @@
     position: relative;
     bottom : 0;
     height: 100%;
-    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 35px;
   }
   .gallery .swiper-pagination-bullet{
     border-radius : 0;
