@@ -98,7 +98,7 @@
         }else{
           //find which group
           for (const groupe of this.content) {
-            if(groupe.Title == newValue){
+            if(groupe.Title == newValue || groupe.ChineseTitle == newValue || groupe.EnglishTitle == newValue){
               if(oldValue == null){
                 u = groupe.videoTransition.data.attributes.url
                 this.isTransition = true;

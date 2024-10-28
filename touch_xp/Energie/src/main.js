@@ -28,8 +28,8 @@ return res.json();
 //   })
 // })
 
-import { StatusBar } from '@capacitor/status-bar';
-import { NavigationBar } from '@hugotomazi/capacitor-navigation-bar';
+// import { StatusBar } from '@capacitor/status-bar';
+// import { NavigationBar } from '@hugotomazi/capacitor-navigation-bar';
 const hideStatusBar = async () => {
   await StatusBar.hide();
 };
